@@ -1,0 +1,480 @@
+<?php
+/**
+ * Config
+ *
+ * @package WordPress
+ * @subpackage Ultimate_Coming_Soon_Page
+ * @since 0.1
+ */
+
+if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {	
+    class SeedProd_Ultimate_Coming_Soon_Page extends SeedProd_Framework {
+        
+        /**
+         *  Extend the base construct and add plugin specific hooks
+         */
+        function __construct(){
+            $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
+            parent::__construct();
+            add_action( 'wp_ajax_seedprod_comingsoon_refesh_list', array(&$this,'refresh_list'));
+            if(isset($seedprod_comingsoon_options['comingsoon_enabled']) && in_array('1',$seedprod_comingsoon_options['comingsoon_enabled'])){
+                add_action('template_redirect', array(&$this,'render_comingsoon_page'));
+            }
+            add_action( 'wp_ajax_seedprod_mailinglist_callback', array(&$this,'ajax_mailinglist_callback') );
+            add_action( 'wp_ajax_nopriv_seedprod_mailinglist_callback', array(&$this,'ajax_mailinglist_callback') );
+            add_action( 'wp_ajax_seedprod_email_export_delete', array(&$this,'email_export_delete') );
+            add_action( 'wp_print_scripts', array(&$this,'add_frontent_scripts') );
+            add_filter( 'plugin_action_links', array(&$this,'plugin_action_links'), 10, 2);
+            if($seedprod_comingsoon_options['comingsoon_mailinglist'] == 'database'){
+                $this->email_database_setup();
+            }
+        }
+        
+        /**
+         * Display the coming soon page
+         */
+        function render_comingsoon_page() {
+            if ( !is_user_logged_in() || $_GET['cs_preview'] == 'true' ) {
+                $file = plugin_dir_path(__FILE__).'template/template-coming-soon.php';
+                include($file);
+            }
+        }
+        
+        /**
+         * Load frontend scripts
+         */
+        function add_frontent_scripts() {
+            if (!is_admin()){
+                wp_enqueue_script( 'modernizr', plugins_url('inc/template/modernizr.js',dirname(__FILE__)), array(),'1.7' );  
+                wp_enqueue_script( 'seedprod_coming_soon_script', plugins_url('inc/template/script.js',dirname(__FILE__)), array( 'jquery' ),$this->plugin_version, true );  
+            }
+        }
+        
+        /**
+         * Create Database to Store Emails
+         */
+        function email_database_setup() {
+            global $wpdb;
+            $tablename = $wpdb->prefix . "seedprod_emails";
+            if( $wpdb->get_var("SHOW TABLES LIKE '$tablename'") != $tablename ){
+                $sql = "CREATE TABLE `$tablename` (
+                    `id` int(10) unsigned NOT NULL auto_increment,
+                    `email` varchar(255) NOT NULL,
+                    `created` timestamp NOT NULL default CURRENT_TIMESTAMP,
+                    PRIMARY KEY (`id`)
+                );";
+            
+                require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+ 
+                dbDelta($sql);
+            }
+            
+        }
+        
+        
+        /**
+         *  Callback for mailing list to be displayed in the admin area.
+         */
+        function refresh_list(){
+            if(check_ajax_referer('seedprod_comingsoon_refesh_list')){
+                $api_key = $_GET['apikey'];
+                delete_transient('seedprod_comingsoon_mailinglist');
+                $mailchimp_lists = $this->get_mailchimp_lists($api_key);
+                echo json_encode($mailchimp_lists);
+                exit();
+            }
+        }
+        
+        /**
+         *  Get List from MailChimp
+         */
+        function get_mailchimp_lists($apikey){
+            $mailchimp_lists = unserialize(get_transient('seedprod_comingsoon_mailinglist'));
+            if($mailchimp_lists === false){
+                require_once 'lib/MCAPI.class.php';
+                $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
+                if(!isset($apikey)){
+                    $apikey = $seedprod_comingsoon_options['comingsoon_mailchimp_api_key'];
+                }
+                $api = new MCAPI($apikey);
+
+                $retval = $api->lists();
+                if ($api->errorCode){
+                	$mailchimp_lists['false'] = "Unable to load lists, check your API Key!";
+                } else {
+
+                	foreach ($retval['data'] as $list){
+                	    $mailchimp_lists[$list['id']] = 'MailChimp - '.$list['name'];
+                	}
+                	set_transient('seedprod_comingsoon_mailinglist',serialize( $mailchimp_lists ),86400);
+                }
+            }
+            return $mailchimp_lists;
+        }
+        
+        /**
+         *  Display mailing list field in admin
+         */
+        function callback_mailinglist_field() {
+            $options = get_option('seedprod_comingsoon_options');
+            $id = 'comingsoon_mailinglist';
+            $setting_id = 'seedprod_comingsoon_options';
+            $option_values = $this->get_mailchimp_lists(null);
+            $option_values['feedburner'] = 'FeedBurner';
+            $option_values['database'] = 'Database';
+            $ajax_url = html_entity_decode(wp_nonce_url('admin-ajax.php?action=seedprod_comingsoon_refesh_list','seedprod_comingsoon_refesh_list'));
+            echo "<select id='$id' class='' name='{$setting_id}[$id]'>";
+    	    foreach($option_values as $k=>$v){
+    	        echo "<option value='$k' ".($options[$id] == $k ? 'selected' : '').">$v</option>";
+    	    }
+    	    echo "</select><button id='comingsoon_mailinglist_refresh' type='button' class='button-secondary'>Refresh</button>
+            <br><small class='description'>More Options Coming Soon :)</small>
+            <script type='text/javascript'>
+            jQuery(document).ready(function($) {
+                $('#comingsoon_mailinglist_refresh').click(function() {
+                    apikey = $('#comingsoon_mailchimp_api_key').val();
+                    $.post('{$ajax_url}&apikey='+apikey, function(data) {
+                      lists = $.parseJSON(data);
+                      if(lists){
+                          $('#comingsoon_mailinglist').html('');
+                      }
+                      $.each(lists,function(k,v){
+                          $('#comingsoon_mailinglist').prepend('<option value=\"'+k+'\">'+v+'</option>');
+                      });
+                      $('#comingsoon_mailinglist_refresh').html('Lists Refreshed');
+                    });
+                }); 
+            });
+            </script>
+            ";
+        }
+        
+        /**
+         * Subscribe User to Mailing List or return an error.
+         */
+        function ajax_mailinglist_callback() {
+            //if ( empty($_POST) || !wp_verify_nonce($_GET['noitfy_nonce'],'seedprod_comingsoon_callback') )
+            if(empty($_GET['email']))
+            {
+               header('HTTP/1.1 403 Forbidden',true,403);
+               exit;
+            }
+            else
+            {   
+                $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
+                $email = $_GET['email'];
+                $errcode = 0;
+                // If not email exit and return 400
+                if(is_email($email) != $email){
+                    die('400');
+                }
+
+                // If databse option update db
+                if($seedprod_comingsoon_options['comingsoon_mailinglist'] == 'database'){
+                    global $wpdb;
+                    $tablename = $wpdb->prefix . "seedprod_emails";
+                    $values = array(
+                        'email' => $email
+                    );
+                    $format_values = array(
+                        '%s'
+                    );
+                    $sql = "SELECT `email` FROM $tablename WHERE email = %s";
+                    $safe_sql = $wpdb->prepare($sql,$email);
+                    $select_result =$wpdb->get_var($safe_sql);
+                    if($select_result != $email){
+                        $insert_result = $wpdb->insert(
+                            $tablename,
+                            $values,
+                            $format_values
+                        );
+                    }
+                    
+                    if($insert_result != false){
+                        die('200');
+                    }
+                    exit;
+                }
+                
+                // if mailchimp option
+                require_once 'lib/MCAPI.class.php';
+                $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
+                $apikey = $seedprod_comingsoon_options['comingsoon_mailchimp_api_key'];
+                $api = new MCAPI($apikey);
+                $listId = $seedprod_comingsoon_options['comingsoon_mailinglist'];
+
+                $retval = $api->listSubscribe( $listId, $email, $merge_vars=NULL,$email_type='html', $double_optin=true);
+                if($retval == false){
+                    die('400');
+                }
+                if ($api->errorCode){
+                	die('500');
+                } else {
+                    die('200');
+                }  
+                exit;
+            }
+        }
+        
+        /**
+         * Incentive Section explanation Text
+         */
+        function section_incentive() {
+        	echo '<p class="seedprod_section_explanation">Offer your visitors incentives such as coupons codes, free ebook, free software, etc. in exchange for their email.
+        	Just fill out either or both of the fileds below and the information will be displayed after you have succesfully captured their email.
+        	
+        	</p>';
+        }
+        
+        /**
+        * Email Export
+        */
+        function email_export_delete(){
+            if(check_ajax_referer('seedprod_email_export_delete')){
+                if($_GET['method'] == 'export'){
+                    global $wpdb;
+                	$csv_output .= "Email,Created";
+                	$csv_output .= "\n";
+                    $tablename = $wpdb->prefix . "seedprod_emails";
+                    $sql = "SELECT email,created FROM " . $tablename;
+                    $results = $wpdb->get_results($wpdb->prepare($sql));
+            
+                     foreach ($results as $result) {
+                     	$csv_output .= $result->email ."," . $result->created ."\n";
+                     }
+            
+                     $filename = $file."emails_".date("Y-m-d_H-i",time());
+                     header("Content-type: text/plain");
+                     header("Content-disposition: attachment; filename=".$filename.".csv");
+                     print $csv_output;
+                     exit;
+                }elseif($_GET['method'] == 'delete'){
+                    global $wpdb;
+                	$tablename = $wpdb->prefix . "seedprod_emails";
+                   	$sql = "TRUNCATE " . $tablename;
+                	$result = $wpdb->query($sql);
+                	if($result){
+                	    echo '200';
+                	}
+                	exit;
+                }
+            }else{
+                header('HTTP/1.1 403 Forbidden',true,403);
+                exit;
+            }
+        }
+        
+        /**
+         * Callback Email Export
+         */
+        function callback_database_field(){   
+            $ajax_url = html_entity_decode(wp_nonce_url('admin-ajax.php?action=seedprod_email_export_delete','seedprod_email_export_delete'));
+            echo "<button id='comingsoon_export_emails' type='button' class='button-secondary'>Export</button><button id='comingsoon_delete_emails' type='button' class='button-secondary'>Delete</button>
+            <br><small class='description'></small>
+            <script type='text/javascript'>
+            jQuery(document).ready(function($) {
+                $('#comingsoon_export_emails').click(function() {
+                    window.location.href = '{$ajax_url}&method=export';
+                });
+                $('#comingsoon_delete_emails').click(function() {
+                    if(confirm('Are you sure you want to DELETE all emails?')){
+                        $.get('{$ajax_url}&method=delete', function(data) {
+                           $('#comingsoon_delete_emails').html('Emails Deleted').attr('disabled','disabled');
+                        });
+                    }
+                }); 
+            });
+            </script>
+            ";
+        }
+        
+        function plugin_action_links($links, $file) {
+            $plugin_file = 'ultimate-coming-soon-page/ultimate-coming-soon-page.php';
+            if ($file == $plugin_file) {
+                $settings_link = '<a href="options-general.php?page=seedprod_coming_soon">Settings</a>';
+                array_push($links, $settings_link);
+            }
+            return $links;
+        }
+
+        
+        
+        // End of Class					
+    }
+}
+
+/**
+ * Config
+ */
+$seedprod_comingsoon = new SeedProd_Ultimate_Coming_Soon_Page();
+$seedprod_comingsoon->plugin_base_url = plugins_url('',dirname(__FILE__));
+$seedprod_comingsoon->plugin_version = '0.1';
+$seedprod_comingsoon->plugin_type = 'free';
+$seedprod_comingsoon->plugin_short_url = 'http://bit.ly';
+$seedprod_comingsoon->plugin_name = 'Coming Soon';
+$seedprod_comingsoon->menu[] = array("type" => "add_options_page",
+                         "page_name" => "Coming Soon",
+                         "menu_name" => "Coming Soon",
+                         "capability" => "manage_options",
+                         "menu_slug" => "seedprod_coming_soon",
+                         "callback" => array($seedprod_comingsoon,'option_page'),
+                         "icon_url" => plugins_url('framework/seedprod-icon-16x16.png',dirname(__FILE__)),
+                        );
+                        
+/**
+ *  Do not replace validate_function. Create unique id and copy menu slug 
+ * from menu config. Create 'validate_function' if using custom validation.
+ */
+$seedprod_comingsoon->options[] = array( "type" => "setting",
+                "id" => "seedprod_comingsoon_options",
+				"menu_slug" => "seedprod_coming_soon"
+				);
+
+/**
+ * Create unique id,label, create 'desc_callback' if you need custom description, attach
+ * to a menu_slug from menu config.
+ */
+$seedprod_comingsoon->options[] = array( "type" => "section",
+                "id" => "seedprod_section_coming_soon",
+				"label" => "Settings",	
+				"menu_slug" => "seedprod_coming_soon");
+
+
+/**
+ * Choose type, id, label, attache to a section and setting id.
+ * Create 'callback' function if you are creating a custom field.
+ * Optional desc, default value, class, option_values, pattern
+ * Types image,textbox,select,textarea,radio,checkbox,color,custom
+ */
+$seedprod_comingsoon->options[] = array( "type" => "checkbox",
+                "id" => "comingsoon_enabled",
+				"label" => "Enable",
+				"desc" => "Enable if you want to display a coming soon page to visitors. Users who are logged in will not see the coming soon page, this means you.  <a href='".home_url()."/?cs_preview=true'>Preview</a>",
+                "option_values" => array('1'=>'Yes'),
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);
+$seedprod_comingsoon->options[] = array( "type" => "image",
+                "id" => "comingsoon_image",
+				"label" => "Image",
+				"desc" => "Upload a logo or teaser image.",
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);
+$seedprod_comingsoon->options[] = array( "type" => "textbox",
+                "id" => "comingsoon_headline",
+				"label" => "Headline",
+				"desc" => "Write a headline for your coming soon page. Tip: Avoid using 'Coming Soon'.",
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);
+$seedprod_comingsoon->options[] = array( "type" => "textarea",
+                "id" => "comingsoon_description",
+				"label" => "Description",
+				"desc" => "Tell the visitor what to expect from your site.",
+				"class" => "large-text",
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);	
+$seedprod_comingsoon->options[] = array( "type" => "textbox",
+                "id" => "comingsoon_mailchimp_api_key",
+				"label" => "MailChimp API Key",
+				"desc" => "Enter your API Key. <a href='http://admin.mailchimp.com/account/api-key-popup'>Get your API key</a>",
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);
+$seedprod_comingsoon->options[] = array( "type" => "textbox",
+                "id" => "comingsoon_feedburner_address",
+				"label" => "FeedBurn Address",
+				"desc" => "Enter the part after http://feeds2.feedburner.com/",
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);
+$seedprod_comingsoon->options[] = array( "type" => "custom",
+                "id" => "comingsoon_mailinglist",
+                "callback" => array($seedprod_comingsoon,'callback_mailinglist_field'),
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);	
+
+$seedprod_comingsoon->options[] = array( "type" => "textarea",
+                "id" => "comingsoon_customhtml",
+				"label" => "Custom HTML",
+				"desc" => "Enter any custom html or javascript that you want outputed.",
+				"class" => "large-text",
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);	
+				
+$seedprod_comingsoon->options[] = array( "type" => "section",
+                "id" => "seedprod_section_style",
+				"label" => "Style",	
+				"menu_slug" => "seedprod_coming_soon");
+				
+$seedprod_comingsoon->options[] = array( "type" => "color",
+                "id" => "comingsoon_custom_bg_color",
+				"label" => "Background Color",
+				"section_id" => "seedprod_section_style",
+				"setting_id" => "seedprod_comingsoon_options",
+				
+				);
+				
+$seedprod_comingsoon->options[] = array( "type" => "image",
+                "id" => "comingsoon_custom_bg_image",
+				"label" => "Background Image",
+				"desc" => "",
+				"section_id" => "seedprod_section_style",
+				"setting_id" => "seedprod_comingsoon_options",
+				"desc" => 'Upload an optional background image. This will override the color above if set.',
+				);
+
+$seedprod_comingsoon->options[] = array( "type" => "radio",
+                "id" => "comingsoon_font_color",
+				"label" => "Font Color",
+				"option_values" => array('black'=>'Black','gray'=>'Gray','white'=>'White'),
+				"desc" => "",
+				"default_value" => "black",
+				"section_id" => "seedprod_section_style",
+				"setting_id" => "seedprod_comingsoon_options",
+				);
+				
+$seedprod_comingsoon->options[] = array( "type" => "select",
+                "id" => "comingsoon_headline_font",
+				"label" => "Headline Font",
+				"option_values" => $seedprod_comingsoon->font_field_list(),
+				"section_id" => "seedprod_section_style",
+				"setting_id" => "seedprod_comingsoon_options",
+				"desc" => 'View <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html">System Fonts</a> - View <a href="http://www.google.com/webfonts">Google Fonts</a>',
+				);
+$seedprod_comingsoon->options[] = array( "type" => "select",
+                "id" => "comingsoon_body_font",
+				"label" => "Body Font",
+				"option_values" => $seedprod_comingsoon->font_field_list(),
+				"default_value" => "_impact",
+				"section_id" => "seedprod_section_style",
+				"setting_id" => "seedprod_comingsoon_options",
+				"desc" => 'View <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html">System Fonts</a> - View <a href="http://www.google.com/webfonts">Google Fonts</a>'
+				);
+				
+$seedprod_comingsoon->options[] = array( "type" => "textarea",
+                "id" => "comingsoon_custom_css",
+				"label" => "Custom CSS",
+				"desc" => "",
+				"class" => "large-text",
+				"section_id" => "seedprod_section_style",
+				"setting_id" => "seedprod_comingsoon_options",
+				"desc" => 'Need to tweaks the styles? Add your custom CSS here.',
+				);
+				
+$seedprod_comingsoon->options[] = array( "type" => "radio",
+                "id" => "comingsoon_footer_credit",
+				"label" => "Powered By SeedProd",
+				"option_values" => array('0'=>'Nope - Got No Love','1'=>'Yep - I Love You Man'),
+				"desc" => "Can we show a <strong>cool stylish</strong> footer credit at the bottom the page.",
+				"default_value" => "0",
+				"section_id" => "seedprod_section_style",
+				"setting_id" => "seedprod_comingsoon_options",
+				);	
+							
+
+?>

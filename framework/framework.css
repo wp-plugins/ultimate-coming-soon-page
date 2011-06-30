@@ -1,0 +1,14 @@
+.seedprod .support-postbox .hndle span{
+    background: transparent url(help.png) no-repeat;
+    padding-left:20px;
+}
+
+.seedprod .like-postbox .hndle span{
+    background: transparent url(star.png) no-repeat;
+    padding-left:20px;
+}
+
+.seedprod .rss-postbox .hndle span{
+    background: transparent url(seedprod-icon-16x16.png) no-repeat;
+    padding-left:20px;
+}

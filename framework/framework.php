@@ -1,0 +1,558 @@
+<?php
+/**
+ * SeedProd Framework - Inspired by Yoast's Plugins and WooThemes Framework
+ *
+ * @package WordPress
+ * @subpackage Ultimate_Coming_Soon_Page
+ * @since 0.1
+ */
+if (!class_exists('SeedProd_Framework')) {
+	class SeedProd_Framework {
+	
+        /**
+         * Define the Version of the Plugin
+         */
+        public $plugin_version = '';
+        public $plugin_type = ''; // free,lite and pro
+        public $plugin_name = '';
+        public $plugin_support_url = '';
+        public $plugin_short_url = '';
+        public $plugin_seedprod_url = '';
+        public $plugin_donate_url = '';
+        public $plugin_official_url = '';
+        private $framework_version = '0.1';
+
+        /**
+         * Define if we are deploying a theme and add the theme params
+         */
+        public $deploy_theme = 0;
+        public $deploy_theme_name = array('template' =>'', 'stylesheet' => '');
+
+        /**
+         * Global we set in seedprod_admin_enqueue_scripts and use in create_menu
+         */
+        public $pages = array();
+
+        /**
+         *  Define the menus that will be rendered.
+         *  Do not replace callback function.
+         */
+        public $menu = array();
+        
+        /**
+         *  Define options, sections and fields
+         */
+        public $options = array();
+	
+    	/**
+    	 * Load Hooks
+    	 */
+    	function __construct() {
+    	    add_action('admin_enqueue_scripts', array(&$this,'admin_enqueue_scripts'));
+    	    add_action('admin_menu',array(&$this,'create_menu'));
+    	    add_action('admin_init', array(&$this,'set_settings'));
+    	}
+    	
+    	/**
+         * Set the base url to use in the plugin
+         *
+         * @since  0.1
+         * @return string
+         */
+    	function base_url(){
+            return plugins_url('',dirname(__FILE__));
+        }
+    	    
+	
+        /**
+         * Properly enqueue styles and scripts for our theme options page.
+         *
+         * This function is attached to the admin_enqueue_scripts action hook.
+         *
+         * @since  0.1
+         * @param string $hook_suffix The name of the current page we are on.
+         */
+        function admin_enqueue_scripts( $hook_suffix ) {
+            if(!in_array($hook_suffix, $this->pages))
+                return;
+            wp_enqueue_script('dashboard');
+        	wp_enqueue_script( 'seedprod_framework', plugins_url('framework.js',__FILE__), array( 'jquery','media-upload','thickbox','farbtastic' ), $this->plugin_version );
+        	wp_enqueue_style( 'seedprod_framework', plugins_url('framework.css',__FILE__), false, $this->plugin_version );
+        	wp_enqueue_script( 'seedprod_plugin', plugins_url('inc/js/admin-script.js',dirname(__FILE__)), array( 'jquery','media-upload','thickbox','farbtastic' ), $this->plugin_version );
+        	wp_enqueue_style( 'seedprod_plugin', plugins_url('inc/css/admin-style.css',dirname(__FILE__)), false, $this->plugin_version );
+        	wp_enqueue_style('thickbox');
+            wp_enqueue_style('farbtastic'); 
+        }
+
+        /**
+         * Creates WordPress Menu pages from an array in the config file.
+         *
+         * This function is attached to the admin_menu action hook.
+         *
+         * @since 0.1
+         */
+        function create_menu(){
+            foreach ($this->menu as $v) {
+                $this->pages[] = call_user_func_array($v['type'],array($v['page_name'],$v['menu_name'],$v['capability'],$v['menu_slug'],$v['callback'],$v['icon_url']));
+            }
+    
+        }
+
+        /**
+         * Render the option pages.
+         *
+         * @since 0.1
+         */
+        function option_page() {
+            $page = $_REQUEST['page'];
+        	?>
+        	<div class="wrap seedprod">
+        	    <?php screen_icon(); ?>
+        		<h2><?php echo $this->plugin_name; ?> </h2>
+        		<?php settings_errors(); ?> 
+        		<div id="poststuff" class="metabox-holder has-right-sidebar">
+                    <div id="side-info-column" class="inner-sidebar">
+                        <div id="side-sortables" class="meta-box-sortables ui-sortable">
+                            <div class="postbox support-postbox">
+                                <div class="handlediv" title="Click to toggle"><br /></div>
+                				<h3 class="hndle"><span>Plugin Support</span></h3>
+                				<div class="inside">
+                					<div class="support-widget">
+                					<p>
+                					   Got a Question, Idea, Problem or Praise?
+                					</p>
+                					<ul>
+                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_support_url) ? 'http://seedprod.com/support/' : $this->plugin_support_url) ?>">Support Request</a></li>
+                				    </ul>
+                					
+                					</div>
+                				</div>
+                            </div>
+                            <?php if($this->plugin_type != 'pro'){ ?>
+                            <div class="postbox like-postbox">
+                                <div class="handlediv" title="Click to toggle"><br /></div>
+                				<h3 class="hndle"><span>Show Some Love</span></h3>
+                				<div class="inside">
+                					<div class="like-widget">
+                					<p>Like this plugin? Show your support by:</p>
+                					<ul>
+                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_donate_url) ? 'http://seedprod.com/donate/' : $this->plugin_donate_url) ?>">Donate To It</a></li>
+                					    <li>&raquo; <a href="<?php echo "http://twitter.com/share?url={$this->plugin_seedprod_url}&text=Check out this awesome WordPress Plugin I'm using, '{$this->plugin_name}' by SeedProd {$this->plugin_short_url}"; ?>">Tweet It</a></li>
+                					    <?php if(!empty($this->plugin_official_url)){ ?>
+                					    <li>&raquo; <a href="<?php echo $this->plugin_official_url ?>">Rate It</a></li>
+                					    <?php } ?>
+                					</ul>
+                					</div>
+                				</div>
+                            </div>
+                            <?php } ?>
+                            <div class="postbox rss-postbox">
+                                <div class="handlediv" title="Click to toggle"><br /></div>
+                				<h3 class="hndle"><span>SeedProd Blog</span></h3>
+                				<div class="inside">
+                					<div class="rss-widget">
+                					<?php
+                					wp_widget_rss_output(array(
+                					   'url' => 'http://seedprod.com/feed/',
+                					   'title' => 'SeedProd Blog',
+                					   'items' => 3,
+                					   'show_summary' => 0,
+                					   'show_author' => 0,
+                					   'show_date' => 1,
+                					));
+                					?>
+            					    <ul>
+                					    <li>&raquo; <a href="http://seedprod.com/subscribe/">Subscribe by Email</a></li>
+                				    </ul>
+                					</div>
+                				</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="post-body">
+                        <div id="post-body-content" >
+                            <div class="meta-box-sortables ui-sortable">
+                                <form action="options.php" method="post">
+                                <?php
+                                foreach ($this->options as $v) {
+                                    if($v['menu_slug'] == $page){
+                                        switch ($v['type']) {
+                                            case 'setting':
+                        				        settings_fields($v['id']);
+                        				        break;
+                        				    case 'section':
+                        				        echo '<div class="postbox seedprod-postbox"><div class="handlediv" title="Click to toggle"><br /></div>';
+                                        		$this->seedprod_do_settings_sections($v['id']);
+                                    		    echo '</div>';
+                                    		    break;
+                        		    
+                        		        }
+                		            }
+                                }
+                                ?>
+                        		<input name="Submit" type="submit" value="Save Changes" class="button-primary"/>
+                        	    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        	</div>	
+        	<?php
+        }
+
+        /**
+         * Create the settings options, sections and fields via the WordPress Settings API
+         *
+         * This function is attached to the admin_init action hook.
+         *
+         * @since 0.1
+         */
+        function set_settings(){
+            foreach ($this->options as $k) {
+                switch ($k['type']) {
+                    case 'setting':
+                        if(empty($k['validate_function'])){
+                	        $k['validate_function'] = array(&$this,'validate_machine');
+                	    }
+                    	register_setting(
+                    		$k['id'],
+                    		$k['id'],
+                    		$k['validate_function']
+                    	);
+                    	break;
+                	case 'section':
+                	    if(empty($k['desc_callback'])){
+                	        $k['desc_callback'] = array(&$this,'section_dummy_desc');
+                	    }else{
+                	        $k['desc_callback'] = array(&$this, $k['desc_callback']);
+                	    }
+                    	add_settings_section(
+                    		$k['id'],
+                    		$k['label'],
+                    		$k['desc_callback'],
+                    		$k['id']
+                    	);
+                    	break;
+                	default:
+                    	if(empty($k['callback'])){
+                	        $k['callback'] = array(&$this,'field_machine');
+                	    }
+                    	add_settings_field(
+                    		$k['id'],
+                    		$k['label'],
+                    		$k['callback'],
+                    		$k['section_id'],
+                    		$k['section_id'],
+                    		array('id' => $k['id'], 
+                    		'desc' => $k['desc'],
+                    		'setting_id' => $k['setting_id'], 
+                    		'class' => $k['class'], 
+                    		'type' => $k['type'],
+                    		'default_value' => $k['default_value'],
+                    		'option_values' => $k['option_values'] )
+                    	);
+        	    }
+            }
+        }
+
+        /**
+         * Create a field based on the field type passed in.
+         *
+         * @since 0.1
+         */
+        function field_machine($args) {
+            extract($args);
+        	$options = get_option( $setting_id );
+        	switch($type){
+        	    case 'textbox':
+        	        echo "<input id='$id' class='".(empty($class) ? 'regular-text' : $class)."' name='{$setting_id}[$id]' type='text' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
+        	        <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>";
+        	        break;
+                case 'image':
+        	        echo "<input id='$id' class='".(empty($class) ? 'regular-text' : $class)."' name='{$setting_id}[$id]' type='text' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
+        	        <input id='{$id}_upload_image_button' class='button-secondary' type='button' value='Media Image Library' />
+        	        <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>
+        	        <script type='text/javascript'>
+        	        jQuery(document).ready(function($) {
+
+                    	var formfield_{$id} = null;
+
+                    	$('#{$id}_upload_image_button').click(function() {
+                    		$('html').addClass('Image');
+                    		formfield_{$id} = $('#{$id}').attr('name');
+                    		tb_show('', 'media-upload.php?type=image&TB_iframe=true');
+                    		return false;
+                    	});
+
+                    	window.original_send_to_editor = window.send_to_editor;
+                    	window.send_to_editor = function(html){
+                    	    var fileurl_{$id};
+
+                    		if (formfield_{$id} != null) {
+                    			fileurl_{$id} = $('img',html).attr('src');
+
+                    			$('#{$id}').val(fileurl_{$id});
+
+                    			tb_remove();
+
+                    			$('html').removeClass('Image');
+                    			formfield_{$id} = null;
+                    		} else {
+                    			window.original_send_to_editor(html);
+                    		}
+                    	};
+
+                    });
+        	        </script>
+        	        ";
+        	        break;
+        	    case 'select':
+            	    echo "<select id='$id' class='".(empty($class) ? '' : $class)."' name='{$setting_id}[$id]'>";
+            	    foreach($option_values as $k=>$v){
+            	        if(preg_match("/optgroupend/i",$k)){
+            	            echo "</optgroup>";
+            	        }else{
+            	            if(preg_match("/optgroup/i",$k)){
+                	            echo "<optgroup label='$v'>";
+                	        }else{
+
+                	            if(preg_match("/empty/i",$k) && empty($default_value)){             
+                	                echo "<option value=''>$v</option>";
+                	            }else{
+            	                    echo "<option value='$k' ".((preg_match("/empty/i",$options[$id] || isset($options[$id]) === false) ? $default_value : $options[$id]) == $k ? 'selected' : '').">$v</option>";
+        	                    }
+        	                }
+        	            }
+
+            	    }
+            	    echo "</select>
+                    <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>";
+                    break;
+        	    case 'textarea':
+                    echo "<textarea id='$id' class='".(empty($class) ? '' : $class)."' name='{$setting_id}[$id]'>".(empty($options[$id]) ? $default_value : $options[$id])."</textarea>
+        	        <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>";
+        	        break;
+        	    case 'radio':
+        	        foreach($option_values as $k=>$v){
+        	            echo "<input type='radio' name='{$setting_id}[$id]' value='$k'".((empty($options[$id]) ? $default_value : $options[$id]) == $k ? 'checked' : '')."  /> $v<br/>";
+                    }
+        	        echo "<small class='description'>".(empty($desc) ? '' : $desc)."</small>";
+        	        break;
+        	    case 'checkbox':
+        	        $count = 0;
+        	        foreach($option_values as $k=>$v){
+        	            echo "<input type='checkbox' name='{$setting_id}[$id][]' value='$k'".(in_array($k,(empty($options[$id]) ? (empty($default_value) ? array(): $default_value) : $options[$id])) ? 'checked' : '')."  /> $v<br/>";
+                        $count++;
+                    }
+        	        echo "<small class='description'>".(empty($desc) ? '' : $desc)."</small>";
+        	        break;
+        	    case 'color':
+        	        echo "
+            	        <input id='$id' type='text' name='{$setting_id}[$id]' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
+                        <a href='#' class='pickcolor' id='$id-example'></a>
+                        <input type='button' class='pickcolor button-secondary' value='Select Color'>
+                        <div id='$id-colorPickerDiv' style='z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;'></div>
+                        <br />
+                        <small class='description'>".(empty($desc) ? '' : $desc)."</small>
+                        <style type='text/css'>
+                        #$id-example {
+                        	-moz-border-radius: 4px;
+                        	-webkit-border-radius: 4px;
+                        	border-radius: 4px;
+                        	border: 1px solid #dfdfdf;
+                        	margin: 0 7px 0 3px;
+                        	padding: 4px 14px;
+                        }
+                        </style>
+                        <script type='text/javascript'>
+                        var farbtastic_$id;
+
+                        (function($){
+                        	var pickColor_$id = function(a) {
+                        		farbtastic_$id.setColor(a);
+                        		$('#$id').val(a);
+                        		$('#$id-example').css('background-color', a);
+                        	};
+
+                        	$(document).ready( function() {
+                        		farbtastic_$id = $.farbtastic('#$id-colorPickerDiv', pickColor_$id);
+
+                        		pickColor_$id( $('#$id').val() );
+
+                        		$('.pickcolor').click( function(e) {
+                        			$('#$id-colorPickerDiv').show();
+                        			e.preventDefault();
+                        		});
+
+                        		$('#$id').keyup( function() {
+                        			var a = $('#$id').val(),
+                        				b = a;
+
+                        			a = a.replace(/[^a-fA-F0-9]/, '');
+                        			if ( '#' + a !== b )
+                        				$('#$id').val(a);
+                        			if ( a.length === 3 || a.length === 6 )
+                        				pickColor_$id( '#' + a );
+                        		});
+
+                        		$(document).mousedown( function() {
+                        			$('#$id-colorPickerDiv').hide();
+                        		});
+                        	});
+                        })(jQuery);
+                        </script>
+                        ";
+        	        break;
+        	}
+	
+        }
+
+        /**
+         * Validates user input before we save it via the Options API. If error add_setting_error
+         *
+         * @since 0.1
+         * @param array $input Contains all the values submited to the POST.
+         * @return array $input Contains sanitized values.
+         * @todo Figure out best way to validate values.
+         */
+        function validate_machine($input) {
+            foreach ($this->options as $k) {
+                switch($k['type']){
+                    case 'setting':
+                        break;
+                    case 'section':
+                        break;
+                    default:
+                        // Validate a pattern
+                        if($pattern){
+                    	    if(!preg_match( $pattern, $input[$k['id']])) {
+                        		add_settings_error(
+                        			$k['id'],
+                        			'seedprod_error',
+                        			$k['error_msg'],
+                        			'error'
+                        		);
+                        		unset($input[$k['id']]);
+                        	}		
+                        }
+                        // Sanitize 
+                	    if($k['type'] == 'image'){
+                	        $input[$k['id']] = esc_url_raw($input[$k['id']]);
+                	    }
+        	    }
+            }
+        	return $input;
+        }
+
+        /**
+         * Dummy function to be called by all sections from the Settings API. Define a custom function in the config.
+         *
+         * @since 0.1
+         * @return string Empty
+         */
+        function section_dummy_desc() {
+        	echo '';
+        }
+        
+        /**
+         * Returns Font Families
+         *
+         * @since 0.1
+         * @return string or array
+         */
+        function font_families($family=null) {
+            $fonts = array();
+            $fonts['_arial'] = 'Helvetica, Arial, sans-serif';
+            $fonts['_arial_black'] = 'Arial Black, Arial Black, Gadget, sans-serif';
+            $fonts['_georgia'] = 'Georgia,serif';
+            $fonts['_helvetica_neue'] = '"Helvetica Neue", Helvetica, Arial, sans-serif';
+            $fonts['_impact'] = 'Charcoal,Impact,sans-serif';
+            $fonts['_lucida'] = 'Lucida Grande,Lucida Sans Unicode, sans-serif';
+            $fonts['_palatino'] = 'Palatino,Palatino Linotype, Book Antiqua, serif';
+            $fonts['_tahoma'] = 'Geneva,Tahoma,sans-serif';
+            $fonts['_times'] = 'Times,Times New Roman, serif';
+            $fonts['_trebuchet'] = 'Trebuchet MS, sans-serif';
+            $fonts['_verdana'] = 'Verdana, Geneva, sans-serif';
+            if($family){
+                $font_family=$fonts[$family];
+                if(empty($font_family)){
+                    $font_family = '"'. urldecode($family) . '",sans-serif' ;
+                }
+            }else{
+                $font_family=$fonts;  
+            }
+        	return $font_family;
+        }
+        
+        /**
+         * Get list of fonts from google and web safe fonts.
+         *
+         * @since 0.1
+         * @return array 
+         */
+         function font_field_list($show_google_fonts = true){
+             $fonts = unserialize(get_transient('seedprod_fonts'));
+             if($fonts === false){
+                 if($show_google_fonts){
+                     $query = urlencode('select * from html where url="http://www.google.com/webfonts" and xpath=\'//div[@class="preview"]/span\'');
+                     $request = "http://query.yahooapis.com/v1/public/yql?q={$query}&format=json";
+                     $reponse = wp_remote_get($request);
+                     $result = json_decode($reponse['body']);
+                     foreach($result->query->results->span as $v){
+                        $google_fonts[urlencode($v)] = $v;
+                     }
+                     asort($google_fonts);
+                     $pre2["optgroup_2"] = "Google Fonts";
+                     $post2["optgroupend_2"] = "";
+                 }
+                 $post1["optgroupend_1"] = "";
+                 $system_fonts['_arial'] = 'Arial';
+                 $system_fonts['_arial_black'] = 'Arial Black';
+                 $system_fonts['_georgia'] = 'Georgia';
+                 $system_fonts['_helvetica_neue'] = 'Helvetica Neue';
+                 $system_fonts['_impact'] = 'Impact';
+                 $system_fonts['_lucida'] = 'Lucida Grande';
+                 $system_fonts['_palatino'] = 'Palatino';
+                 $system_fonts['_tahoma'] = 'Tahoma';
+                 $system_fonts['_times'] = 'Times New Roman';
+                 $system_fonts['_trebuchet'] = 'Trebuchet';
+                 $system_fonts['_verdana'] = 'Verdana';
+                 $pre0["empty_0"] = "Select a Font";
+                 $pre1["optgroup_1"] = "System Fonts";
+                 $pre2["optgroup_2"] = "Google Fonts";
+                 $fonts =  $pre0 + $pre1 + $system_fonts+ $post1+ $pre2 + $google_fonts + $post2;
+                 if(!empty($google_fonts)){
+                     set_transient('seedprod_fonts',serialize( $fonts ),86400);
+                }
+             }
+             return $fonts;
+         }
+         
+         /**
+          * SeedProd version of WP's do_settings_sections
+          *
+          * @since 0.1
+          */
+         function seedprod_do_settings_sections($page) {
+             global $wp_settings_sections, $wp_settings_fields;
+
+             if ( !isset($wp_settings_sections) || !isset($wp_settings_sections[$page]) )
+                 return;
+
+             foreach ( (array) $wp_settings_sections[$page] as $section ) {
+                 echo "<h3 class='hndle'>{$section['title']}</h3>\n";
+                 echo '<div class="inside">';
+                 call_user_func($section['callback'], $section);
+                 if ( !isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section['id']]) )
+                     continue;
+                 echo '<table class="form-table">';
+                 do_settings_fields($page, $section['id']);
+                 echo '</table>';
+                 echo '</div>';
+             }
+         }
+
+    }
+}
+?>
