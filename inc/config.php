@@ -119,15 +119,15 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             $options = get_option('seedprod_comingsoon_options');
             $id = 'comingsoon_mailinglist';
             $setting_id = 'seedprod_comingsoon_options';
-            $option_values = $this->get_mailchimp_lists(null);
+            //$option_values = $this->get_mailchimp_lists(null);
             $option_values['feedburner'] = 'FeedBurner';
-            $option_values['database'] = 'Database';
+            //$option_values['database'] = 'Database';
             $ajax_url = html_entity_decode(wp_nonce_url('admin-ajax.php?action=seedprod_comingsoon_refesh_list','seedprod_comingsoon_refesh_list'));
             echo "<select id='$id' class='' name='{$setting_id}[$id]'>";
     	    foreach($option_values as $k=>$v){
     	        echo "<option value='$k' ".($options[$id] == $k ? 'selected' : '').">$v</option>";
     	    }
-    	    echo "</select><button id='comingsoon_mailinglist_refresh' type='button' class='button-secondary'>Refresh</button>
+    	    echo "</select><!--<button id='comingsoon_mailinglist_refresh' type='button' class='button-secondary'>Refresh</button>-->
             <br><small class='description'>More Options Coming Soon :)</small>
             <script type='text/javascript'>
             jQuery(document).ready(function($) {
@@ -392,6 +392,7 @@ $seedprod_comingsoon->options[] = array( "type" => "textbox",
 				);
 $seedprod_comingsoon->options[] = array( "type" => "custom",
                 "id" => "comingsoon_mailinglist",
+                "label" => "Mailing List",
                 "callback" => array($seedprod_comingsoon,'callback_mailinglist_field'),
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",

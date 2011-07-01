@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/donate/
 Tags: coming soon, teaser, feedburner, email, mailinglist
 Requires at least: 3
 Tested up to: 3.4
-Stable tag: 0.2
+Stable tag: 0.3
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -15,7 +15,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 Benefits, Features and Options:
 
 *   Works with any WordPress Theme
-*   Completely customizable the look and feel including Background Color and Image, Logo, Fonts etc..
+*   Completely customizable look and feel including Background Color and Image, Logo, Fonts etc..
 *   Easily add Custom CSS and HTML
 *   Works with several mailing list providers: FeedBurner (More Coming Soon)
 *   Integrated with Google Fonts
@@ -55,6 +55,8 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 0.3 =
+* Fixed some initial launch bugs
 
 = 0.2 =
 * Alpha Launch

@@ -71,14 +71,14 @@ global $seedprod_comingsoon;
                 <?php echo $sc_jdt['comingsoon_customhtml'] ?>
             </div>
             <?php endif; ?>
-            <?php if($sc_jdt['comingsoon_mailinglist'] == 'feedburner'): ?>
+            <?php if($sc_jdt['comingsoon_mailinglist'] == 'feedburner' && !empty($sc_jdt['comingsoon_feedburner_address'])): ?>
             	<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $sc_jdt['comingsoon_feedburner_address']; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                     <input type="hidden" value="<?php echo $sc_jdt['comingsoon_feedburner_address']; ?>" name="uri"/>
                     <input type="hidden" name="loc" value="en_US"/>
                     <input id="notify-email" type="text" name="email" value="Enter Your Email"/>
                     <button id="notify-btn" type="submit">Notify Me!</button>
     			</form>
-            <?php elseif(!empty($sc_jdt['comingsoon_mailinglist'])): ?>
+            <?php elseif($sc_jdt['comingsoon_mailinglist'] != 'feedburner' && !empty($sc_jdt['comingsoon_mailinglist'])): ?>
                 <form id="notify">  
                     <input id="notify-url" name="notify-url" type="hidden" value="<?php echo admin_url() ?>admin-ajax.php" />
                     <?php wp_nonce_field('seedprod_comingsoon_callback','noitfy-nonce'); ?>
