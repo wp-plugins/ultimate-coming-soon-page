@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/donate/
 Tags: coming soon, teaser, feedburner, email, mailinglist
 Requires at least: 3
 Tested up to: 3.2
-Stable tag: 0.4
+Stable tag: 0.4.1
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -18,7 +18,7 @@ Benefits, Features and Options:
 *   Completely customizable look and feel including Background Color and Image, Logo, Fonts etc..
 *   Easily add Custom CSS and HTML
 *   Works with several mailing list providers: FeedBurner (More Coming Soon)
-*   Integrated with Google Fonts - Temporally disabled
+*   Integrated with Google Fonts
 *   Visible to only non logged in users so you can build your site will visitors see the "Coming Soon" page.
 *   Uses HTML5 &amp; CSS3
 
@@ -55,6 +55,9 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 0.4.1 =
+* Fixed a HUGE Google Fonts API bug. Please update.
+
 = 0.4 =
 * Working on a fix for the Google Font API
 
@@ -65,6 +68,14 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 0.4.1 =
+* Fixed a HUGE Google Fonts API bug. Please update.
+
+= 0.4 =
+* Working on a fix for the Google Font API
+
+= 0.3 =
+* Fixed some initial launch bugs
 
 = 0.2 =
 Alpha Launch
