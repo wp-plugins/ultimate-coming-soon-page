@@ -271,40 +271,8 @@ if (!class_exists('SeedProd_Framework')) {
         	        break;
                 case 'image':
         	        echo "<input id='$id' class='".(empty($class) ? 'regular-text' : $class)."' name='{$setting_id}[$id]' type='text' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
-        	        <input id='{$id}_upload_image_button' class='button-secondary' type='button' value='Media Image Library' />
+        	        <input id='{$id}_upload_image_button' class='button-secondary upload-button' type='button' value='Media Image Library' />
         	        <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>
-        	        <script type='text/javascript'>
-        	        jQuery(document).ready(function($) {
-
-                    	var formfield_{$id} = null;
-
-                    	$('#{$id}_upload_image_button').click(function() {
-                    		$('html').addClass('Image');
-                    		formfield_{$id} = $('#{$id}').attr('name');
-                    		tb_show('', 'media-upload.php?type=image&TB_iframe=true');
-                    		return false;
-                    	});
-
-                    	window.original_send_to_editor = window.send_to_editor;
-                    	window.send_to_editor = function(html){
-                    	    var fileurl_{$id};
-
-                    		if (formfield_{$id} != null) {
-                    			fileurl_{$id} = $('img',html).attr('src');
-
-                    			$('#{$id}').val(fileurl_{$id});
-
-                    			tb_remove();
-
-                    			$('html').removeClass('Image');
-                    			formfield_{$id} = null;
-                    		} else {
-                    			window.original_send_to_editor(html);
-                    		}
-                    	};
-
-                    });
-        	        </script>
         	        ";
         	        break;
         	    case 'select':
