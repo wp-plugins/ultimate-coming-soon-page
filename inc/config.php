@@ -377,13 +377,6 @@ $seedprod_comingsoon->options[] = array( "type" => "textarea",
 				"setting_id" => "seedprod_comingsoon_options",
 				);	
 $seedprod_comingsoon->options[] = array( "type" => "textbox",
-                "id" => "comingsoon_mailchimp_api_key",
-				"label" => "MailChimp API Key",
-				"desc" => "Enter your API Key. <a href='http://admin.mailchimp.com/account/api-key-popup'>Get your API key</a>",
-				"section_id" => "seedprod_section_coming_soon",
-				"setting_id" => "seedprod_comingsoon_options",
-				);
-$seedprod_comingsoon->options[] = array( "type" => "textbox",
                 "id" => "comingsoon_feedburner_address",
 				"label" => "FeedBurn Address",
 				"desc" => "Enter the part after http://feeds2.feedburner.com/",
