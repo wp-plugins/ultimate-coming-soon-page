@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/donate/
 Tags: coming soon, teaser, feedburner, email, mailinglist
 Requires at least: 3
 Tested up to: 3.2
-Stable tag: 0.4.4
+Stable tag: 0.4.4.1
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -21,7 +21,7 @@ Benefits, Features and Options:
 *   Integrated with Google Fonts
 *   Visible to only non logged in users so you can build your site will visitors see the "Coming Soon" page.
 *   Uses HTML5 &amp; CSS3
-*   Works with WordPres SEO by Yaost and other SEO plugins
+*   Works with WordPress SEO by Yoast and other SEO plugins
 
 == Installation ==
 
@@ -56,6 +56,9 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 0.4.4.1 =
+* Typo Fixes
+
 = 0.4.4 =
 * Added bigger screenshot
 
