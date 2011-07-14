@@ -21,7 +21,7 @@ Benefits, Features and Options:
 *   Integrated with Google Fonts
 *   Visible to only non logged in users so you can build your site will visitors see the "Coming Soon" page.
 *   Uses HTML5 &amp; CSS3
-
+*   Works with WordPres SEO by Yaost and other SEO plugins
 
 == Installation ==
 
@@ -52,9 +52,13 @@ If you feel you must have one then use the custom html and javascript option to 
 == Screenshots ==
 
 1. Build an awesome Coming Soon page like this one above.
+2. Setting View
 
 
 == Changelog ==
+= 0.4.2 =
+* Move CSS rules after wp-head
+
 = 0.4.1 =
 * Fixed a HUGE Google Fonts API bug. Please update.
 
@@ -68,6 +72,9 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 0.4.2 =
+* Move CSS rules after wp-head
+
 = 0.4.1 =
 * Fixed a HUGE Google Fonts API bug. Please update.
 

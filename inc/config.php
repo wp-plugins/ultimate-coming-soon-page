@@ -310,7 +310,7 @@ $seedprod_comingsoon = new SeedProd_Ultimate_Coming_Soon_Page();
 $seedprod_comingsoon->plugin_base_url = plugins_url('',dirname(__FILE__));
 $seedprod_comingsoon->plugin_version = '0.1';
 $seedprod_comingsoon->plugin_type = 'free';
-$seedprod_comingsoon->plugin_short_url = 'http://bit.ly';
+$seedprod_comingsoon->plugin_short_url = 'http://bit.ly/pPUKHe';
 $seedprod_comingsoon->plugin_name = 'Coming Soon';
 $seedprod_comingsoon->menu[] = array("type" => "add_options_page",
                          "page_name" => "Coming Soon",

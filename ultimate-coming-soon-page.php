@@ -33,17 +33,5 @@ function seedprod_activation() {
     if ( version_compare( get_bloginfo( 'version' ), '3.0', '<' ) ) {
         deactivate_plugins( __FILE__  );
         wp_die( __('WordPress 3.0 and higher. The plugin has now disabled itself. On a side note why are you running an old version :( Upgrade!') );
-    }else{
-        if($seedprod_comingsoon->deploy_theme)
-            switch_theme($seedprod_comingsoon->deploy_theme_name['template'],$seedprod_comingsoon->deploy_theme_name['stylesheet']);
     }
 }
-
-
-/**
- * If deploy theme register our custom theme path
- */
-if($seedprod_comingsoon->deploy_theme)
-    register_theme_directory(plugin_dir_path(__FILE__).'theme/');
-      
-?>
