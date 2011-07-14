@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/donate/
 Tags: coming soon, teaser, feedburner, email, mailinglist
 Requires at least: 3
 Tested up to: 3.2
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
