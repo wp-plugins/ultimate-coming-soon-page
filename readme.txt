@@ -19,7 +19,7 @@ Benefits, Features and Options:
 *   Easily add Custom CSS and HTML
 *   Works with several mailing list providers: FeedBurner (More Coming Soon)
 *   Integrated with Google Fonts
-*   Visible to only non logged in users so you can build your site will visitors see the "Coming Soon" page.
+*   Visible to only non logged in users so you can build your site while visitors see the "Coming Soon" page.
 *   Uses HTML5 &amp; CSS3
 *   Works with WordPress SEO by Yoast and other SEO plugins
 
