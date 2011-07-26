@@ -47,10 +47,10 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
         function add_frontent_scripts() {
             if (!is_admin()){
                 $data = array( 
-                    'msgdefault' => __( 'Enter Your Email' ),
-                    'msg500' => __( 'Error :( Please try again.' ),
-                    'msg400' => __( 'Please enter a valid email.' ),
-                    'msg200' => __( "You'll be notified soon!" ),
+                    'msgdefault' => __( 'Enter Your Email' , 'ultimate-coming-soon-page'),
+                    'msg500' => __( 'Error :( Please try again.' , 'ultimate-coming-soon-page'),
+                    'msg400' => __( 'Please enter a valid email.' , 'ultimate-coming-soon-page'),
+                    'msg200' => __( "You'll be notified soon!" , 'ultimate-coming-soon-page'),
                 
                 );
                 wp_localize_script( 'seedprod_coming_soon_script', 'seedprod_err_msg', $data );
@@ -109,7 +109,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
 
                 $retval = $api->lists();
                 if ($api->errorCode){
-                	$mailchimp_lists['false'] = __("Unable to load lists, check your API Key!");
+                	$mailchimp_lists['false'] = __("Unable to load lists, check your API Key!", 'ultimate-coming-soon-page');
                 } else {
 
                 	foreach ($retval['data'] as $list){
@@ -231,7 +231,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
         function section_incentive() {
         	echo '<p class="seedprod_section_explanation">'.__('Offer your visitors incentives such as coupons codes, free ebook, free software, etc. in exchange for their email.
         	Just fill out either or both of the fileds below and the information will be displayed after you have succesfully captured their email.
-        	').'</p>';
+        	', 'ultimate-coming-soon-page').'</p>';
         }
         
         /**
@@ -277,7 +277,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          */
         function callback_database_field(){   
             $ajax_url = html_entity_decode(wp_nonce_url('admin-ajax.php?action=seedprod_email_export_delete','seedprod_email_export_delete'));
-            $data = array( 'delete_confirm' => __( 'Are you sure you want to DELETE all emails?' ) );
+            $data = array( 'delete_confirm' => __( 'Are you sure you want to DELETE all emails?' , 'ultimate-coming-soon-page') );
             wp_localize_script( 'seedprod_coming_soon_script', 'seedprod_object', $data );
             echo "<button id='comingsoon_export_emails' type='button' class='button-secondary'>Export</button><button id='comingsoon_delete_emails' type='button' class='button-secondary'>Delete</button>
             <br><small class='description'></small>
@@ -321,10 +321,10 @@ $seedprod_comingsoon->plugin_base_url = plugins_url('',dirname(__FILE__));
 $seedprod_comingsoon->plugin_version = '0.1';
 $seedprod_comingsoon->plugin_type = 'free';
 $seedprod_comingsoon->plugin_short_url = 'http://bit.ly/pPUKHe';
-$seedprod_comingsoon->plugin_name = __('Coming Soon');
+$seedprod_comingsoon->plugin_name = __('Coming Soon', 'ultimate-coming-soon-page');
 $seedprod_comingsoon->menu[] = array("type" => "add_options_page",
-                         "page_name" => __("Coming Soon"),
-                         "menu_name" => __("Coming Soon"),
+                         "page_name" => __("Coming Soon", 'ultimate-coming-soon-page'),
+                         "menu_name" => __("Coming Soon", 'ultimate-coming-soon-page'),
                          "capability" => "manage_options",
                          "menu_slug" => "seedprod_coming_soon",
                          "callback" => array($seedprod_comingsoon,'option_page'),
@@ -346,7 +346,7 @@ $seedprod_comingsoon->options[] = array( "type" => "setting",
  */
 $seedprod_comingsoon->options[] = array( "type" => "section",
                 "id" => "seedprod_section_coming_soon",
-				"label" => __("Settings"),	
+				"label" => __("Settings", 'ultimate-coming-soon-page'),	
 				"menu_slug" => "seedprod_coming_soon");
 
 
@@ -358,44 +358,44 @@ $seedprod_comingsoon->options[] = array( "type" => "section",
  */
 $seedprod_comingsoon->options[] = array( "type" => "checkbox",
                 "id" => "comingsoon_enabled",
-				"label" => __("Enable"),
-				"desc" => sprintf(__("Enable if you want to display a coming soon page to visitors. Users who are logged in will not see the coming soon page, this means you.  <a href='%s/?cs_preview=true'>Preview</a>"),home_url()),
-                "option_values" => array('1'=>__('Yes')),
+				"label" => __("Enable", 'ultimate-coming-soon-page'),
+				"desc" => sprintf(__("Enable if you want to display a coming soon page to visitors. Users who are logged in will not see the coming soon page, this means you.  <a href='%s/?cs_preview=true'>Preview</a>", 'ultimate-coming-soon-page'),home_url()),
+                "option_values" => array('1'=>__('Yes', 'ultimate-coming-soon-page')),
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
 				);
 $seedprod_comingsoon->options[] = array( "type" => "image",
                 "id" => "comingsoon_image",
-				"label" => __("Image"),
-				"desc" => __("Upload a logo or teaser image."),
+				"label" => __("Image", 'ultimate-coming-soon-page'),
+				"desc" => __("Upload a logo or teaser image.", 'ultimate-coming-soon-page'),
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
 				);
 $seedprod_comingsoon->options[] = array( "type" => "textbox",
                 "id" => "comingsoon_headline",
-				"label" => __("Headline"),
-				"desc" => __("Write a headline for your coming soon page. Tip: Avoid using 'Coming Soon'."),
+				"label" => __("Headline", 'ultimate-coming-soon-page'),
+				"desc" => __("Write a headline for your coming soon page. Tip: Avoid using 'Coming Soon'.", 'ultimate-coming-soon-page'),
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
 				);
 $seedprod_comingsoon->options[] = array( "type" => "textarea",
                 "id" => "comingsoon_description",
-				"label" => __("Description"),
-				"desc" => __("Tell the visitor what to expect from your site."),
+				"label" => __("Description", 'ultimate-coming-soon-page'),
+				"desc" => __("Tell the visitor what to expect from your site.", 'ultimate-coming-soon-page'),
 				"class" => "large-text",
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
 				);	
 $seedprod_comingsoon->options[] = array( "type" => "textbox",
                 "id" => "comingsoon_feedburner_address",
-				"label" => __("FeedBurn Address"),
-				"desc" => __("Enter the part after http://feeds2.feedburner.com/"),
+				"label" => __("FeedBurn Address", 'ultimate-coming-soon-page'),
+				"desc" => __("Enter the part after http://feeds2.feedburner.com/", 'ultimate-coming-soon-page'),
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
 				);
 $seedprod_comingsoon->options[] = array( "type" => "custom",
                 "id" => "comingsoon_mailinglist",
-                "label" => __("Mailing List"),
+                "label" => __("Mailing List", 'ultimate-coming-soon-page'),
                 "callback" => array($seedprod_comingsoon,'callback_mailinglist_field'),
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
@@ -403,8 +403,8 @@ $seedprod_comingsoon->options[] = array( "type" => "custom",
 
 $seedprod_comingsoon->options[] = array( "type" => "textarea",
                 "id" => "comingsoon_customhtml",
-				"label" => __("Custom HTML"),
-				"desc" => __("Enter any custom html or javascript that you want outputed."),
+				"label" => __("Custom HTML", 'ultimate-coming-soon-page'),
+				"desc" => __("Enter any custom html or javascript that you want outputed.", 'ultimate-coming-soon-page'),
 				"class" => "large-text",
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
@@ -412,12 +412,12 @@ $seedprod_comingsoon->options[] = array( "type" => "textarea",
 				
 $seedprod_comingsoon->options[] = array( "type" => "section",
                 "id" => "seedprod_section_style",
-				"label" => __("Style"),	
+				"label" => __("Style", 'ultimate-coming-soon-page'),	
 				"menu_slug" => "seedprod_coming_soon");
 				
 $seedprod_comingsoon->options[] = array( "type" => "color",
                 "id" => "comingsoon_custom_bg_color",
-				"label" => __("Background Color"),
+				"label" => __("Background Color", 'ultimate-coming-soon-page'),
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
 				
@@ -425,17 +425,17 @@ $seedprod_comingsoon->options[] = array( "type" => "color",
 				
 $seedprod_comingsoon->options[] = array( "type" => "image",
                 "id" => "comingsoon_custom_bg_image",
-				"label" => __("Background Image"),
+				"label" => __("Background Image", 'ultimate-coming-soon-page'),
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
-				"desc" => __('Upload an optional background image. This will override the color above if set.'),
+				"desc" => __('Upload an optional background image. This will override the color above if set.', 'ultimate-coming-soon-page'),
 				);
 
 $seedprod_comingsoon->options[] = array( "type" => "radio",
                 "id" => "comingsoon_font_color",
-				"label" => __("Font Color"),
-				"option_values" => array('black'=>__('Black'),'gray'=>__('Gray'),'white'=>__('White')),
-				"desc" => __(""),
+				"label" => __("Font Color", 'ultimate-coming-soon-page'),
+				"option_values" => array('black'=>__('Black', 'ultimate-coming-soon-page'),'gray'=>__('Gray', 'ultimate-coming-soon-page'),'white'=>__('White', 'ultimate-coming-soon-page')),
+				"desc" => __("", 'ultimate-coming-soon-page'),
 				"default_value" => "black",
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
@@ -443,37 +443,37 @@ $seedprod_comingsoon->options[] = array( "type" => "radio",
 				
 $seedprod_comingsoon->options[] = array( "type" => "select",
                 "id" => "comingsoon_headline_font",
-				"label" => __("Headline Font"),
+				"label" => __("Headline Font", 'ultimate-coming-soon-page'),
 				"option_values" => $seedprod_comingsoon->font_field_list(),
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
-				"desc" => __('View <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html">System Fonts</a> - View <a href="http://www.google.com/webfonts">Google Fonts</a>'),
+				"desc" => __('View <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html">System Fonts</a> - View <a href="http://www.google.com/webfonts">Google Fonts</a>', 'ultimate-coming-soon-page'),
 				);
 $seedprod_comingsoon->options[] = array( "type" => "select",
                 "id" => "comingsoon_body_font",
-				"label" => __("Body Font"),
+				"label" => __("Body Font", 'ultimate-coming-soon-page'),
 				"option_values" => $seedprod_comingsoon->font_field_list(),
 				"default_value" => "_impact",
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
-				"desc" => __('View <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html">System Fonts</a> - View <a href="http://www.google.com/webfonts">Google Fonts</a>'),
+				"desc" => __('View <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html">System Fonts</a> - View <a href="http://www.google.com/webfonts">Google Fonts</a>', 'ultimate-coming-soon-page'),
 				);
 				
 $seedprod_comingsoon->options[] = array( "type" => "textarea",
                 "id" => "comingsoon_custom_css",
-				"label" => __("Custom CSS"),
+				"label" => __("Custom CSS", 'ultimate-coming-soon-page'),
 				"desc" => "",
 				"class" => "large-text",
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
-				"desc" => __('Need to tweaks the styles? Add your custom CSS here.'),
+				"desc" => __('Need to tweaks the styles? Add your custom CSS here.', 'ultimate-coming-soon-page'),
 				);
 				
 $seedprod_comingsoon->options[] = array( "type" => "radio",
                 "id" => "comingsoon_footer_credit",
-				"label" => __("Powered By SeedProd"),
-				"option_values" => array('0'=>__('Nope - Got No Love'),'1'=>__('Yep - I Love You Man')),
-				"desc" => __("Can we show a <strong>cool stylish</strong> footer credit at the bottom the page."),
+				"label" => __("Powered By SeedProd", 'ultimate-coming-soon-page'),
+				"option_values" => array('0'=>__('Nope - Got No Love', 'ultimate-coming-soon-page'),'1'=>__('Yep - I Love You Man', 'ultimate-coming-soon-page')),
+				"desc" => __("Can we show a <strong>cool stylish</strong> footer credit at the bottom the page.", 'ultimate-coming-soon-page'),
 				"default_value" => "0",
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",

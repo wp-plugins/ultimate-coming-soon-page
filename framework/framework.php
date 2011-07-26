@@ -115,14 +115,14 @@ if (!class_exists('SeedProd_Framework')) {
                         <div id="side-sortables" class="meta-box-sortables ui-sortable">
                             <div class="postbox support-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                				<h3 class="hndle"><span><?php _e('Plugin Support') ?></span></h3>
+                				<h3 class="hndle"><span><?php _e('Plugin Support', 'ultimate-coming-soon-page') ?></span></h3>
                 				<div class="inside">
                 					<div class="support-widget">
                 					<p>
                 					   <?php _e('Got a Question, Idea, Problem or Praise?' ?>
                 					</p>
                 					<ul>
-                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_support_url) ? 'http://seedprod.com/support/' : $this->plugin_support_url) ?>"><?php _e('Support Request') ?></a></li>
+                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_support_url) ? 'http://seedprod.com/support/' : $this->plugin_support_url) ?>"><?php _e('Support Request', 'ultimate-coming-soon-page') ?></a></li>
                 				    </ul>
                 					
                 					</div>
@@ -131,15 +131,15 @@ if (!class_exists('SeedProd_Framework')) {
                             <?php if($this->plugin_type != 'pro'){ ?>
                             <div class="postbox like-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                				<h3 class="hndle"><span><?php _e('Show Some Love') ?></span></h3>
+                				<h3 class="hndle"><span><?php _e('Show Some Love', 'ultimate-coming-soon-page') ?></span></h3>
                 				<div class="inside">
                 					<div class="like-widget">
-                					<p><?php _e('Like this plugin? Show your support by:')?></p>
+                					<p><?php _e('Like this plugin? Show your support by:', 'ultimate-coming-soon-page')?></p>
                 					<ul>
-                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_donate_url) ? 'http://seedprod.com/donate/' : $this->plugin_donate_url) ?>"><?php _e('Donate To It') ?></a></li>
-                					    <li>&raquo; <a href="<?php echo "http://twitter.com/share?url={$this->plugin_seedprod_url}&text=Check out this awesome WordPress Plugin I'm using, '{$this->plugin_name}' by SeedProd {$this->plugin_short_url}"; ?>"><?php _e('Tweet It') ?></a></li>
+                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_donate_url) ? 'http://seedprod.com/donate/' : $this->plugin_donate_url) ?>"><?php _e('Donate To It', 'ultimate-coming-soon-page') ?></a></li>
+                					    <li>&raquo; <a href="<?php echo "http://twitter.com/share?url={$this->plugin_seedprod_url}&text=Check out this awesome WordPress Plugin I'm using, '{$this->plugin_name}' by SeedProd {$this->plugin_short_url}"; ?>"><?php _e('Tweet It', 'ultimate-coming-soon-page') ?></a></li>
                 					    <?php if(!empty($this->plugin_official_url)){ ?>
-                					    <li>&raquo; <a href="<?php echo $this->plugin_official_url ?>"><?php _e('Rate It') ?></a></li>
+                					    <li>&raquo; <a href="<?php echo $this->plugin_official_url ?>"><?php _e('Rate It', 'ultimate-coming-soon-page') ?></a></li>
                 					    <?php } ?>
                 					</ul>
                 					</div>
@@ -148,7 +148,7 @@ if (!class_exists('SeedProd_Framework')) {
                             <?php } ?>
                             <div class="postbox rss-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                				<h3 class="hndle"><span><?php _e('SeedProd Blog') ?></span></h3>
+                				<h3 class="hndle"><span><?php _e('SeedProd Blog', 'ultimate-coming-soon-page') ?></span></h3>
                 				<div class="inside">
                 					<div class="rss-widget">
                 					<?php
@@ -162,7 +162,7 @@ if (!class_exists('SeedProd_Framework')) {
                 					));
                 					?>
             					    <ul>
-                					    <li>&raquo; <a href="http://seedprod.com/subscribe/"><?php _e('Subscribe by Email') ?></a></li>
+                					    <li>&raquo; <a href="http://seedprod.com/subscribe/"><?php _e('Subscribe by Email', 'ultimate-coming-soon-page') ?></a></li>
                 				    </ul>
                 					</div>
                 				</div>
@@ -191,7 +191,7 @@ if (!class_exists('SeedProd_Framework')) {
                 		            }
                                 }
                                 ?>
-                        		<input name="Submit" type="submit" value="<?php _e('Save Changes') ?>" class="button-primary"/>
+                        		<input name="Submit" type="submit" value="<?php _e('Save Changes', 'ultimate-coming-soon-page') ?>" class="button-primary"/>
                         	    </form>
                             </div>
                         </div>
@@ -271,7 +271,7 @@ if (!class_exists('SeedProd_Framework')) {
         	        break;
                 case 'image':
         	        echo "<input id='$id' class='".(empty($class) ? 'regular-text' : $class)."' name='{$setting_id}[$id]' type='text' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
-        	        <input id='{$id}_upload_image_button' class='button-secondary upload-button' type='button' value='". __('Media Image Library')."' />
+        	        <input id='{$id}_upload_image_button' class='button-secondary upload-button' type='button' value='". __('Media Image Library', 'ultimate-coming-soon-page')."' />
         	        <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>
         	        ";
         	        break;
@@ -319,7 +319,7 @@ if (!class_exists('SeedProd_Framework')) {
         	        echo "
             	        <input id='$id' type='text' name='{$setting_id}[$id]' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
                         <a href='#' class='pickcolor' id='$id-example'></a>
-                        <input type='button' class='pickcolor button-secondary' value='".__('Select Color')."'>
+                        <input type='button' class='pickcolor button-secondary' value='".__('Select Color', 'ultimate-coming-soon-page')."'>
                         <div id='$id-colorPickerDiv' style='z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;'></div>
                         <br />
                         <small class='description'>".(empty($desc) ? '' : $desc)."</small>
