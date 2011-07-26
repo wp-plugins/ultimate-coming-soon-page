@@ -271,7 +271,7 @@ if (!class_exists('SeedProd_Framework')) {
         	        break;
                 case 'image':
         	        echo "<input id='$id' class='".(empty($class) ? 'regular-text' : $class)."' name='{$setting_id}[$id]' type='text' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
-        	        <input id='{$id}_upload_image_button' class='button-secondary upload-button' type='button' value='Media Image Library' />
+        	        <input id='{$id}_upload_image_button' class='button-secondary upload-button' type='button' value='". __('Media Image Library')."' />
         	        <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>
         	        ";
         	        break;
@@ -319,7 +319,7 @@ if (!class_exists('SeedProd_Framework')) {
         	        echo "
             	        <input id='$id' type='text' name='{$setting_id}[$id]' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
                         <a href='#' class='pickcolor' id='$id-example'></a>
-                        <input type='button' class='pickcolor button-secondary' value='Select Color'>
+                        <input type='button' class='pickcolor button-secondary' value='".__('Select Color')."'>
                         <div id='$id-colorPickerDiv' style='z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;'></div>
                         <br />
                         <small class='description'>".(empty($desc) ? '' : $desc)."</small>

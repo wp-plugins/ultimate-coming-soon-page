@@ -14,6 +14,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          *  Extend the base construct and add plugin specific hooks
          */
         function __construct(){
+            load_plugin_textdomain('ultimate-coming-soon-page',false,'ultimate-coming-soon-page/languages');
             $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
             parent::__construct();
             add_action( 'wp_ajax_seedprod_comingsoon_refesh_list', array(&$this,'refresh_list'));
@@ -277,7 +278,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
         function callback_database_field(){   
             $ajax_url = html_entity_decode(wp_nonce_url('admin-ajax.php?action=seedprod_email_export_delete','seedprod_email_export_delete'));
             $data = array( 'delete_confirm' => __( 'Are you sure you want to DELETE all emails?' ) );
-            wp_localize_script( 'seedprod_handle', 'seedprod_object', $data );
+            wp_localize_script( 'seedprod_coming_soon_script', 'seedprod_object', $data );
             echo "<button id='comingsoon_export_emails' type='button' class='button-secondary'>Export</button><button id='comingsoon_delete_emails' type='button' class='button-secondary'>Delete</button>
             <br><small class='description'></small>
             <script type='text/javascript'>
