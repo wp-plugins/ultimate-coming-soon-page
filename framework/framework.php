@@ -119,7 +119,7 @@ if (!class_exists('SeedProd_Framework')) {
                 				<div class="inside">
                 					<div class="support-widget">
                 					<p>
-                					   <?php _e('Got a Question, Idea, Problem or Praise?' ?>
+                					   <?php _e('Got a Question, Idea, Problem or Praise?') ?>
                 					</p>
                 					<ul>
                 					    <li>&raquo; <a href="<?php echo (empty($this->plugin_support_url) ? 'http://seedprod.com/support/' : $this->plugin_support_url) ?>"><?php _e('Support Request', 'ultimate-coming-soon-page') ?></a></li>
@@ -385,6 +385,7 @@ if (!class_exists('SeedProd_Framework')) {
          * @todo Figure out best way to validate values.
          */
         function validate_machine($input) {
+            $error = false;
             foreach ($this->options as $k) {
                 switch($k['type']){
                     case 'setting':
@@ -395,6 +396,7 @@ if (!class_exists('SeedProd_Framework')) {
                         // Validate a pattern
                         if($pattern){
                     	    if(!preg_match( $pattern, $input[$k['id']])) {
+                    	        $error = true;
                         		add_settings_error(
                         			$k['id'],
                         			'seedprod_error',
@@ -409,6 +411,9 @@ if (!class_exists('SeedProd_Framework')) {
                 	        $input[$k['id']] = esc_url_raw($input[$k['id']]);
                 	    }
         	    }
+            }
+            if(!$error){
+                add_settings_error('general', 'settings_updated', sprintf(__("Settings saved.  <a href='%s/?cs_preview=true'>Preview &raquo;</a>", 'ultimate-coming-soon-page'),home_url()), 'updated');
             }
         	return $input;
         }

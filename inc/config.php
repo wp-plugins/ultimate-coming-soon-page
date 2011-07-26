@@ -366,7 +366,7 @@ $seedprod_comingsoon->options[] = array( "type" => "checkbox",
 $seedprod_comingsoon->options[] = array( "type" => "image",
                 "id" => "comingsoon_image",
 				"label" => __("Image", 'ultimate-coming-soon-page'),
-				"desc" => __("Upload a logo or teaser image.", 'ultimate-coming-soon-page'),
+				"desc" => __("Upload a logo or teaser image (or) enter the url to your image.", 'ultimate-coming-soon-page'),
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
 				);
@@ -427,7 +427,7 @@ $seedprod_comingsoon->options[] = array( "type" => "image",
 				"label" => __("Background Image", 'ultimate-coming-soon-page'),
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
-				"desc" => __('Upload an optional background image. This will override the color above if set.', 'ultimate-coming-soon-page'),
+				"desc" => __('Upload an optional background image (or) enter the url to your image. This will override the color above if set.', 'ultimate-coming-soon-page'),
 				);
 
 $seedprod_comingsoon->options[] = array( "type" => "radio",
