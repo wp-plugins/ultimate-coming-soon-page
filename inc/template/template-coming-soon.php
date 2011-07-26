@@ -75,16 +75,16 @@ global $seedprod_comingsoon;
             	<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $sc_jdt['comingsoon_feedburner_address']; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                     <input type="hidden" value="<?php echo $sc_jdt['comingsoon_feedburner_address']; ?>" name="uri"/>
                     <input type="hidden" name="loc" value="en_US"/>
-                    <input id="notify-email" type="text" name="email" value="Enter Your Email"/>
-                    <button id="notify-btn" type="submit">Notify Me!</button>
+                    <input id="notify-email" type="text" name="email" value="<?php _e('Enter Your Email') ?>"/>
+                    <button id="notify-btn" type="submit"><?php _e('Notify Me!') ?></button>
     			</form>
             <?php elseif($sc_jdt['comingsoon_mailinglist'] != 'feedburner' && !empty($sc_jdt['comingsoon_mailinglist'])): ?>
                 <form id="notify">  
                     <input id="notify-url" name="notify-url" type="hidden" value="<?php echo admin_url() ?>admin-ajax.php" />
                     <?php wp_nonce_field('seedprod_comingsoon_callback','noitfy-nonce'); ?>
                     <fieldset>
-                    <input id="notify-email" name="notify-email" type="text" value="Enter Your Email" />
-                    <button id="notify-btn" type="submit">Notify Me!</button>
+                    <input id="notify-email" name="notify-email" type="text" value="<?php _e('Enter Your Email') ?>" />
+                    <button id="notify-btn" type="submit"><?php _e('Notify Me!') ?></button>
                     <img id="ajax-indicator" src="<?php echo plugins_url('template/images/ajax-loader.gif',dirname(__FILE__)); ?>">
                     </fieldset>
                 </form>

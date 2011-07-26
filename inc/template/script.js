@@ -18,10 +18,10 @@ jQuery.ajaxSetup ({
     cache: false
 });
 jQuery(document).ready(function($){
-    var msgdefault = 'Enter Your Email';
-    var msg500 = 'Error :( Please try again.';
-    var msg400 = 'Please enter a valid email.';
-    var msg200 = 'You\'ll be notified soon!';
+    var msgdefault = seedprod_err_msg.msgdefault;
+    var msg500 = seedprod_err_msg.msg500;
+    var msg400 = seedprod_err_msg.msg400;
+    var msg200 = seedprod_err_msg.msg200;
     $('#notify').submit(function() {
         
         url = $("#notify-url").val();
