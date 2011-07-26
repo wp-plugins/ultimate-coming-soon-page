@@ -115,14 +115,14 @@ if (!class_exists('SeedProd_Framework')) {
                         <div id="side-sortables" class="meta-box-sortables ui-sortable">
                             <div class="postbox support-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                				<h3 class="hndle"><span>Plugin Support</span></h3>
+                				<h3 class="hndle"><span><?php _e('Plugin Support') ?></span></h3>
                 				<div class="inside">
                 					<div class="support-widget">
                 					<p>
-                					   Got a Question, Idea, Problem or Praise?
+                					   <?php _e('Got a Question, Idea, Problem or Praise?' ?>
                 					</p>
                 					<ul>
-                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_support_url) ? 'http://seedprod.com/support/' : $this->plugin_support_url) ?>">Support Request</a></li>
+                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_support_url) ? 'http://seedprod.com/support/' : $this->plugin_support_url) ?>"><?php _e('Support Request') ?></a></li>
                 				    </ul>
                 					
                 					</div>
@@ -131,15 +131,15 @@ if (!class_exists('SeedProd_Framework')) {
                             <?php if($this->plugin_type != 'pro'){ ?>
                             <div class="postbox like-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                				<h3 class="hndle"><span>Show Some Love</span></h3>
+                				<h3 class="hndle"><span><?php _e('Show Some Love') ?></span></h3>
                 				<div class="inside">
                 					<div class="like-widget">
-                					<p>Like this plugin? Show your support by:</p>
+                					<p><?php _e('Like this plugin? Show your support by:')?></p>
                 					<ul>
-                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_donate_url) ? 'http://seedprod.com/donate/' : $this->plugin_donate_url) ?>">Donate To It</a></li>
-                					    <li>&raquo; <a href="<?php echo "http://twitter.com/share?url={$this->plugin_seedprod_url}&text=Check out this awesome WordPress Plugin I'm using, '{$this->plugin_name}' by SeedProd {$this->plugin_short_url}"; ?>">Tweet It</a></li>
+                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_donate_url) ? 'http://seedprod.com/donate/' : $this->plugin_donate_url) ?>"><?php _e('Donate To It') ?></a></li>
+                					    <li>&raquo; <a href="<?php echo "http://twitter.com/share?url={$this->plugin_seedprod_url}&text=Check out this awesome WordPress Plugin I'm using, '{$this->plugin_name}' by SeedProd {$this->plugin_short_url}"; ?>"><?php _e('Tweet It') ?></a></li>
                 					    <?php if(!empty($this->plugin_official_url)){ ?>
-                					    <li>&raquo; <a href="<?php echo $this->plugin_official_url ?>">Rate It</a></li>
+                					    <li>&raquo; <a href="<?php echo $this->plugin_official_url ?>"><?php _e('Rate It') ?></a></li>
                 					    <?php } ?>
                 					</ul>
                 					</div>
@@ -148,7 +148,7 @@ if (!class_exists('SeedProd_Framework')) {
                             <?php } ?>
                             <div class="postbox rss-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                				<h3 class="hndle"><span>SeedProd Blog</span></h3>
+                				<h3 class="hndle"><span><?php _e('SeedProd Blog') ?></span></h3>
                 				<div class="inside">
                 					<div class="rss-widget">
                 					<?php
@@ -162,7 +162,7 @@ if (!class_exists('SeedProd_Framework')) {
                 					));
                 					?>
             					    <ul>
-                					    <li>&raquo; <a href="http://seedprod.com/subscribe/">Subscribe by Email</a></li>
+                					    <li>&raquo; <a href="http://seedprod.com/subscribe/"><?php _e('Subscribe by Email') ?></a></li>
                 				    </ul>
                 					</div>
                 				</div>
@@ -191,7 +191,7 @@ if (!class_exists('SeedProd_Framework')) {
                 		            }
                                 }
                                 ?>
-                        		<input name="Submit" type="submit" value="Save Changes" class="button-primary"/>
+                        		<input name="Submit" type="submit" value="<?php _e('Save Changes') ?>" class="button-primary"/>
                         	    </form>
                             </div>
                         </div>
