@@ -14,7 +14,6 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          *  Extend the base construct and add plugin specific hooks
          */
         function __construct(){
-            load_plugin_textdomain('ultimate-coming-soon-page',false,'ultimate-coming-soon-page/languages');
             $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
             parent::__construct();
             add_action( 'wp_ajax_seedprod_comingsoon_refesh_list', array(&$this,'refresh_list'));
@@ -404,7 +403,7 @@ $seedprod_comingsoon->options[] = array( "type" => "custom",
 $seedprod_comingsoon->options[] = array( "type" => "textarea",
                 "id" => "comingsoon_customhtml",
 				"label" => __("Custom HTML", 'ultimate-coming-soon-page'),
-				"desc" => __("Enter any custom html or javascript that you want outputed.", 'ultimate-coming-soon-page'),
+				"desc" => __("Enter any custom html or javascript that you want outputted.", 'ultimate-coming-soon-page'),
 				"class" => "large-text",
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",

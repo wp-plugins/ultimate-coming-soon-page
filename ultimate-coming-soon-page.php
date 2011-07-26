@@ -21,6 +21,9 @@ Copyright 2011  John Turner (email : john@seedprod.com, twitter : @johnturner)
 /**
  * Require config to get our initial values
  */
+ 
+load_plugin_textdomain('ultimate-coming-soon-page',false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
+
 require_once('framework/framework.php');
 require_once('inc/config.php');
 
@@ -32,6 +35,6 @@ require_once('inc/config.php');
 function seedprod_activation() {
     if ( version_compare( get_bloginfo( 'version' ), '3.0', '<' ) ) {
         deactivate_plugins( __FILE__  );
-        wp_die( __('WordPress 3.0 and higher. The plugin has now disabled itself. On a side note why are you running an old version :( Upgrade!') );
+        wp_die( __('WordPress 3.0 and higher. The plugin has now disabled itself. On a side note why are you running an old version :( Upgrade!','ultimate-coming-soon-page') );
     }
 }
