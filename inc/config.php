@@ -45,6 +45,8 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          */
         function add_frontent_scripts() {
             if (!is_admin()){
+                wp_enqueue_script( 'modernizr', plugins_url('inc/template/modernizr.js',dirname(__FILE__)), array(),'1.7' );  
+                wp_enqueue_script( 'seedprod_coming_soon_script', plugins_url('inc/template/script.js',dirname(__FILE__)), array( 'jquery' ),$this->plugin_version, true );  
                 $data = array( 
                     'msgdefault' => __( 'Enter Your Email' , 'ultimate-coming-soon-page'),
                     'msg500' => __( 'Error :( Please try again.' , 'ultimate-coming-soon-page'),
@@ -53,8 +55,10 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
                 
                 );
                 wp_localize_script( 'seedprod_coming_soon_script', 'seedprod_err_msg', $data );
-                wp_enqueue_script( 'modernizr', plugins_url('inc/template/modernizr.js',dirname(__FILE__)), array(),'1.7' );  
-                wp_enqueue_script( 'seedprod_coming_soon_script', plugins_url('inc/template/script.js',dirname(__FILE__)), array( 'jquery' ),$this->plugin_version, true );  
+                
+            }else{
+                $data = array( 'delete_confirm' => __( 'Are you sure you want to DELETE all emails?' , 'ultimate-coming-soon-page') );
+                wp_localize_script( 'seedprod_plugin', 'seedprod_object', $data );
             }
         }
         
