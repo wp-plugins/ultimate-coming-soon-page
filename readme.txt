@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/donate/
-Tags: coming soon, teaser, feedburner, email, mailinglist
+Tags: coming soon, teaser, feedburner, email, mailinglist, i18n
 Requires at least: 3
 Tested up to: 3.2
-Stable tag: 0.4.6
+Stable tag: 0.5
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -22,6 +22,7 @@ Benefits, Features and Options:
 *   Visible to only non logged in users so you can build your site while visitors see the "Coming Soon" page.
 *   Uses HTML5 &amp; CSS3
 *   Works with WordPress SEO by Yoast and other SEO plugins
+*   i18n support
 
 == Installation ==
 
@@ -56,6 +57,9 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 0.5 =
+* i18n support added.
+
 = 0.4.6 =
 * Fixing WordPress.org Profile
 
@@ -87,6 +91,9 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 0.5 =
+* i18n support added.
+
 = 0.4.6 =
 * Fixing WordPress.org Profile
 
