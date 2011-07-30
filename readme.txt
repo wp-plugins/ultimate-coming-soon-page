@@ -24,6 +24,8 @@ Benefits, Features and Options:
 *   Works with WordPress SEO by Yoast and other SEO plugins
 *   i18n support
 
+[View a live demo &raquo;](http://saastheme.com "The Ultimate Lean Startup / MVP / MicroISV WordPress Theme")
+
 == Installation ==
 
 Manual Installation
