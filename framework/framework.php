@@ -245,13 +245,14 @@ if (!class_exists('SeedProd_Framework')) {
                     		$k['section_id'],
                     		$k['section_id'],
                     		array('id' => $k['id'], 
-                    		'desc' => $k['desc'],
+                    		'desc' => (isset($k['desc']) ? $k['desc'] : ''),
                     		'setting_id' => $k['setting_id'], 
-                    		'class' => $k['class'], 
+                    		'class' => (isset($k['class']) ? $k['class'] : ''), 
                     		'type' => $k['type'],
-                    		'default_value' => $k['default_value'],
-                    		'option_values' => $k['option_values'] )
+                    		'default_value' => (isset($k['default_value']) ? $k['default_value'] : ''),
+                    		'option_values' => (isset($k['option_values']) ? $k['option_values'] : ''))
                     	);
+                	    
         	    }
             }
         }
