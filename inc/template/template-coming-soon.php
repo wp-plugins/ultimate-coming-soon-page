@@ -20,7 +20,7 @@ global $seedprod_comingsoon;
   <?php if(substr($sc_jdt['comingsoon_headline_font'], 0, 1) != '_'): ?>
   <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_headline_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
-  <?php wp_head(); ?>
+  <?php @wp_head(); ?>
   <style type="text/css">
     body{
         background: <?php echo $sc_jdt['comingsoon_custom_bg_color'];?> url('<?php echo (empty($sc_jdt['comingsoon_custom_bg_image']) ? plugins_url('template/images/bg.png',dirname(__FILE__)) : $sc_jdt['comingsoon_custom_bg_image']); ?>') repeat;
@@ -107,7 +107,7 @@ global $seedprod_comingsoon;
   <img id="credit" src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-footer-logo-{$sc_jdt['comingsoon_font_color']}.png" ?>" alt="Powered by SeedProd" /></a>
   <?php endif; ?>
   </footer>
-  <?php wp_footer(); ?>
+  <?php @wp_footer(); ?>
   <!--[if lt IE 7 ]>
       <script src="<?php echo plugins_url('template/dd_belatedpng.js',dirname(__FILE__)); ?>"></script>
       <script>DD_belatedPNG.fix('img, .png_bg');</script>

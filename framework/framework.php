@@ -176,19 +176,21 @@ if (!class_exists('SeedProd_Framework')) {
                                 <form action="options.php" method="post">
                                 <?php
                                 foreach ($this->options as $v) {
-                                    if($v['menu_slug'] == $page){
-                                        switch ($v['type']) {
-                                            case 'setting':
-                        				        settings_fields($v['id']);
-                        				        break;
-                        				    case 'section':
-                        				        echo '<div class="postbox seedprod-postbox"><div class="handlediv" title="Click to toggle"><br /></div>';
-                                        		$this->seedprod_do_settings_sections($v['id']);
-                                    		    echo '</div>';
-                                    		    break;
+                                    if(isset($v['menu_slug'])){
+                                        if($v['menu_slug'] == $page){
+                                            switch ($v['type']) {
+                                                case 'setting':
+                            				        settings_fields($v['id']);
+                            				        break;
+                            				    case 'section':
+                            				        echo '<div class="postbox seedprod-postbox"><div class="handlediv" title="Click to toggle"><br /></div>';
+                                            		$this->seedprod_do_settings_sections($v['id']);
+                                        		    echo '</div>';
+                                        		    break;
                         		    
-                        		        }
-                		            }
+                            		        }
+                    		            }
+            		                }
                                 }
                                 ?>
                         		<input name="Submit" type="submit" value="<?php _e('Save Changes', 'ultimate-coming-soon-page') ?>" class="button-primary"/>
@@ -395,7 +397,7 @@ if (!class_exists('SeedProd_Framework')) {
                         break;
                     default:
                         // Validate a pattern
-                        if($pattern){
+                        if(isset($pattern) && $pattern){
                     	    if(!preg_match( $pattern, $input[$k['id']])) {
                     	        $error = true;
                         		add_settings_error(
