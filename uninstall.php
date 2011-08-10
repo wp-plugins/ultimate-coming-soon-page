@@ -16,5 +16,5 @@ if(!defined('WP_UNINSTALL_PLUGIN'))
 /**
  * Delete the options the plugin uses upon uninstall
  */
-delete_option('seedprod_comingsoon_options');
+//delete_option('seedprod_comingsoon_options');
 ?>
