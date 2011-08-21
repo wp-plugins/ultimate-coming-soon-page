@@ -12,7 +12,7 @@ window.log = function(){
 (function(b){function c(){}for(var d="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),a;a=d.pop();)b[a]=b[a]||c})(window.console=window.console||{});
 
 jQuery(document).ready(function($){
-    
+    // Uploader
     var uploadID = ''; /*setup the var*/
 
     jQuery('.upload-button').click(function() {
@@ -27,5 +27,17 @@ jQuery(document).ready(function($){
         uploadID.val(imgurl); /*assign the value to the input*/
         tb_remove();
     };
+    
+    // Color Picker
+    $('.pickcolor').click( function(e) {
+		colorPicker = jQuery(this).next('div');
+		input = jQuery(this).prev('input');
+		$(colorPicker).farbtastic(input);
+		colorPicker.show();
+		e.preventDefault();
+		$(document).mousedown( function() {
+    		$(colorPicker).hide();
+    	});
+	});
 });
 

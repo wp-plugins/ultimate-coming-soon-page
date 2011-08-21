@@ -320,59 +320,11 @@ if (!class_exists('SeedProd_Framework')) {
         	        break;
         	    case 'color':
         	        echo "
-            	        <input id='$id' type='text' name='{$setting_id}[$id]' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
-                        <a href='#' class='pickcolor' id='$id-example'></a>
-                        <input type='button' class='pickcolor button-secondary' value='".__('Select Color', 'ultimate-coming-soon-page')."'>
-                        <div id='$id-colorPickerDiv' style='z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;'></div>
+            	        <input id='$id' type='text' name='{$setting_id}[$id]' value='".(empty($options[$id]) ? $default_value : $options[$id])."' style='background-color:".(empty($options[$id]) ? $default_value : $options[$id]).";' />
+                        <input type='button' class='pickcolor button-secondary' value='Select Color'>
+                        <div id='colorpicker' style='z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;'></div>
                         <br />
                         <small class='description'>".(empty($desc) ? '' : $desc)."</small>
-                        <style type='text/css'>
-                        #$id-example {
-                        	-moz-border-radius: 4px;
-                        	-webkit-border-radius: 4px;
-                        	border-radius: 4px;
-                        	border: 1px solid #dfdfdf;
-                        	margin: 0 7px 0 3px;
-                        	padding: 4px 14px;
-                        }
-                        </style>
-                        <script type='text/javascript'>
-                        var farbtastic_$id;
-
-                        (function($){
-                        	var pickColor_$id = function(a) {
-                        		farbtastic_$id.setColor(a);
-                        		$('#$id').val(a);
-                        		$('#$id-example').css('background-color', a);
-                        	};
-
-                        	$(document).ready( function() {
-                        		farbtastic_$id = $.farbtastic('#$id-colorPickerDiv', pickColor_$id);
-
-                        		pickColor_$id( $('#$id').val() );
-
-                        		$('.pickcolor').click( function(e) {
-                        			$('#$id-colorPickerDiv').show();
-                        			e.preventDefault();
-                        		});
-
-                        		$('#$id').keyup( function() {
-                        			var a = $('#$id').val(),
-                        				b = a;
-
-                        			a = a.replace(/[^a-fA-F0-9]/, '');
-                        			if ( '#' + a !== b )
-                        				$('#$id').val(a);
-                        			if ( a.length === 3 || a.length === 6 )
-                        				pickColor_$id( '#' + a );
-                        		});
-
-                        		$(document).mousedown( function() {
-                        			$('#$id-colorPickerDiv').hide();
-                        		});
-                        	});
-                        })(jQuery);
-                        </script>
                         ";
         	        break;
         	}
