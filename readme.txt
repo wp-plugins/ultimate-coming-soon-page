@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/donate/
-Tags: coming soon, teaser, feedburner, email, mailinglist, i18n
+Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite
 Requires at least: 3
 Tested up to: 3.2
 Stable tag: 0.5.1
