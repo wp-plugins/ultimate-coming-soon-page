@@ -10,7 +10,15 @@ global $seedprod_comingsoon;
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title><?php wp_title(''); ?></title>
+  <title><?php
+  	wp_title( '|', true, 'right' );
+  	bloginfo( 'name' );
+  	$site_description = get_bloginfo( 'description', 'display' );
+  	if ( $site_description && ( is_home() || is_front_page() ) )
+  		echo " | $site_description";
+  	if ( $paged >= 2 || $page >= 2 )
+  		echo ' | ' . sprintf( __( 'Page %s', 'toolbox' ), max( $paged, $page ) );
+  	?></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="<?php echo plugins_url('template/style.css',dirname(__FILE__)); ?>">
