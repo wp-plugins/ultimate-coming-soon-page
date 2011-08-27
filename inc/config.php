@@ -34,9 +34,11 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          * Display the coming soon page
          */
         function render_comingsoon_page() {
-            if ( !is_user_logged_in() || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')) {
-                $file = plugin_dir_path(__FILE__).'template/template-coming-soon.php';
-                include($file);
+            if(!is_admin()){
+                if ( !is_user_logged_in() || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')) {
+                    $file = plugin_dir_path(__FILE__).'template/template-coming-soon.php';
+                    include($file);
+                }
             }
         }
         
