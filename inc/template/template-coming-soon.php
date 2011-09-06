@@ -21,7 +21,6 @@ global $seedprod_comingsoon;
   	?></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="<?php echo plugins_url('template/style.css',dirname(__FILE__)); ?>">
   <?php if(substr($sc_jdt['comingsoon_body_font'], 0, 1) != '_'): ?>
   <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_body_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
@@ -29,6 +28,7 @@ global $seedprod_comingsoon;
   <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_headline_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
   <?php @wp_head(); ?>
+  <link rel="stylesheet" href="<?php echo plugins_url('template/style.css',dirname(__FILE__)); ?>">
   <style type="text/css">
     body{
         background: <?php echo $sc_jdt['comingsoon_custom_bg_color'];?> url('<?php echo (empty($sc_jdt['comingsoon_custom_bg_image']) ? plugins_url('template/images/bg.png',dirname(__FILE__)) : $sc_jdt['comingsoon_custom_bg_image']); ?>') repeat;
@@ -64,7 +64,7 @@ global $seedprod_comingsoon;
   </style>
 </head>
 
-<body>
+<body id="coming-soon-page">
 
   <div id="container">
     <div id="main" role="main">
