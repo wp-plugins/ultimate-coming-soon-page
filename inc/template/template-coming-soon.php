@@ -28,9 +28,7 @@ global $seedprod_comingsoon;
   <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_headline_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
   <?php 
-  if($sc_jdt['comingsoon_include_wp_head']){
       @wp_head(); 
-  }
   ?>
   <link rel="stylesheet" href="<?php echo plugins_url('template/style.css',dirname(__FILE__)); ?>">
   <style type="text/css">
