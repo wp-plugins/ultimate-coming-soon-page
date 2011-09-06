@@ -65,6 +65,9 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 0.6 =
+* Removed wp_head unless explicitly called. Added Portuguese Translation
+
 = 0.5.5 =
 * Fixed a title bug and ColorPicker Bug
 
@@ -105,6 +108,9 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 0.6 =
+* Removed wp_head unless explicitly called. Added Portuguese Translation
+
 = 0.5.5 =
 * Fixed a title bug and ColorPicker Bug
 
