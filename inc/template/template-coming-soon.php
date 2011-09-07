@@ -36,7 +36,7 @@ global $seedprod_comingsoon;
         background: <?php echo $sc_jdt['comingsoon_custom_bg_color'];?> url('<?php echo (empty($sc_jdt['comingsoon_custom_bg_image']) ? plugins_url('template/images/bg.png',dirname(__FILE__)) : $sc_jdt['comingsoon_custom_bg_image']); ?>') repeat;
     }
     <?php if(!empty($sc_jdt['comingsoon_body_font'])):?>
-    #container{
+    #coming-soon-container{
         font-family:<?php echo $seedprod_comingsoon->font_families($sc_jdt['comingsoon_body_font']); ?>;
     }
     <?php endif;?>
@@ -47,17 +47,17 @@ global $seedprod_comingsoon;
     <?php endif;?>
 
     <?php if($sc_jdt['comingsoon_font_color'] == 'white'):?>
-    #container, #footer{
+    #coming-soon-container, #coming-soon-footer{
         color:#fff;
         text-shadow: #333 1px 1px 0px;
     }
     <?php elseif($sc_jdt['comingsoon_font_color'] == 'gray'):?>
-    #container, #footer{
+    #coming-soon-container, #coming-soon-footer{
         color:#666;
         text-shadow: #fff 1px 1px 0px;
     }
     <?php elseif($sc_jdt['comingsoon_font_color'] == 'black'):?>
-    #container, #footer{
+    #coming-soon-container, #coming-soon-footer{
         color:#000;
         text-shadow: #fff 1px 1px 0px;
     }
@@ -68,8 +68,8 @@ global $seedprod_comingsoon;
 
 <body id="coming-soon-page">
 
-  <div id="container">
-    <div id="main" role="main">
+  <div id="coming-soon-container">
+    <div id="coming-soon-main" role="main">
         <div id="coming-soon">
             <?php if(!empty($sc_jdt['comingsoon_image'])): ?>
             <img id="teaser-image" src="<?php echo $sc_jdt['comingsoon_image'] ?>" alt="Teaser"/>
@@ -111,7 +111,7 @@ global $seedprod_comingsoon;
         </div>
     </div> <!--! end of #main -->
   </div> <!--! end of #container -->
-  <footer id="footer">
+  <footer id="coming-soon-footer">
   <?php if($sc_jdt['comingsoon_footer_credit']): ?>
   Powered by <a href="http://seedprod.com/wordpress-coming-soon-plugin">
   <img id="credit" src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-footer-logo-{$sc_jdt['comingsoon_font_color']}.png" ?>" alt="Powered by SeedProd" /></a>

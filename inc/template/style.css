@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
  font-weight: 500;
  }
  
-#container{
+#coming-soon-container{
     font-size:116%;
     line-height:1.6;
     padding:0 10px;
@@ -267,7 +267,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 
 
-#footer{
+#coming-soon-footer{
     position:relative;
     font-size:85%;
     margin:20px auto;
