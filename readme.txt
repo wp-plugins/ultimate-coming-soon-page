@@ -31,6 +31,7 @@ Benefits, Features and Options:
 Included Translations
 
 * Portuguese by [Alexander Pereira](http://www.pontovisual.net/traducao-do-plugin-ultimate-coming-soon-page/)
+# Greek by [Mihalis Papanousis](http://aenaon.biz)
 
 == Installation ==
 
