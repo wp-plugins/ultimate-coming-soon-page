@@ -1,3 +1,23 @@
+.seedprod .upgrade-postbox{
+	border:1px solid #fc3 ;
+	background: #ffc;
+}
+.seedprod .upgrade-postbox .hndle{
+	border-bottom:1px solid #fc3;
+	background:#F5F5A3;
+}
+
+.seedprod .upgrade-postbox .hndle span{
+    background: transparent url(heart.png) no-repeat;
+    padding-left:20px;
+	color:#c00;
+}
+
+.seedprod .upgrade-postbox li.check{
+    background: transparent url(check-12x12.png) no-repeat;
+    padding-left:20px;
+}
+
 .seedprod .support-postbox .hndle span{
     background: transparent url(help.png) no-repeat;
     padding-left:20px;
