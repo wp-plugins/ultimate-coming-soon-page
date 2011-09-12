@@ -5,8 +5,14 @@
 .seedprod .upgrade-postbox .hndle{
 	border-bottom:1px solid #fc3;
 	background:#F5F5A3;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffcc), to(#F5F5A3)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #ffffcc, #F5F5A3); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient(top, #ffffcc, #F5F5A3); /* FF3.6 */
+    background-image:     -ms-linear-gradient(top, #ffffcc, #F5F5A3); /* IE10 */
+    background-image:      -o-linear-gradient(top, #ffffcc, #F5F5A3); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #ffffcc, #F5F5A3);
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffcc', EndColorStr='#F5F5A3'); /* IE6–IE9 */
 }
-
 .seedprod .upgrade-postbox .hndle span{
     background: transparent url(heart.png) no-repeat;
     padding-left:20px;
