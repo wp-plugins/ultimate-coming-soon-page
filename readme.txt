@@ -30,7 +30,7 @@ Benefits, Features and Options:
 
 Pro Version Features:
 
-*   Store Emails in you own Database
+*   Store Emails in your own Database
 *   MailChimp Integration
 *   Responsive Layout, Mobile Support
 *   White Label Branding
