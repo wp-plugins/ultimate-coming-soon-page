@@ -12,9 +12,9 @@ Creates a Teaser Coming Soon Page for your Website and Collects Emails from your
 
 The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a coming soon page for your website. 
 
-[View a live demo &raquo;](http://saastheme.com "The Ultimate Lean Startup / MVP / MicroISV WordPress Theme")
-
-[Read the wpmu.org review &raquo;](http://wpmu.org/work-on-your-wordpress-site-behind-the-scenes-with-the-ultimate-coming-soon-page-plugin/ "Work on Your WordPress Site Behind the Scenes with the Ultimate Coming Soon Page Plugin")
+*   [View a live demo &raquo;](http://saastheme.com "The Ultimate Lean Startup / MVP / MicroISV WordPress Theme")
+*   [Read the wpmu.org review &raquo;](http://wpmu.org/work-on-your-wordpress-site-behind-the-scenes-with-the-ultimate-coming-soon-page-plugin/ "Work on Your WordPress Site Behind the Scenes with the Ultimate Coming Soon Page Plugin")
+*   [Upgrade to the Pro Version](http://seedprod.com/product/coming-soon-pro-plugin/)
 
 Benefits, Features and Options:
 
@@ -27,6 +27,16 @@ Benefits, Features and Options:
 *   Uses HTML5 &amp; CSS3
 *   i18n support
 *   Multisite Support
+
+Pro Version Features:
+
+*   Store Emails in you own Database
+*   MailChimp Integration
+*   Responsive Layout, Mobile Support
+*   White Label Branding
+*   Display an Incentive after capturing an Email
+*   Tweet Button Integration
+*   Priority Support
 
 Included Translations
 
