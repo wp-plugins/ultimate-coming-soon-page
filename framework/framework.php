@@ -132,7 +132,7 @@ if (!class_exists('SeedProd_Framework')) {
                 				    </ul>
 									<br/>
 									<p>
-                					 <a href="" class="button-primary">Upgrade Now &raquo;</a>
+                					 <a id="buy-button" href="" class="woo-sc-button medium">Upgrade Now &raquo;</a>
 									</p>
 
                 					</div>
