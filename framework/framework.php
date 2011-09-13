@@ -131,7 +131,9 @@ if (!class_exists('SeedProd_Framework')) {
 										<li class="check">Use on Unlimited Sites</li>
 										<li class="check">1 Year Automatic Updates &amp; Priority Support Included</li>
                 				    </ul>
-									<br/>
+									<p>
+									Use coupon code <strong>COMINGSOON20</strong> and <strong>Save 20%</strong>
+									</p>
 									<form id="fastspring-cart" action="http://sites.fastspring.com/seedprod/product/comingsoonpro?action=order" method="POST" target="_top">
                                     <a id="buy-button" class="woo-sc-button medium" href="javascript:document.getElementById('fastspring-cart').submit()" class="woo-sc-button medium">Upgrade Now &raquo;</a></form>
 									<p>
