@@ -128,6 +128,7 @@ if (!class_exists('SeedProd_Framework')) {
 										<li class="check">White Label Branding</li>
 										<li class="check">Display an Incentive after capturing an Email</li>
 										<li class="check">Tweet Button Integration</li>
+										<li class="check">Use on Unlimited Sites</li>
 										<li class="check">1 Year Automatic Updates &amp; Priority Support Included</li>
                 				    </ul>
 									<br/>
