@@ -128,11 +128,16 @@ if (!class_exists('SeedProd_Framework')) {
 										<li class="check">White Label Branding</li>
 										<li class="check">Display an Incentive after capturing an Email</li>
 										<li class="check">Tweet Button Integration</li>
-										<li class="check">Priority Support</li>
+										<li class="check">1 Year Automatic Updates &amp; Priority Support Included</li>
                 				    </ul>
 									<br/>
 									<p>
-                					 <a id="buy-button" href="" class="woo-sc-button medium">Upgrade Now &raquo;</a>
+									<form id="fastspring-cart" action="http://sites.fastspring.com/seedprod/product/comingsoonpro?action=order" method="POST" target="_top">
+                                    <a id="buy-button" class="woo-sc-button medium" href="javascript:document.getElementById('fastspring-cart').submit()" class="woo-sc-button medium">Upgrade Now &raquo;</a></form>
+        
+									</p>
+									<p>
+									<a href="http://seedprod.com/product/coming-soon-pro-plugin/">Get More Info</a>
 									</p>
 
                 					</div>
