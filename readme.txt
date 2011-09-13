@@ -41,7 +41,8 @@ Pro Version Features:
 Included Translations
 
 * Portuguese by [Alexander Pereira](http://www.pontovisual.net/traducao-do-plugin-ultimate-coming-soon-page/)
-# Greek by [Mihalis Papanousis](http://aenaon.biz)
+* Greek by [Mihalis Papanousis](http://aenaon.biz)
+* Slovenian by [Jani Roskar](http://qb.si)
 
 == Installation ==
 
