@@ -14,9 +14,9 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 
 *   [View a live demo &raquo;](http://saastheme.com "The Ultimate Lean Startup / MVP / MicroISV WordPress Theme")
 *   [Read the wpmu.org review &raquo;](http://wpmu.org/work-on-your-wordpress-site-behind-the-scenes-with-the-ultimate-coming-soon-page-plugin/ "Work on Your WordPress Site Behind the Scenes with the Ultimate Coming Soon Page Plugin")
-*   [Upgrade to the Pro Version](http://seedprod.com/product/coming-soon-pro-plugin/)
+*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/)
 
-Benefits, Features and Options:
+**Benefits, Features and Options:**
 
 *   Works with any WordPress Theme
 *   Completely customizable look and feel including Background Color and Image, Logo, Fonts etc..
@@ -28,7 +28,7 @@ Benefits, Features and Options:
 *   i18n support
 *   Multisite Support
 
-Pro Version Features:
+**Pro Version Features:**
 
 *   Store Emails in your own Database
 *   MailChimp Integration
@@ -38,7 +38,7 @@ Pro Version Features:
 *   Tweet Button Integration
 *   Priority Support
 
-Included Translations
+**Included Translations:**
 
 * Portuguese(pt_PT) by [Alexander Pereira](http://www.pontovisual.net/traducao-do-plugin-ultimate-coming-soon-page/)
 * Greek(el) by [Mihalis Papanousis](http://aenaon.biz)
