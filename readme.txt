@@ -56,7 +56,7 @@ Manual Installation
 
 = How do I use FeedBurner to collect emails? =
 
-<iframe width="532" height="300" src="http://www.youtube.com/embed/31dUHLCW8VU" frameborder="0" allowfullscreen></iframe>
+<object width="532" height="300"><param name="movie" value="http://www.youtube.com/v/31dUHLCW8VU?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/31dUHLCW8VU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="532" height="300" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 = Can I add a Countdown? =
 
