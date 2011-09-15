@@ -17,7 +17,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             $seedprod_comingsoon_options = get_option('seedprod_comingsoon_options');
             parent::__construct();
             add_action( 'wp_ajax_seedprod_comingsoon_refesh_list', array(&$this,'refresh_list'));
-            if(isset($seedprod_comingsoon_options['comingsoon_enabled']) && in_array('1',$seedprod_comingsoon_options['comingsoon_enabled'])){
+            if((isset($seedprod_comingsoon_options['comingsoon_enabled']) && in_array('1',$seedprod_comingsoon_options['comingsoon_enabled'])) || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')){
                 add_action('template_redirect', array(&$this,'render_comingsoon_page'));
             }
             add_action( 'wp_ajax_seedprod_mailinglist_callback', array(&$this,'ajax_mailinglist_callback') );
