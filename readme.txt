@@ -54,16 +54,9 @@ Manual Installation
 
 == Frequently Asked Questions ==
 
-= What mail service providers do you support? =
+= How do I use FeedBurner to collect emails? =
 
-Currently we support FeedBurner. To activate email subscriptions for your feed.
-
-1. Go to [FeedBurner.com](http://feedburner.com/ "FeedBurner") and login
-1. Click **My Feeds** in the upper-left-hand corner
-1. Select your feed from the list
-1. Click the **Publicize** tab
-1. Click **Email Subscriptions** on the left
-1. Make sure **Feedburner** is selected, and click **Activate**
+<iframe width="532" height="300" src="http://www.youtube.com/embed/31dUHLCW8VU" frameborder="0" allowfullscreen></iframe>
 
 = Can I add a Countdown? =
 
