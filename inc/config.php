@@ -427,7 +427,7 @@ $seedprod_comingsoon->options[] = array( "type" => "color",
 				"label" => __("Background Color", 'ultimate-coming-soon-page'),
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
-				
+				"default_value" => "#ffffff",
 				);
 				
 $seedprod_comingsoon->options[] = array( "type" => "image",

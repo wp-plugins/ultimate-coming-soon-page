@@ -28,7 +28,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 *   i18n support
 *   Multisite Support
 
-**Pro Version Features:**
+### Pro Version Features:
 
 *   Store Emails in your own Database
 *   MailChimp Integration
@@ -36,7 +36,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 *   White Label Branding
 *   Display an Incentive after capturing an Email
 *   Tweet Button Integration
-*   Priority Support
+*   1 Year Automatic Updates and Priority Support
 
 **Included Translations:**
 
@@ -54,16 +54,9 @@ Manual Installation
 
 == Frequently Asked Questions ==
 
-= What mail service providers do you support? =
+= How do I use FeedBurner to collect emails? =
 
-Currently we support FeedBurner. To activate email subscriptions for your feed.
-
-1. Go to [FeedBurner.com](http://feedburner.com/ "FeedBurner") and login
-1. Click **My Feeds** in the upper-left-hand corner
-1. Select your feed from the list
-1. Click the **Publicize** tab
-1. Click **Email Subscriptions** on the left
-1. Make sure **Feedburner** is selected, and click **Activate**
+http://www.youtube.com/watch?v=31dUHLCW8VU
 
 = Can I add a Countdown? =
 
