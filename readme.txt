@@ -28,7 +28,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 *   i18n support
 *   Multisite Support
 
-**Pro Version Features:**
+### Pro Version Features:
 
 *   Store Emails in your own Database
 *   MailChimp Integration
@@ -36,7 +36,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 *   White Label Branding
 *   Display an Incentive after capturing an Email
 *   Tweet Button Integration
-*   Priority Support
+*   1 Year Automatic Updates and Priority Support
 
 **Included Translations:**
 
