@@ -132,7 +132,7 @@ if (!class_exists('SeedProd_Framework')) {
 										<li class="check">1 Year Automatic Updates &amp; Priority Support Included</li>
                 				    </ul>
 									<p>
-									<a  class="woo-sc-button medium" href="http://seedprod.com/product/coming-soon-pro-plugin/">Learn More</a>
+									<a  class="woo-sc-button medium" href="http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=ultimate-coming-soon-page&utm_medium=link&utm_campaign=coming-soon-pro">Learn More</a>
 									</p>
 
                 					</div>

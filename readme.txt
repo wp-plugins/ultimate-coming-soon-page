@@ -14,7 +14,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 
 *   [View a live demo &raquo;](http://saastheme.com "The Ultimate Lean Startup / MVP / MicroISV WordPress Theme")
 *   [Read the wpmu.org review &raquo;](http://wpmu.org/work-on-your-wordpress-site-behind-the-scenes-with-the-ultimate-coming-soon-page-plugin/ "Work on Your WordPress Site Behind the Scenes with the Ultimate Coming Soon Page Plugin")
-*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/)
+*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress&utm_medium=link&utm_campaign=coming-soon-pro)
 
 ### Benefits, Features and Options:
 
