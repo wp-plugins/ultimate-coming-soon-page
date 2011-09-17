@@ -294,7 +294,7 @@ if (!class_exists('SeedProd_Framework')) {
         	$options = get_option( $setting_id );
         	switch($type){
         	    case 'textbox':
-        	        echo "<input id='$id' class='".(empty($class) ? 'regular-text' : $class)."' name='{$setting_id}[$id]' type='text' value='".(empty($options[$id]) ? $default_value : $options[$id])."' />
+        	        echo "<input id='$id' class='".(empty($class) ? 'regular-text' : $class)."' name='{$setting_id}[$id]' type='text' value='".esc_attr(empty($options[$id]) ? $default_value : $options[$id])."' />
         	        <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>";
         	        break;
                 case 'image':
