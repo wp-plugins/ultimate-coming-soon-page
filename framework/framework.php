@@ -113,31 +113,7 @@ if (!class_exists('SeedProd_Framework')) {
         		<div id="poststuff" class="metabox-holder has-right-sidebar">
                     <div id="side-info-column" class="inner-sidebar">
                         <div id="side-sortables" class="meta-box-sortables ui-sortable">
-					     	<div class="postbox upgrade-postbox">
-                                <div class="handlediv" title="Click to toggle"><br /></div>
-                				<h3 class="hndle"><span><?php _e('Upgrade to the Pro Version', 'ultimate-coming-soon-page') ?></span></h3>
-                				<div class="inside">
-                					<div class="support-widget">
-                					<p>
-                					   <strong><?php _e('Features included in the Coming Soon Pro:', 'ultimate-coming-soon-page') ?></strong>
-                					</p>
-                					<ul>
-                					    <li class="check">Store Emails in your own Database</li>
-										<li class="check">MailChimp Integration</li>
-										<li class="check">Responsive Layout, Mobile Support</li>
-										<li class="check">White Label Branding</li>
-										<li class="check">Display an Incentive after capturing an Email</li>
-										<li class="check">Tweet Button Integration</li>
-										<li class="check">Use on Unlimited Sites</li>
-										<li class="check">1 Year Automatic Updates &amp; Priority Support Included</li>
-                				    </ul>
-									<p>
-									<a  class="woo-sc-button medium" href="http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=ultimate-coming-soon-page&utm_medium=link&utm_campaign=coming-soon-pro">Learn More</a>
-									</p>
-
-                					</div>
-                				</div>
-                            </div>
+					     	<iframe src="http://seedprod.com/wp-content/landing-pages/landing-coming-soon-pro.php" style="height:307px;margin-bottom:20px"></iframe>
                             <div class="postbox support-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
                 				<h3 class="hndle"><span><?php _e('Plugin Support', 'ultimate-coming-soon-page') ?></span></h3>

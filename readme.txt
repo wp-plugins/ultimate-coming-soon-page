@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/donate/
 Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite
 Requires at least: 3
 Tested up to: 3.2
-Stable tag: 0.7.2
+Stable tag: 0.7.3
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -70,6 +70,9 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 0.7.3 =
+* Escape Output
+
 = 0.7.2 =
 * Default color bug fix, enabled preview when not enabled.
 
@@ -126,6 +129,9 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 0.7.3 =
+* Escape Output
+
 = 0.7.2 =
 * Default color bug fix, enabled preview when not enabled.
 
