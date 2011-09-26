@@ -3,7 +3,7 @@
 Plugin Name: Ultimate Coming Soon Page
 Plugin URI: http://seedprod.com/wordpress-coming-soon-plugin/
 Description: Creates a Teaser Page for your Site and Collect Email Addresses from your Visitors.
-Version: 0.7.3
+Version: 0.7.4
 Author: SeedProd
 Author URI: http://seedprod.com
 License: GPLv2
