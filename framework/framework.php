@@ -113,7 +113,7 @@ if (!class_exists('SeedProd_Framework')) {
         		<div id="poststuff" class="metabox-holder has-right-sidebar">
                     <div id="side-info-column" class="inner-sidebar">
                         <div id="side-sortables" class="meta-box-sortables ui-sortable">
-					     	<iframe src="http://seedprod.com/wp-content/landing-pages/landing-coming-soon-pro.php" style="height:307px;margin-bottom:20px"></iframe>
+					     	<iframe src="http://seedprod.com/wp-content/landing-pages/landing-coming-soon-pro.php" style="height:307px;margin-bottom:20px;border:none;"></iframe>
                             <div class="postbox support-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
                 				<h3 class="hndle"><span><?php _e('Plugin Support', 'ultimate-coming-soon-page') ?></span></h3>
