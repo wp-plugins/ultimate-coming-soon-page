@@ -32,7 +32,7 @@ require_once('inc/config.php');
  *
  * @since 0.1
  */
-function seedprod_activation() {
+function seedprod_ucsp_activation() {
     if ( version_compare( get_bloginfo( 'version' ), '3.0', '<' ) ) {
         deactivate_plugins( __FILE__  );
         wp_die( __('WordPress 3.0 and higher required. The plugin has now disabled itself. On a side note why are you running an old version :( Upgrade!','ultimate-coming-soon-page') );
