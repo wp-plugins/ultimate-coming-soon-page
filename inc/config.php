@@ -154,7 +154,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
     	        echo "<option value='$k' ".($options[$id] == $k ? 'selected' : '').">$v</option>";
     	    }
     	    echo "</select><!--<button id='comingsoon_mailinglist_refresh' type='button' class='button-secondary'>Refresh</button>-->
-            <br><small class='description'>More Options Coming Soon :)</small>
+            <br><small class='description'>More Options in the Pro Version :)</small>
             <script type='text/javascript'>
             jQuery(document).ready(function($) {
                 $('#comingsoon_mailinglist_refresh').click(function() {
