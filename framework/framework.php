@@ -369,7 +369,14 @@ if (!class_exists('SeedProd_Framework')) {
         	    }
             }
             if(!$error){
-                add_settings_error('general', 'settings_updated', sprintf(__("Settings saved.  <a href='%s/?cs_preview=true'>Preview &raquo;</a>", 'ultimate-coming-soon-page'),home_url()), 'updated');
+ 				global $wp_settings_errors;
+				$display = true;
+				foreach($wp_settings_errors as $k=>$v){
+					if($v['code'] == 'seedprod_settings_updated')
+						$display = false;
+				}
+				if($display)
+		        	add_settings_error('general', 'seedprod_settings_updated', sprintf(__("Settings saved.  <a href='%s/?cs_preview=true'>Preview &raquo;</a>", 'ultimate-coming-soon-page'),home_url()), 'updated');
             }
         	return $input;
         }

@@ -9,6 +9,8 @@
 
 if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {	
     class SeedProd_Ultimate_Coming_Soon_Page extends SeedProd_Framework {
+	
+		private $coming_soon_rendered = false; 
         
         /**
          *  Extend the base construct and add plugin specific hooks
@@ -34,14 +36,21 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          * Display the coming soon page
          */
         function render_comingsoon_page() {
-            if(!is_admin()){
-                if(!is_feed()){
-                    if ( !is_user_logged_in() || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')) {
-                        $file = plugin_dir_path(__FILE__).'template/template-coming-soon.php';
-                        include($file);
-                    }
-                }
-            }
+			$theme_my_login = get_option('theme_my_login');
+			if(!empty($theme_my_login['page_id'])){
+				$theme_my_login = $theme_my_login['page_id'];
+			}
+			if(!is_page($theme_my_login)){
+	            if(!is_admin()){
+	                if(!is_feed()){
+	                    if ( !is_user_logged_in() || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')) {
+	                        $this->coming_soon_rendered = true;
+							$file = plugin_dir_path(__FILE__).'template/template-coming-soon.php';
+	                        include($file);
+	                    }
+	                }
+	            }
+			}
         }
         
         /**
@@ -49,17 +58,18 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          */
         function add_frontent_scripts() {
             if (!is_admin()){
-                wp_enqueue_script( 'modernizr', plugins_url('inc/template/modernizr.js',dirname(__FILE__)), array(),'1.7' );  
-                wp_enqueue_script( 'seedprod_coming_soon_script', plugins_url('inc/template/script.js',dirname(__FILE__)), array( 'jquery' ),$this->plugin_version, true );  
-                $data = array( 
-                    'msgdefault' => __( 'Enter Your Email' , 'ultimate-coming-soon-page'),
-                    'msg500' => __( 'Error :( Please try again.' , 'ultimate-coming-soon-page'),
-                    'msg400' => __( 'Please enter a valid email.' , 'ultimate-coming-soon-page'),
-                    'msg200' => __( "You'll be notified soon!" , 'ultimate-coming-soon-page'),
+				if($this->coming_soon_rendered){
+	                wp_enqueue_script( 'modernizr', plugins_url('inc/template/modernizr.js',dirname(__FILE__)), array(),'1.7' );  
+	                wp_enqueue_script( 'seedprod_coming_soon_script', plugins_url('inc/template/script.js',dirname(__FILE__)), array( 'jquery' ),$this->plugin_version, true );  
+	                $data = array( 
+	                    'msgdefault' => __( 'Enter Your Email' , 'ultimate-coming-soon-page'),
+	                    'msg500' => __( 'Error :( Please try again.' , 'ultimate-coming-soon-page'),
+	                    'msg400' => __( 'Please enter a valid email.' , 'ultimate-coming-soon-page'),
+	                    'msg200' => __( "You'll be notified soon!" , 'ultimate-coming-soon-page'),
                 
-                );
-                wp_localize_script( 'seedprod_coming_soon_script', 'seedprod_err_msg', $data );
-                
+	                );
+	                wp_localize_script( 'seedprod_coming_soon_script', 'seedprod_err_msg', $data );
+            	}
             }else{
                 $data = array( 'delete_confirm' => __( 'Are you sure you want to DELETE all emails?' , 'ultimate-coming-soon-page') );
                 wp_localize_script( 'seedprod_plugin', 'seedprod_object', $data );
