@@ -36,11 +36,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          * Display the coming soon page
          */
         function render_comingsoon_page() {
-			$theme_my_login = get_option('theme_my_login');
-			if(!empty($theme_my_login['page_id'])){
-				$theme_my_login = $theme_my_login['page_id'];
-			}
-			if(!is_page($theme_my_login)){
+
 	            if(!is_admin()){
 	                if(!is_feed()){
 	                    if ( !is_user_logged_in() || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')) {
@@ -50,7 +46,6 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
 	                    }
 	                }
 	            }
-			}
         }
         
         /**
