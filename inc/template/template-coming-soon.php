@@ -11,7 +11,6 @@ global $seedprod_comingsoon;
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><?php
-  	wp_title( '|', true, 'right' );
   	bloginfo( 'name' );
   	$site_description = get_bloginfo( 'description', 'display' );
   	if ( $site_description && ( is_home() || is_front_page() ) )
