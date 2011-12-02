@@ -2,7 +2,7 @@
 $sc_jdt = get_option('seedprod_comingsoon_options'); 
 global $seedprod_comingsoon;
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -110,12 +110,12 @@ global $seedprod_comingsoon;
         </div>
     </div> <!--! end of #main -->
   </div> <!--! end of #container -->
-  <footer id="coming-soon-footer">
+  <div id="coming-soon-footer">
   <?php if($sc_jdt['comingsoon_footer_credit']): ?>
   Powered by <a href="http://seedprod.com/wordpress-coming-soon-plugin">
   <img id="credit" src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-footer-logo-{$sc_jdt['comingsoon_font_color']}.png" ?>" alt="Powered by SeedProd" /></a>
   <?php endif; ?>
-  </footer>
+  </div>
   <?php @wp_footer(); ?>
   <!--[if lt IE 7 ]>
       <script src="<?php echo plugins_url('template/dd_belatedpng.js',dirname(__FILE__)); ?>"></script>

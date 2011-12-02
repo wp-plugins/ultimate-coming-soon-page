@@ -14,7 +14,6 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 
 *   [View a live demo &raquo;](http://saastheme.com/?cs_preview=true "The Ultimate Lean Startup / MVP / MicroISV WordPress Theme")
 *   [Read the wpmu.org review &raquo;](http://wpmu.org/work-on-your-wordpress-site-behind-the-scenes-with-the-ultimate-coming-soon-page-plugin/ "Work on Your WordPress Site Behind the Scenes with the Ultimate Coming Soon Page Plugin")
-*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress&utm_medium=link&utm_campaign=coming-soon-pro)
 
 ### Benefits, Features and Options:
 
@@ -38,11 +37,14 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 *   Tweet Button Integration
 *   1 Year Automatic Updates and Priority Support
 
+*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress&utm_medium=link&utm_campaign=coming-soon-pro)
+
 **Included Translations:**
 
 * Portuguese(pt_PT) by [Alexander Pereira](http://www.pontovisual.net/traducao-do-plugin-ultimate-coming-soon-page/)
 * Greek(el) by [Mihalis Papanousis](http://aenaon.biz)
 * Slovenian(sl_SI) by [Jani Roskar](http://qb.si)
+* Portuguese Brazilian (pt_BR) by [Bruno Cantuatia](http://cantuaria.net.br)
 
 == Installation ==
 
