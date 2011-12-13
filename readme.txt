@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/donate/
-Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite
+Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite, launch, maintenance, mailchimp
 Requires at least: 3
 Tested up to: 3.3
-Stable tag: 0.7.5.4
+Stable tag: 0.8
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -72,6 +72,9 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 0.8 =
+* 3.3 Compatability
+
 = 0.7.5.2 =
 * Bug Fix
 
@@ -145,6 +148,9 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 0.8 =
+* 3.3 Compatability
+
 = 0.7.5.1 =
 * Be good and take your medicine.
 
