@@ -53,7 +53,7 @@ Manual Installation
 
 1. Upload the `ultimate-coming-soon-page` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Visit **Settings** > **Coming Soon** to enable coming soon page and set you options.
+1. Visit **Settings** > **Coming Soon** to enable the coming soon page and set your options.
 
 == Frequently Asked Questions ==
 
