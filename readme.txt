@@ -38,7 +38,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 *   Tweet Button Integration
 *   1 Year Automatic Updates and Priority Support
 
-*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress&utm_medium=link&utm_campaign=coming-soon-pro)
+*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/)
 
 **Included Translations:**
 
