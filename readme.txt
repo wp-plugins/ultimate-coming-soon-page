@@ -46,6 +46,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 * Greek(el) by [Mihalis Papanousis](http://aenaon.biz)
 * Slovenian(sl_SI) by [Jani Roskar](http://qb.si)
 * Portuguese Brazilian (pt_BR) by [Bruno Cantuatia](http://cantuaria.net.br)
+* French (fr) by Gabriel Delattre
 
 == Installation ==
 
