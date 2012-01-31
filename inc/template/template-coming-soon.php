@@ -26,9 +26,8 @@ global $seedprod_comingsoon;
   <?php if(substr($sc_jdt['comingsoon_headline_font'], 0, 1) != '_'): ?>
   <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_headline_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
-  <?php 
-      @wp_head(); 
-  ?>
+  <?php  do_action( 'sc_head'); ?>
+
   <link rel="stylesheet" href="<?php echo plugins_url('template/style.css',dirname(__FILE__)); ?>">
   <style type="text/css">
     body{
@@ -116,7 +115,7 @@ global $seedprod_comingsoon;
   <img id="credit" src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-footer-logo-{$sc_jdt['comingsoon_font_color']}.png" ?>" alt="Powered by SeedProd" /></a>
   <?php endif; ?>
   </div>
-  <?php @wp_footer(); ?>
+  <?php //@wp_footer(); ?>
   <!--[if lt IE 7 ]>
       <script src="<?php echo plugins_url('template/dd_belatedpng.js',dirname(__FILE__)); ?>"></script>
       <script>DD_belatedPNG.fix('img, .png_bg');</script>

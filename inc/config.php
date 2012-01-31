@@ -26,6 +26,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             add_action( 'wp_ajax_nopriv_seedprod_mailinglist_callback', array(&$this,'ajax_mailinglist_callback') );
             add_action( 'wp_ajax_seedprod_email_export_delete', array(&$this,'email_export_delete') );
             add_action( 'wp_enqueue_scripts', array(&$this,'add_frontent_scripts') );
+            add_action( 'sc_head','wp_enqueue_scripts',1);
             add_filter( 'plugin_action_links', array(&$this,'plugin_action_links'), 10, 2);
             if($seedprod_comingsoon_options['comingsoon_mailinglist'] == 'database'){
                 $this->email_database_setup();
