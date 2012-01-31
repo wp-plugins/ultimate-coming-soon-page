@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/donate/
-Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite, launch, maintenance, mailchimp
+Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite, launch, maintenance, mailchimp,admin, administration, construction, maintenance mode, offline, unavailable
 Requires at least: 3
 Tested up to: 3.3
 Stable tag: 0.8
