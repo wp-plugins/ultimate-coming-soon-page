@@ -137,7 +137,7 @@ if (!class_exists('SeedProd_Framework')) {
                 					<div class="like-widget">
                 					<p><?php _e('Like this plugin? Show your support by:', 'ultimate-coming-soon-page')?></p>
                 					<ul>
-                					    <li>&raquo; <a href="http://wordpress.org/extend/plugins/ultimate-coming-soon-page/"><?php _e('Rate It', 'ultimate-coming-soon-page') ?></a></li>
+                					    <li>&raquo; <a href="http://wordpress.org/extend/plugins/ultimate-coming-soon-page/"><?php _e('Rating It', 'ultimate-coming-soon-page') ?></a></li>
                 					    <li>&raquo; <a href="<?php echo "http://twitter.com/share?url={$this->plugin_seedprod_url}&text=Check out this awesome WordPress Plugin I'm using, '{$this->plugin_name}' by SeedProd {$this->plugin_short_url}"; ?>"><?php _e('Tweet It', 'ultimate-coming-soon-page') ?></a></li>
                 					    
                 					    
