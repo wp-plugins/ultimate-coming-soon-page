@@ -74,6 +74,11 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 1.0.0 =
+*Removed functions that were not needed.
+*Switched to Semantic Versioning http://semver.org/
+*French translation added
+
 = 0.8 =
 * 3.3 Compatability
 
@@ -150,6 +155,11 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.0.0 =
+*Removed functions that were not needed.
+*Switched to Semantic Versioning http://semver.org/
+*French translation added
+
 = 0.8 =
 * 3.3 Compatability
 
