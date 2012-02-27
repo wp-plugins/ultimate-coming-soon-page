@@ -438,6 +438,14 @@ $seedprod_comingsoon->options[] = array( "type" => "image",
 				"setting_id" => "seedprod_comingsoon_options",
 				"desc" => __('Upload an optional background image (or) enter the url to your image. This will override the color above if set.', 'ultimate-coming-soon-page'),
 				);
+$seedprod_comingsoon->options[] = array( "type" => "checkbox",
+                "id" => "comingsoon_background_strech",
+                "label" => __("Stretch Background Image", 'ultimate-coming-soon-page'),
+                "desc" => sprintf(__("This will stretch your background image to any browser window size.", 'ultimate-coming-soon-page'),home_url()),
+                "option_values" => array('1'=>__('Yes', 'ultimate-coming-soon-page')),
+                "section_id" => "seedprod_section_style",
+                "setting_id" => "seedprod_comingsoon_options",
+                );
 
 $seedprod_comingsoon->options[] = array( "type" => "radio",
                 "id" => "comingsoon_font_color",
