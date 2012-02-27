@@ -47,7 +47,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 * Slovenian(sl_SI) by [Jani Roskar](http://qb.si)
 * Portuguese Brazilian (pt_BR) by [Bruno Cantuatia](http://cantuaria.net.br)
 * French (fr) by Gabriel Delattre
-* Polish (pl_PL) by [Krzysztof Spychalski](http://pl2wp.prywatny.eu)
+* Polish (pl_PL) by [pl2wp-Team](http://pl2wp.prywatny.eu)
 
 == Installation ==
 
