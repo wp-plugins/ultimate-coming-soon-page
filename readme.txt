@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/donate/
 Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite, launch, maintenance, mailchimp,admin, administration, construction, maintenance mode, offline, unavailable
 Requires at least: 3
 Tested up to: 3.3
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -47,6 +47,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 * Slovenian(sl_SI) by [Jani Roskar](http://qb.si)
 * Portuguese Brazilian (pt_BR) by [Bruno Cantuatia](http://cantuaria.net.br)
 * French (fr) by Gabriel Delattre
+* Polish (pl_PL) by [Krzysztof Spychalski](http://pl2wp.prywatny.eu)
 
 == Installation ==
 
@@ -74,6 +75,10 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 1.1.0 =
+* Added Polish Translation
+* Added Full Stretch Background
+
 = 1.0.0 =
 * Removed functions that were not needed.
 * Switched to Semantic Versioning http://semver.org/
@@ -155,6 +160,10 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.1.0 =
+* Added Polish Translation
+* Added Full Stretch Background
+
 = 1.0.0 =
 * Removed functions that were not needed.
 * Switched to Semantic Versioning http://semver.org/
