@@ -32,6 +32,12 @@ global $seedprod_comingsoon;
   <style type="text/css">
     body{
         background: <?php echo $sc_jdt['comingsoon_custom_bg_color'];?> url('<?php echo (empty($sc_jdt['comingsoon_custom_bg_image']) ? plugins_url('template/images/bg.png',dirname(__FILE__)) : $sc_jdt['comingsoon_custom_bg_image']); ?>') repeat;
+        <?php if(!empty($sc_jdt['comingsoon_background_strech'])):?>
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: top center;
+          background-size:cover;
+        <?php endif;?>
     }
     <?php if(!empty($sc_jdt['comingsoon_body_font'])):?>
     #coming-soon-container{
