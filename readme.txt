@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/donate/
 Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite, launch, maintenance, mailchimp,admin, administration, construction, maintenance mode, offline, unavailable
 Requires at least: 3
 Tested up to: 3.3
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -12,7 +12,7 @@ Creates a Teaser Coming Soon Page for your Website and Collects Emails from your
 
 The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a coming soon page for your website. 
 
-*   [View a live demo &raquo;](http://saastheme.com/?cs_preview=true "The Ultimate Lean Startup / MVP / MicroISV WordPress Theme")
+*   [View a live demo &raquo;](http://static.seedprod.com.s3.amazonaws.com/demo/index.html?demo=ultimate-coming-soon-page "SeedProd")
 *   [Read the wpmu.org review &raquo;](http://wpmu.org/work-on-your-wordpress-site-behind-the-scenes-with-the-ultimate-coming-soon-page-plugin/ "Work on Your WordPress Site Behind the Scenes with the Ultimate Coming Soon Page Plugin")
 *   [Read the wpmods.com review &raquo;](http://www.wpmods.com/ultimate-coming-soon-page-wordpress-plugin/ "Ultimate Coming Soon Page WordPress Plugin")
 
@@ -30,15 +30,16 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 
 ### Pro Version Features:
 
-*   Store Emails in your own Database
-*   MailChimp Integration
-*   Responsive Layout, Mobile Support
-*   White Label Branding
-*   Display an Incentive after capturing an Email
-*   Tweet Button Integration
-*   1 Year Automatic Updates and Priority Support
+*	Store emails in your database or integrate 
+with MailChimp, Aweber, Constant Contact, 
+Campaign Monitor & even Gravity Forms
+*	Includes a Maintenance Mode
+*	Display Social Profiles and Sharing Buttons
+*	Import / Export Settings
+*	Responsive Mobile Ready Design
+*	Plus more...
 
-*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress&utm_medium=link&utm_campaign=coming-soon-pro)
+*   [Upgrade to the Pro Version Now!&raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
 
 **Included Translations:**
 
@@ -48,6 +49,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 * Portuguese Brazilian (pt_BR) by [Bruno Cantuatia](http://cantuaria.net.br)
 * French (fr) by Gabriel Delattre
 * Polish (pl_PL) by [pl2wp-Team](http://pl2wp.prywatny.eu)
+* Russian (ru_RU) by [Oleg Vlasov](http://bestplugins.ru)
 
 == Installation ==
 
@@ -75,6 +77,9 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 1.2.0 =
+* Added Russian Translation
+
 = 1.1.0 =
 * Added Polish Translation
 * Added Full Stretch Background
@@ -160,6 +165,9 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.2.0 =
+* Added Russian Translation
+
 = 1.1.0 =
 * Added Polish Translation
 * Added Full Stretch Background

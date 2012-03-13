@@ -113,7 +113,7 @@ if (!class_exists('SeedProd_Framework')) {
         		<div id="poststuff" class="metabox-holder has-right-sidebar">
                     <div id="side-info-column" class="inner-sidebar">
                         <div id="side-sortables" class="meta-box-sortables ui-sortable">
-					     	<a href="http://seedprod.com/product/coming-soon-pro-plugin/" target="_top"><img src="http://static.seedprod.com/ads/coming-soon-pro-sidebar.png" /></a>
+					     	<a href="http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_top"><img src="http://static.seedprod.com/ads/coming-soon-pro-sidebar.png" /></a>
                             <div class="postbox support-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
                 				<h3 class="hndle"><span><?php _e('Plugin Support', 'ultimate-coming-soon-page') ?></span></h3>
