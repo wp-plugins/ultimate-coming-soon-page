@@ -24,6 +24,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 *   Collect Emails with FeedBurner
 *   Integrated with Google Fonts
 *   Visible to only non logged in users so you can build your site while visitors see the "Coming Soon" page.
+*	Stretch Background Image to Cover the Entire Browser
 *   Uses HTML5 &amp; CSS3
 *   i18n support
 *   Multisite Support
