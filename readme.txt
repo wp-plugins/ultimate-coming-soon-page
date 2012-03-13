@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/donate/
 Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite, launch, maintenance, mailchimp,admin, administration, construction, maintenance mode, offline, unavailable
 Requires at least: 3
 Tested up to: 3.3
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 
 Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
 
@@ -30,15 +30,16 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 
 ### Pro Version Features:
 
-*   Store Emails in your own Database
-*   MailChimp Integration
-*   Responsive Layout, Mobile Support
-*   White Label Branding
-*   Display an Incentive after capturing an Email
-*   Tweet Button Integration
-*   1 Year Automatic Updates and Priority Support
+*	Store emails in your database or integrate 
+with MailChimp, Aweber, Constant Contact, 
+Campaign Monitor & even Gravity Forms
+*	Includes a Maintenance Mode
+*	Display Social Profiles and Sharing Buttons
+*	Import / Export Settings
+*	Responsive Mobile Ready Design
+*	Plus more...
 
-*   [Upgrade to the Pro Version &raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
+*   [Upgrade to the Pro Version Now!&raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
 
 **Included Translations:**
 
