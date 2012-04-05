@@ -38,7 +38,7 @@ Campaign Monitor & even Gravity Forms
 *	Display Social Profiles and Sharing Buttons
 *	Import / Export Settings
 *	Responsive Mobile Ready Design
-*	Plus more...
+*	Plus lots more...
 
 *   [Upgrade to the Pro Version Now!&raquo;](http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
 

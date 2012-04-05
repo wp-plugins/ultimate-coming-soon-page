@@ -118,7 +118,7 @@ global $seedprod_comingsoon;
   </div> <!--! end of #container -->
   <div id="coming-soon-footer">
   <?php if($sc_jdt['comingsoon_footer_credit']): ?>
-  Powered by <a href="http://seedprod.com/wordpress-coming-soon-plugin">
+  Powered by <a href="http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/">
   <img id="credit" src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-footer-logo-{$sc_jdt['comingsoon_font_color']}.png" ?>" alt="Powered by SeedProd" /></a>
   <?php endif; ?>
   </div>
