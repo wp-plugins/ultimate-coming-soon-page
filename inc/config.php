@@ -21,6 +21,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             add_action( 'wp_ajax_seedprod_comingsoon_refesh_list', array(&$this,'refresh_list'));
             if((isset($seedprod_comingsoon_options['comingsoon_enabled']) && in_array('1',$seedprod_comingsoon_options['comingsoon_enabled'])) || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')){
                 add_action('template_redirect', array(&$this,'render_comingsoon_page'),12);
+                add_action( 'admin_bar_menu',array( &$this, 'admin_bar_menu' ), 1000 );
             }
             add_action( 'wp_ajax_seedprod_mailinglist_callback', array(&$this,'ajax_mailinglist_callback') );
             add_action( 'wp_ajax_nopriv_seedprod_mailinglist_callback', array(&$this,'ajax_mailinglist_callback') );
@@ -31,6 +32,23 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             if($seedprod_comingsoon_options['comingsoon_mailinglist'] == 'database'){
                 $this->email_database_setup();
             }
+        }
+
+        /**
+        * Display admin bar when active
+        */
+
+        function admin_bar_menu(){
+            global $wp_admin_bar;
+
+            /* Add the main siteadmin menu item */
+                $wp_admin_bar->add_menu( array(
+                    'id'     => 'debug-bar',
+                    'href' => admin_url().'options-general.php?page=seedprod_coming_soon',
+                    'parent' => 'top-secondary',
+                    'title'  => apply_filters( 'debug_bar_title', __('Coming Soon Mode Active', 'ultimate-coming-soon-page') ),
+                    'meta'   => array( 'class' => 'ucsp-mode-active' ),
+                ) );
         }
         
         /**

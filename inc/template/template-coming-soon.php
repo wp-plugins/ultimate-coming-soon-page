@@ -13,10 +13,8 @@ global $seedprod_comingsoon;
   <title><?php
   	bloginfo( 'name' );
   	$site_description = get_bloginfo( 'description', 'display' );
-  	if ( $site_description && ( is_home() || is_front_page() ) )
+  	if ( $site_description  )
   		echo " | $site_description";
-  	if ( $paged >= 2 || $page >= 2 )
-  		echo ' | ' . sprintf( __( 'Page %s', 'toolbox' ), max( $paged, $page ) );
   	?></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +34,10 @@ global $seedprod_comingsoon;
           background-repeat: no-repeat;
           background-attachment: fixed;
           background-position: top center;
-          background-size:cover;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
         <?php endif;?>
     }
     <?php if(!empty($sc_jdt['comingsoon_body_font'])):?>
@@ -122,9 +123,26 @@ global $seedprod_comingsoon;
   <?php endif; ?>
   </div>
   <?php //@wp_footer(); ?>
+  <script src="<?php echo includes_url(); ?>js/jquery/jquery.js"></script>
+  <script src="<?php echo plugins_url('template/script.js',dirname(__FILE__)); ?>"></script>
   <!--[if lt IE 7 ]>
       <script src="<?php echo plugins_url('template/dd_belatedpng.js',dirname(__FILE__)); ?>"></script>
       <script>DD_belatedPNG.fix('img, .png_bg');</script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script>
+  jQuery(document).ready(function($){
+    <?php
+    if(!empty($sc_jdt['comingsoon_background_strech'])):
+    ?>
+    $.supersized({
+      slides:[ {image : '<?php echo $sc_jdt['comingsoon_custom_bg_image']; ?>'} ]
+    });
+    <?php
+    endif;
+    ?>
+  });
+  </script>
   <![endif]-->
 </body>
 </html>

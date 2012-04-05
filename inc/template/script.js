@@ -1,60 +1,13 @@
-// usage: log('inside coolFunc', this, arguments);
-// paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
-window.log = function(){
-  log.history = log.history || [];   // store logs to an array for reference
-  log.history.push(arguments);
-  if(this.console) {
-      arguments.callee = arguments.callee.caller;
-      console.log( Array.prototype.slice.call(arguments) );
-  }
-};
-// make it safe to use console.log always
-(function(b){function c(){}for(var d="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),a;a=d.pop();)b[a]=b[a]||c})(window.console=window.console||{});
+/*
 
-
-// Coming Soon Notify Me
-jQuery.ajaxSetup ({
-    // Disable caching of AJAX responses */
-    cache: false
-});
-jQuery(document).ready(function($){
-    var msgdefault = seedprod_err_msg.msgdefault;
-    var msg500 = seedprod_err_msg.msg500;
-    var msg400 = seedprod_err_msg.msg400;
-    var msg200 = seedprod_err_msg.msg200;
-    $('#notify').submit(function() {
-        
-        url = $("#notify-url").val();
-        action = 'seedprod_mailinglist_callback';
-        email = $("#notify-email").val();
-        noitfy_nonce = $("#noitfy-nonce").val();
-        payload = '?action='+action+'&email='+email+'&noitfy_nonce='+noitfy_nonce;
-        jQuery.get(url+payload, function(data,textStatus,xhr) {
-          switch(data)
-          {
-          case '500':
-            msg = msg500;
-            break;
-          case '400':
-            msg = msg400;
-            break;
-          case '200':
-            msg = msg200;
-            $("#notify-incentive").show();
-          }
-          $("#notify-email").val(msg);
-        });
-        return false;
-    });
-    $('#notify-email').focus(function() {  
-        if (this.value == msg500 || this.value == msg400 || this.value == msg200 || this.value == msgdefault){
-        	this.value = '';
-    	}
-    });
-    $(document).ajaxStart(function(){ 
-      $('#ajax-indicator').show(); 
-    }).ajaxStop(function(){ 
-      $('#ajax-indicator').hide();
-    });
+    Supersized - Fullscreen Slideshow jQuery Plugin
+    Version : Core 3.2.1
+    Site    : www.buildinternet.com/project/supersized
     
-});
+    Author  : Sam Dunn
+    Company : One Mighty Roar (www.onemightyroar.com)
+    License : MIT License / GPL License
+    
+*/
+
+(function(a){a(document).ready(function(){a("body").append('<div id="supersized-loader"></div><div id="supersized"></div>')});a.supersized=function(b){var c="#supersized",d=this;d.$el=a(c);d.el=c;vars=a.supersized.vars;d.$el.data("supersized",d);api=d.$el.data("supersized");d.init=function(){a.supersized.vars.options=a.extend({},a.supersized.defaultOptions,b);d.options=a.supersized.vars.options;d._build()};d._build=function(){d._start()};d._start=function(){if(d.options.start_slide){vars.current_slide=d.options.start_slide-1}else{vars.current_slide=Math.floor(Math.random()*d.options.slides.length)}var f=d.options.new_window?' target="_blank"':"";imageLink=(api.getField("url"))?"href='"+api.getField("url")+"'":"";var e=a('<img src="'+api.getField("image")+'"/>');e.appendTo(d.el).wrap('<a class="image-loading activeslide" '+imageLink+f+"></a>").css("visibility","hidden");e.load(function(){d._origDim(a(this));d.resizeNow();d.launch()});d.$el.css("visibility","hidden")};d.launch=function(){d.$el.css("visibility","visible");a("#supersized-loader").hide();a(window).resize(function(){d.resizeNow()})};d.resizeNow=function(){return d.$el.each(function(){a("img",d.el).each(function(){thisSlide=a(this);var f=(thisSlide.data("origHeight")/thisSlide.data("origWidth")).toFixed(2);var e=d.$el.width(),h=d.$el.height(),i;if(d.options.fit_always){if((h/e)>f){g()}else{j()}}else{if((h<=d.options.min_height)&&(e<=d.options.min_width)){if((h/e)>f){d.options.fit_landscape&&f<1?g(true):j(true)}else{d.options.fit_portrait&&f>=1?j(true):g(true)}}else{if(e<=d.options.min_width){if((h/e)>f){d.options.fit_landscape&&f<1?g(true):j()}else{d.options.fit_portrait&&f>=1?j():g(true)}}else{if(h<=d.options.min_height){if((h/e)>f){d.options.fit_landscape&&f<1?g():j(true)}else{d.options.fit_portrait&&f>=1?j(true):g()}}else{if((h/e)>f){d.options.fit_landscape&&f<1?g():j()}else{d.options.fit_portrait&&f>=1?j():g()}}}}}function g(k){if(k){if(thisSlide.width()<e||thisSlide.width()<d.options.min_width){if(thisSlide.width()*f>=d.options.min_height){thisSlide.width(d.options.min_width);thisSlide.height(thisSlide.width()*f)}else{j()}}}else{if(d.options.min_height>=h&&!d.options.fit_landscape){if(e*f>=d.options.min_height||(e*f>=d.options.min_height&&f<=1)){thisSlide.width(e);thisSlide.height(e*f)}else{if(f>1){thisSlide.height(d.options.min_height);thisSlide.width(thisSlide.height()/f)}else{if(thisSlide.width()<e){thisSlide.width(e);thisSlide.height(thisSlide.width()*f)}}}}else{thisSlide.width(e);thisSlide.height(e*f)}}}function j(k){if(k){if(thisSlide.height()<h){if(thisSlide.height()/f>=d.options.min_width){thisSlide.height(d.options.min_height);thisSlide.width(thisSlide.height()/f)}else{g(true)}}}else{if(d.options.min_width>=e){if(h/f>=d.options.min_width||f>1){thisSlide.height(h);thisSlide.width(h/f)}else{if(f<=1){thisSlide.width(d.options.min_width);thisSlide.height(thisSlide.width()*f)}}}else{thisSlide.height(h);thisSlide.width(h/f)}}}if(thisSlide.parent().hasClass("image-loading")){a(".image-loading").removeClass("image-loading")}if(d.options.horizontal_center){a(this).css("left",(e-a(this).width())/2)}if(d.options.vertical_center){a(this).css("top",(h-a(this).height())/2)}});if(d.options.image_protect){a("img",d.el).bind("contextmenu mousedown",function(){return false})}return false})};d._origDim=function(e){e.data("origWidth",e.width()).data("origHeight",e.height()).css("visibility","visible")};d.getField=function(e){return d.options.slides[vars.current_slide][e]};d.init()};a.supersized.vars={current_slide:0,options:{}};a.supersized.defaultOptions={start_slide:1,new_window:1,image_protect:1,min_width:0,min_height:0,vertical_center:1,horizontal_center:1,fit_always:0,fit_portrait:1,fit_landscape:0};a.fn.supersized=function(b){return this.each(function(){(new a.supersized(b))})}})(jQuery);

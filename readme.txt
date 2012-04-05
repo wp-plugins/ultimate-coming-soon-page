@@ -1,12 +1,12 @@
 === Plugin Name ===
 Contributors: johnnytee
-Donate link: http://seedprod.com/donate/
-Tags: coming soon, teaser, feedburner, email, mailinglist, i18n, multisite, launch, maintenance, mailchimp,admin, administration, construction, maintenance mode, offline, unavailable
+Donate link: http://seedprod.com/
+Tags: coming soon, under construction, maintenance mode, launch, maintenance, administration, construction, offline, unavailable, mailinglist, i18n, multisite, 
 Requires at least: 3
 Tested up to: 3.3
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 
-Creates a Teaser Coming Soon Page for your Website and Collects Emails from your Visitors. Custom Options available. 
+Creates a Coming Soon Page for your Website while it's under construction and Collects Emails from your Visitors. Custom Options available. 
 
 == Description ==
 
@@ -19,7 +19,7 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 ### Benefits, Features and Options:
 
 *   Works with any WordPress Theme
-*   Completely customizable look and feel including Background Color and Image, Logo, Fonts etc..
+*   Completely customizable look and feel including Background Color and Image, Logo, Fonts etc...
 *   Easily add Custom CSS and HTML
 *   Collect Emails with FeedBurner
 *   Integrated with Google Fonts
@@ -40,7 +40,7 @@ Campaign Monitor & even Gravity Forms
 *	Responsive Mobile Ready Design
 *	Plus more...
 
-*   [Upgrade to the Pro Version Now!&raquo;](http://seedprod.com/product/coming-soon-pro-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
+*   [Upgrade to the Pro Version Now!&raquo;](http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
 
 **Included Translations:**
 
@@ -78,6 +78,10 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 1.3.0 =
+* Added Adminbar Notification
+* Added IE 7 and 8 Full Background Support
+
 = 1.2.0 =
 * Added Russian Translation
 
@@ -166,6 +170,10 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.3.0 =
+* Added Adminbar Notification
+* Added IE 7 and 8 Full Background Support
+
 = 1.2.0 =
 * Added Russian Translation
 
