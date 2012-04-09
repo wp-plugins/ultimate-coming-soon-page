@@ -78,6 +78,9 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 1.4.0 =
+* Added Powered By Link ID
+
 = 1.3.0 =
 * Added Adminbar Notification
 * Added IE 7 and 8 Full Background Support
@@ -170,6 +173,9 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.4.0 =
+* Added Powered By Link ID
+
 = 1.3.0 =
 * Added Adminbar Notification
 * Added IE 7 and 8 Full Background Support

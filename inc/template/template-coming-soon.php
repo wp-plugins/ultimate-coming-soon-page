@@ -117,10 +117,16 @@ global $seedprod_comingsoon;
     </div> <!--! end of #main -->
   </div> <!--! end of #container -->
   <div id="coming-soon-footer">
-  <?php if($sc_jdt['comingsoon_footer_credit']): ?>
-  Powered by <a href="http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/">
+  <?php if($sc_jdt['comingsoon_footer_credit']){ 
+    if(!empty($sc_jdt['comingsoon_affiliate_id']) && is_numeric($sc_jdt['comingsoon_affiliate_id'])){
+      $powered_by_url = "https://www.e-junkie.com/ecom/gb.php?cl=187765&c=ib&aff=".$sc_jdt['comingsoon_affiliate_id'];
+    }else{
+      $powered_by_url = "http://www.seedprod.com/";
+    }
+  ?>
+  <a href="<?php echo $powered_by_url; ?>" target="_blank">
   <img id="credit" src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-footer-logo-{$sc_jdt['comingsoon_font_color']}.png" ?>" alt="Powered by SeedProd" /></a>
-  <?php endif; ?>
+  <?php } ?>
   </div>
   <?php //@wp_footer(); ?>
   <script src="<?php echo includes_url(); ?>js/jquery/jquery.js"></script>
