@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/
 Tags: coming soon, under construction, maintenance mode, launch, maintenance, administration, construction, offline, unavailable, mailinglist, i18n, multisite, 
 Requires at least: 3
 Tested up to: 3.3
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 
 Creates a Coming Soon Page for your Website while it's under construction and Collects Emails from your Visitors. Custom Options available. 
 
