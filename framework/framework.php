@@ -73,7 +73,7 @@ if (!class_exists('SeedProd_Framework')) {
          * @param string $hook_suffix The name of the current page we are on.
          */
         function admin_enqueue_scripts( $hook_suffix ) {
-            wp_enqueue_style( 'seedprod_plugin', plugins_url('inc/css/admin-style.css',dirname(__FILE__)), false, $this->plugin_version );
+            wp_enqueue_style( 'seedprod_mm_plugin', plugins_url('inc/css/admin-style.css',dirname(__FILE__)), false, $this->plugin_version );
             if(!in_array($hook_suffix, $this->pages))
                 return;
             wp_enqueue_script('dashboard');
@@ -114,7 +114,7 @@ if (!class_exists('SeedProd_Framework')) {
         		<div id="poststuff" class="metabox-holder has-right-sidebar">
                     <div id="side-info-column" class="inner-sidebar">
                         <div id="side-sortables" class="meta-box-sortables ui-sortable">
-					     	<a href="http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_top"><img src="http://static.seedprod.com/ads/coming-soon-pro-sidebar.png" /></a>
+					     	<a href="http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_blank"><img src="http://static.seedprod.com/ads/coming-soon-pro-sidebar.png" /></a>
                             <br><br>
                             <div class="postbox support-postbox">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
@@ -125,7 +125,7 @@ if (!class_exists('SeedProd_Framework')) {
                 					   <?php _e('Got a Question, Idea, Problem or Praise?') ?>
                 					</p>
                 					<ul>
-                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_support_url) ? 'http://seedprod.com/support/' : $this->plugin_support_url) ?>"><?php _e('Support Request', 'ultimate-coming-soon-page') ?></a></li>
+                					    <li>&raquo; <a href="<?php echo (empty($this->plugin_support_url) ? 'http://seedprod.com/support/' : $this->plugin_support_url) ?>" target="_blank"><?php _e('Support Request', 'ultimate-coming-soon-page') ?></a></li>
                 				    </ul>
                 					
                 					</div>
@@ -140,8 +140,8 @@ if (!class_exists('SeedProd_Framework')) {
                 					<p><?php _e('Like this plugin? Show your support by:', 'ultimate-coming-soon-page')?></p>
                 					<ul>
                                         <li>&raquo; <a href="https://www.seedprod.com/submit-site/"><?php _e('Submit your site to the Showcase', 'ultimate-coming-soon-page') ?></a></li>
-                					    <li>&raquo; <a href="http://wordpress.org/extend/plugins/ultimate-coming-soon-page/"><?php _e('Rating It', 'ultimate-coming-soon-page') ?></a></li>
-                					    <li>&raquo; <a href="<?php echo "http://twitter.com/share?url={$this->plugin_seedprod_url}&text=Check out this awesome WordPress Plugin I'm using, 'Ultimate Coming Soon Page' by SeedProd {$this->plugin_short_url}"; ?>"><?php _e('Tweet It', 'ultimate-coming-soon-page') ?></a></li>
+                					    <li>&raquo; <a target="_blank" href="http://wordpress.org/extend/plugins/ultimate-coming-soon-page/"><?php _e('Rating It', 'ultimate-coming-soon-page') ?></a></li>
+                					    <li>&raquo; <a target="_blank" href="<?php echo "http://twitter.com/share?url={$this->plugin_seedprod_url}&text=Check out this awesome WordPress Plugin I'm using, 'Ultimate Coming Soon Page' by SeedProd {$this->plugin_short_url}"; ?>"><?php _e('Tweet It', 'ultimate-coming-soon-page') ?></a></li>
                 					    
                 					    
                 					   
