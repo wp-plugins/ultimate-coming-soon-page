@@ -6,17 +6,16 @@ Requires at least: 3
 Tested up to: 3.4.1
 Stable tag: 1.5.0
 
-Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors. Custom options available. 
-
-Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPress theme you have installed on your site. Anyone who isn't logged in to your site will see the specific page, while you or any other logged-in staffers can access the site as normal to work on your changes or content.
+Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
 == Description ==
 
 The **Ultimate Coming Soon Page** plugin allows you quick and easily set up a coming soon or launch page for your website. 
 
+Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPress theme you have installed on your site. Anyone who isn't logged in to your site will see the specific page, while you or any other logged-in staffers can access the site as normal to work on your changes or content.
+
 
 *   [Upgrade to the Pro Version Now!&raquo;](http://www.seedprod.com?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
-
 *   [View a Live Demo &raquo;](http://demo.seedprod.com/coming-soon-pro/ "SeedProd Demo")
 *   [Read Reviews &raquo;](http://www.seedprod.com/testimonials/ "Ultimate Coming Soon Page WordPress Plugin")
 
