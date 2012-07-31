@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Ultimate Coming Soon Page
-Plugin URI: http://seedprod.com/wordpress-coming-soon-plugin/
-Description: Creates a Teaser Page for your Site and Collect Email Addresses from your Visitors.
-Version: 1.4.2
+Plugin URI: http://www.seedprod.com
+Description: Creates a Coming Soon or Launch page for your website.
+Version: 1.5.0
 Author: SeedProd
-Author URI: http://seedprod.com
+Author URI: http://www.seedprod.com
 License: GPLv2
 Copyright 2011  John Turner (email : john@seedprod.com, twitter : @johnturner)
 */

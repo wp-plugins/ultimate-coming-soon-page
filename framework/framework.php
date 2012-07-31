@@ -82,6 +82,7 @@ if (!class_exists('SeedProd_Framework')) {
         	wp_enqueue_script( 'seedprod_plugin', plugins_url('inc/js/admin-script.js',dirname(__FILE__)), array( 'jquery','media-upload','thickbox','farbtastic' ), $this->plugin_version );
         	wp_enqueue_style( 'seedprod_plugin', plugins_url('inc/css/admin-style.css',dirname(__FILE__)), false, $this->plugin_version );
         	wp_enqueue_style('thickbox');
+            wp_enqueue_script( 'theme-preview' );
             wp_enqueue_style('farbtastic'); 
         }
 
@@ -110,9 +111,16 @@ if (!class_exists('SeedProd_Framework')) {
         	<div class="wrap seedprod">
         	    <?php screen_icon(); ?>
         		<h2><?php echo $this->plugin_name; ?> </h2>
+                <a href="http://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_blank">
+                <img src="http://static.seedprod.com.s3.amazonaws.com/ads/ultimate-coming-soon-page-banner-772x250.jpg" style="max-width:100%">
+                </a>
         		<?php settings_errors(); ?> 
-        		<div id="poststuff" class="metabox-holder has-right-sidebar">
-                    <div id="side-info-column" class="inner-sidebar">
+                <h2 class="nav-tab-wrapper" style="padding-left:20px">
+                    <a class="nav-tab seed_csp3-support" href="options-general.php?page=seedprod_coming_soon"><?php _e('Settings','ultimate-coming-soon-page') ?></a>
+                    <a class="nav-tab seed_csp3-preview thickbox-preview" href="<?php echo home_url(); ?>?cs_preview=true&TB_iframe=true&width=640&height=632" title="<?php _e('&larr; Close Window','ultimate-coming-soon-page') ?>"><?php _e('Live Preview','ultimate-coming-soon-page'); ?></a>
+                </h2>
+        		<div id="poststuff" class="metabox-holder">
+                    <!--<div id="side-info-column" class="inner-sidebar">
                         <div id="side-sortables" class="meta-box-sortables ui-sortable">
 					     	<a href="http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_blank"><img src="http://static.seedprod.com/ads/coming-soon-pro-sidebar.png" /></a>
                             <br><br>
@@ -173,7 +181,7 @@ if (!class_exists('SeedProd_Framework')) {
                             </div>
                             
                         </div>
-                    </div>
+                    </div>-->
                     <div id="post-body">
                         <div id="post-body-content" >
                             <div class="meta-box-sortables ui-sortable">
@@ -197,7 +205,7 @@ if (!class_exists('SeedProd_Framework')) {
             		                }
                                 }
                                 ?>
-                        		<input name="Submit" type="submit" value="<?php _e('Save Changes', 'ultimate-coming-soon-page') ?>" class="button-primary"/>
+                        		
                         	    </form>
                             </div>
                         </div>
@@ -308,6 +316,17 @@ if (!class_exists('SeedProd_Framework')) {
                     echo "<textarea id='$id' class='".(empty($class) ? '' : $class)."' name='{$setting_id}[$id]'>".(empty($options[$id]) ? $default_value : $options[$id])."</textarea>
         	        <br><small class='description'>".(empty($desc) ? '' : $desc)."</small>";
         	        break;
+
+                case 'wpeditor':
+                    $content   = $options[ $id ];
+                    $editor_id = $id;
+                    $args      = array(
+                         'textarea_name' => "{$setting_id}[$id]" 
+                    ); 
+
+                    wp_editor( $content, $editor_id, $args );
+
+                    break;
         	    case 'radio':
         	        foreach($option_values as $k=>$v){
         	            echo "<input type='radio' name='{$setting_id}[$id]' value='$k'".((empty($options[$id]) ? $default_value : $options[$id]) == $k ? 'checked' : '')."  /> $v<br/>";
@@ -491,6 +510,9 @@ if (!class_exists('SeedProd_Framework')) {
                  echo '<table class="form-table">';
                  do_settings_fields($page, $section['id']);
                  echo '</table>';
+                 echo '<p>';
+                 echo "<input name=\"Submit\" type=\"submit\" value=\"". __('Save Changes', 'ultimate-coming-soon-page') ."\" class=\"button-primary\"/>";
+                 echo '</p>';
                  echo '</div>';
              }
          }

@@ -1,20 +1,24 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/
-Tags: coming soon, under construction, maintenance mode, launch, maintenance, administration, construction, offline, unavailable, mailinglist, i18n, multisite, 
+Tags: maintenance mode, coming soon, under construction, launchpad, launch, maintenance, construction, offline, unavailable, newsletter, i18n 
 Requires at least: 3
-Tested up to: 3.3
-Stable tag: 1.4.2
+Tested up to: 3.4.1
+Stable tag: 1.5.0
 
-Creates a Coming Soon Page for your Website while it's under construction and Collects Emails from your Visitors. Custom Options available. 
+Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors. Custom options available. 
+
+Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPress theme you have installed on your site. Anyone who isn't logged in to your site will see the specific page, while you or any other logged-in staffers can access the site as normal to work on your changes or content.
 
 == Description ==
 
-The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a coming soon page for your website. 
+The **Ultimate Coming Soon Page** plugin allows you quick and easily set up a coming soon or launch page for your website. 
 
-*   [View a live demo &raquo;](http://static.seedprod.com.s3.amazonaws.com/demo/index.html?demo=ultimate-coming-soon-page "SeedProd")
-*   [Read the wpmu.org review &raquo;](http://wpmu.org/work-on-your-wordpress-site-behind-the-scenes-with-the-ultimate-coming-soon-page-plugin/ "Work on Your WordPress Site Behind the Scenes with the Ultimate Coming Soon Page Plugin")
-*   [Read the wpmods.com review &raquo;](http://www.wpmods.com/ultimate-coming-soon-page-wordpress-plugin/ "Ultimate Coming Soon Page WordPress Plugin")
+
+*   [Upgrade to the Pro Version Now!&raquo;](http://www.seedprod.com?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
+
+*   [View a Live Demo &raquo;](http://demo.seedprod.com/coming-soon-pro/ "SeedProd Demo")
+*   [Read Reviews &raquo;](http://www.seedprod.com/testimonials/ "Ultimate Coming Soon Page WordPress Plugin")
 
 ### Benefits, Features and Options:
 
@@ -26,18 +30,42 @@ The **Ultimate Coming Soon Page**  plugin allows you quick and easily set up a c
 *   Visible to only non logged in users so you can build your site while visitors see the "Coming Soon" page.
 *	Stretch Background Image to Cover the Entire Browser
 *   Uses HTML5 &amp; CSS3
-*   i18n support
+*   Translation Ready, i18n Support
 *   Multisite Support
 
 ### Pro Version Features:
 
-*	Store emails in your database or integrate 
-with MailChimp, Aweber, Constant Contact, 
-Campaign Monitor & even Gravity Forms
-*	Includes a Maintenance Mode
-*	Display Social Profiles and Sharing Buttons
-*	Import / Export Settings
-*	Responsive Mobile Ready Design
+*	Works with any WordPress theme
+*	Visible only to non logged in users
+*	Secret link for your clients to view the upcoming website without logging in
+*	Search Engine Optimized with customizable meta tags
+*	Mobile Ready responsive design and layout
+*	Maintenance Mode with Automatic Screenshot
+*	Custom Look & Feel with no coding
+*	Integrated Google and Typekit fonts
+*	Full Browser Backgrounds option
+*	Option to capture first and last name
+*	Videos can be embedded in the description just be entering the URL
+*	Display an Incentive after Sign Up
+*	Social Profiles & Social Sharing Buttons
+*	MailChimp, AWeber, Get Response, Constant Contact and Campaign Monitor integration
+*	Gravity Forms integration to collect info from visitors
+*	Built-in referral system to keep track referrered subscribers and how many of those convert
+*	Store Emails in the WordPress Database to export to any email service
+*	Progress bar with automatic completion calculation
+*	Google Analytics Support
+*	Automatic Easy Updates
+*	Shortcode Support
+*	Option to enable template responsiveness
+*	Option to control access by IP
+*	Custom Footer Branding
+*	Custom Favicon
+*	Custom CSS Support
+*	Import/Export Settings for backup or re-use purposes
+*	Multisite Support
+*	HTML5 & CSS3 which degrades gracefully for older browsers
+*	Translation Ready i18n Support
+*	Option to exclude specific URLs from displaying Coming Soon page
 *	Plus lots more...
 
 *   [Upgrade to the Pro Version Now!&raquo;](http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=coming-soon-pro-from-wordpress.org)
@@ -51,6 +79,7 @@ Campaign Monitor & even Gravity Forms
 * French (fr) by Gabriel Delattre
 * Polish (pl_PL) by [pl2wp-Team](http://pl2wp.prywatny.eu)
 * Russian (ru_RU) by [Oleg Vlasov](http://bestplugins.ru)
+* German (de) by Frederic Ch. Reuter
 
 == Installation ==
 
@@ -66,10 +95,9 @@ Manual Installation
 
 http://www.youtube.com/watch?v=31dUHLCW8VU
 
-= Can I add a Countdown? =
+= What if I get locked out? =
 
-OK, I'm going to say it. Countdowns are super lame. Sites never launch on time. I highly suggest not putting a countdown on your site. 
-If you feel you must have one then use the custom html and javascript option to add in your countdown code.
+If you get locked out, just go straight to the wp-admin page. http://www.example.com/wp-admin/
 
 == Screenshots ==
 
@@ -78,6 +106,13 @@ If you feel you must have one then use the custom html and javascript option to 
 
 
 == Changelog ==
+= 1.5.0 =
+* Added German Translation
+* Added wpeditor in the description field
+* Added SeedProd tag
+* Added a better preview
+* Removed second column
+
 = 1.4.2 =
 * Fixed email placeholder
 
@@ -176,6 +211,13 @@ If you feel you must have one then use the custom html and javascript option to 
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.5.0 =
+* Added German Translation
+* Added wpeditor in the description field
+* Added SeedProd tag
+* Added a better preview
+* Removed second column
+
 = 1.4.2 =
 * Fixed email placeholder
 

@@ -93,17 +93,8 @@ global $seedprod_comingsoon;
                     <input id="notify-email" type="text" name="email" placeholder="<?php _e('Enter Your Email', 'ultimate-coming-soon-page') ?>"/>
                     <button id="notify-btn" type="submit"><?php _e('Notify Me!', 'ultimate-coming-soon-page') ?></button>
     			</form>
-            <?php elseif($sc_jdt['comingsoon_mailinglist'] != 'feedburner' && !empty($sc_jdt['comingsoon_mailinglist'])): ?>
-                <form id="notify">  
-                    <input id="notify-url" name="notify-url" type="hidden" value="<?php echo admin_url() ?>admin-ajax.php" />
-                    <?php wp_nonce_field('seedprod_comingsoon_callback','noitfy-nonce'); ?>
-                    <fieldset>
-                    <input id="notify-email" name="notify-email" type="text" placeholder="<?php _e('Enter Your Email', 'ultimate-coming-soon-page') ?>" />
-                    <button id="notify-btn" type="submit"><?php _e('Notify Me!', 'ultimate-coming-soon-page') ?></button>
-                    <img id="ajax-indicator" src="<?php echo plugins_url('template/images/ajax-loader.gif',dirname(__FILE__)); ?>">
-                    </fieldset>
-                </form>
             <?php endif; ?>
+
 
             <div id="notify-incentive">
                 <div id="notify-incentive-text">
@@ -127,6 +118,7 @@ global $seedprod_comingsoon;
   <a href="<?php echo $powered_by_url; ?>" target="_blank">
   <img id="credit" src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-footer-logo-{$sc_jdt['comingsoon_font_color']}.png" ?>" alt="Powered by SeedProd" /></a>
   <?php } ?>
+  <div id="csp3-credit"><a target="_blank" href="http://www.seedprod.com/?utm_source=ucsp-credit-link&utm_medium=link&utm_campaign=ultimate-coming-soon-page-credit-link"><img src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-credit.png"; ?>"></a></div>
   </div>
   <?php //@wp_footer(); ?>
   <script src="<?php echo includes_url(); ?>js/jquery/jquery.js"></script>

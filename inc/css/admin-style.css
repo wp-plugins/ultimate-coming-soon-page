@@ -1,5 +1,6 @@
 .seedprod #icon-options-general {
-    background: transparent url(../../framework/seedprod-icon-36x34.png) no-repeat;
+	background: transparent url(../../framework/seedprod-logo.png) no-repeat 0 9px;
+	width: 75px;
 }
 
 #wpadminbar .ucsp-mode-active > .ab-item{

@@ -280,6 +280,12 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
     top:4px;
 }
 
+#csp3-credit {
+position: fixed;
+bottom: -3px;
+right: 20px;
+}
+
 
 
 

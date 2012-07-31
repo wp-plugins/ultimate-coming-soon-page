@@ -155,6 +155,7 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             $id = 'comingsoon_mailinglist';
             $setting_id = 'seedprod_comingsoon_options';
             //$option_values = $this->get_mailchimp_lists(null);
+            $option_values['none'] = 'Do not display an Email SignUp';
             $option_values['feedburner'] = 'FeedBurner';
             //$option_values['database'] = 'Database';
             $ajax_url = html_entity_decode(wp_nonce_url('admin-ajax.php?action=seedprod_comingsoon_refesh_list','seedprod_comingsoon_refesh_list'));
@@ -404,7 +405,7 @@ $seedprod_comingsoon->options[] = array( "type" => "textbox",
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
 				);
-$seedprod_comingsoon->options[] = array( "type" => "textarea",
+$seedprod_comingsoon->options[] = array( "type" => "wpeditor",
                 "id" => "comingsoon_description",
 				"label" => __("Description", 'ultimate-coming-soon-page'),
 				"desc" => __("Tell the visitor what to expect from your site.", 'ultimate-coming-soon-page'),
@@ -412,13 +413,7 @@ $seedprod_comingsoon->options[] = array( "type" => "textarea",
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
 				);	
-$seedprod_comingsoon->options[] = array( "type" => "textbox",
-                "id" => "comingsoon_feedburner_address",
-				"label" => __("FeedBurn Address", 'ultimate-coming-soon-page'),
-				"desc" => __("Enter the part after http://feeds2.feedburner.com/", 'ultimate-coming-soon-page'),
-				"section_id" => "seedprod_section_coming_soon",
-				"setting_id" => "seedprod_comingsoon_options",
-				);
+
 $seedprod_comingsoon->options[] = array( "type" => "custom",
                 "id" => "comingsoon_mailinglist",
                 "label" => __("Mailing List", 'ultimate-coming-soon-page'),
@@ -427,10 +422,18 @@ $seedprod_comingsoon->options[] = array( "type" => "custom",
 				"setting_id" => "seedprod_comingsoon_options",
 				);	
 
+$seedprod_comingsoon->options[] = array( "type" => "textbox",
+                "id" => "comingsoon_feedburner_address",
+                "label" => __("FeedBurn Address", 'ultimate-coming-soon-page'),
+                "desc" => __("Enter the part after http://feeds2.feedburner.com/ <a href='http://wordpress.org/extend/plugins/ultimate-coming-soon-page/faq/'' target='_blanks'> Learn how</a> to use FeedBurner to collect emails.", 'ultimate-coming-soon-page'),
+                "section_id" => "seedprod_section_coming_soon",
+                "setting_id" => "seedprod_comingsoon_options",
+                );
+
 $seedprod_comingsoon->options[] = array( "type" => "textarea",
                 "id" => "comingsoon_customhtml",
 				"label" => __("Custom HTML", 'ultimate-coming-soon-page'),
-				"desc" => __("Enter any custom html or javascript that you want outputted.", 'ultimate-coming-soon-page'),
+				"desc" => __("Enter any custom html or javascript that you want outputted. You can also enter you Google Analytics code.", 'ultimate-coming-soon-page'),
 				"class" => "large-text",
 				"section_id" => "seedprod_section_coming_soon",
 				"setting_id" => "seedprod_comingsoon_options",
@@ -503,22 +506,22 @@ $seedprod_comingsoon->options[] = array( "type" => "textarea",
 				"desc" => __('Need to tweaks the styles? Add your custom CSS here.', 'ultimate-coming-soon-page'),
 				);
 				
-$seedprod_comingsoon->options[] = array( "type" => "radio",
-                "id" => "comingsoon_footer_credit",
-				"label" => __("Powered By SeedProd", 'ultimate-coming-soon-page'),
-				"option_values" => array('0'=>__('Nope - Got No Love', 'ultimate-coming-soon-page'),'1'=>__('Yep - I Love You Man', 'ultimate-coming-soon-page')),
-				"desc" => __("Can we show a <strong>cool stylish</strong> footer credit at the bottom the page.", 'ultimate-coming-soon-page'),
-				"default_value" => "0",
-				"section_id" => "seedprod_section_style",
-				"setting_id" => "seedprod_comingsoon_options",
-				);	
-$seedprod_comingsoon->options[] = array( "type" => "textbox",
-                "id" => "comingsoon_affiliate_id",
-                "label" => __("Powered By SeedProd Affiliate ID", 'ultimate-coming-soon-page'),
-                "desc" => __("Enter your affiliate ID and earn commisions on sales referred to SeedProd from your page. <a href='http://www.seedprod.com/affiliates/' target='_blank'>Learn More</a>. ", 'ultimate-coming-soon-page'),
-                "section_id" => "seedprod_section_style",
-                "setting_id" => "seedprod_comingsoon_options",
-                );  
+// $seedprod_comingsoon->options[] = array( "type" => "radio",
+//                 "id" => "comingsoon_footer_credit",
+// 				"label" => __("Powered By SeedProd", 'ultimate-coming-soon-page'),
+// 				"option_values" => array('0'=>__('Nope - Got No Love', 'ultimate-coming-soon-page'),'1'=>__('Yep - I Love You Man', 'ultimate-coming-soon-page')),
+// 				"desc" => __("Can we show a <strong>cool stylish</strong> footer credit at the bottom the page.", 'ultimate-coming-soon-page'),
+// 				"default_value" => "0",
+// 				"section_id" => "seedprod_section_style",
+// 				"setting_id" => "seedprod_comingsoon_options",
+// 				);	
+// $seedprod_comingsoon->options[] = array( "type" => "textbox",
+//                 "id" => "comingsoon_affiliate_id",
+//                 "label" => __("Powered By SeedProd Affiliate ID", 'ultimate-coming-soon-page'),
+//                 "desc" => __("Enter your affiliate ID and earn commisions on sales referred to SeedProd from your page. <a href='http://www.seedprod.com/affiliates/' target='_blank'>Learn More</a>. ", 'ultimate-coming-soon-page'),
+//                 "section_id" => "seedprod_section_style",
+//                 "setting_id" => "seedprod_comingsoon_options",
+//                 );  
 							
 
 ?>
