@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/
-Tags: maintenance mode, coming soon, under construction, launchpad, launch, maintenance, construction, offline, unavailable, newsletter, i18n 
+Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, i18n 
 Requires at least: 3
 Tested up to: 3.4.1
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -72,13 +72,13 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 **Included Translations:**
 
 * Portuguese(pt_PT) by [Alexander Pereira](http://www.pontovisual.net/traducao-do-plugin-ultimate-coming-soon-page/)
-* Greek(el) by [Mihalis Papanousis](http://aenaon.biz)
+* Greek(el_EL) by [Mihalis Papanousis](http://aenaon.biz)
 * Slovenian(sl_SI) by [Jani Roskar](http://qb.si)
 * Portuguese Brazilian (pt_BR) by [Bruno Cantuatia](http://cantuaria.net.br)
-* French (fr) by Gabriel Delattre
+* French (fr_FR) by Gabriel Delattre
 * Polish (pl_PL) by [pl2wp-Team](http://pl2wp.prywatny.eu)
 * Russian (ru_RU) by [Oleg Vlasov](http://bestplugins.ru)
-* German (de) by Frederic Ch. Reuter
+* German (de_DE) by Frederic Ch. Reuter
 
 == Installation ==
 
@@ -105,6 +105,10 @@ If you get locked out, just go straight to the wp-admin page. http://www.example
 
 
 == Changelog ==
+= 1.5.1 =
+* Fixed German, French & Greek Translations
+* Updated admin screenshot
+
 = 1.5.0 =
 * Added German Translation
 * Added wpeditor in the description field
@@ -210,6 +214,10 @@ If you get locked out, just go straight to the wp-admin page. http://www.example
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.5.1 =
+* Fixed German, French & Greek Translations
+* Updated admin screenshot
+
 = 1.5.0 =
 * Added German Translation
 * Added wpeditor in the description field
