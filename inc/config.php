@@ -506,22 +506,16 @@ $seedprod_comingsoon->options[] = array( "type" => "textarea",
 				"desc" => __('Need to tweaks the styles? Add your custom CSS here.', 'ultimate-coming-soon-page'),
 				);
 				
-// $seedprod_comingsoon->options[] = array( "type" => "radio",
-//                 "id" => "comingsoon_footer_credit",
-// 				"label" => __("Powered By SeedProd", 'ultimate-coming-soon-page'),
-// 				"option_values" => array('0'=>__('Nope - Got No Love', 'ultimate-coming-soon-page'),'1'=>__('Yep - I Love You Man', 'ultimate-coming-soon-page')),
-// 				"desc" => __("Can we show a <strong>cool stylish</strong> footer credit at the bottom the page.", 'ultimate-coming-soon-page'),
-// 				"default_value" => "0",
-// 				"section_id" => "seedprod_section_style",
-// 				"setting_id" => "seedprod_comingsoon_options",
-// 				);	
-// $seedprod_comingsoon->options[] = array( "type" => "textbox",
-//                 "id" => "comingsoon_affiliate_id",
-//                 "label" => __("Powered By SeedProd Affiliate ID", 'ultimate-coming-soon-page'),
-//                 "desc" => __("Enter your affiliate ID and earn commisions on sales referred to SeedProd from your page. <a href='http://www.seedprod.com/affiliates/' target='_blank'>Learn More</a>. ", 'ultimate-coming-soon-page'),
-//                 "section_id" => "seedprod_section_style",
-//                 "setting_id" => "seedprod_comingsoon_options",
-//                 );  
+$seedprod_comingsoon->options[] = array( "type" => "radio",
+                "id" => "comingsoon_footer_credit",
+				"label" => __("Powered By SeedProd", 'ultimate-coming-soon-page'),
+				"option_values" => array('0'=>__('Nope - Got No Love', 'ultimate-coming-soon-page'),'1'=>__('Yep - I Love You Man', 'ultimate-coming-soon-page')),
+				"desc" => __("Can we show a <strong>cool stylish</strong> footer credit at the bottom the page.", 'ultimate-coming-soon-page'),
+				"default_value" => "0",
+				"section_id" => "seedprod_section_style",
+				"setting_id" => "seedprod_comingsoon_options",
+				);	
+ 
 							
 
 ?>

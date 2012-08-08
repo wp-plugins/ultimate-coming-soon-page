@@ -11,11 +11,11 @@ global $seedprod_comingsoon;
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><?php
-  	bloginfo( 'name' );
-  	$site_description = get_bloginfo( 'description', 'display' );
-  	if ( $site_description  )
-  		echo " | $site_description";
-  	?></title>
+    bloginfo( 'name' );
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description  )
+      echo " | $site_description";
+    ?></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php if(substr($sc_jdt['comingsoon_body_font'], 0, 1) != '_'): ?>
@@ -87,12 +87,12 @@ global $seedprod_comingsoon;
             </div>
             <?php endif; ?>
             <?php if($sc_jdt['comingsoon_mailinglist'] == 'feedburner' && !empty($sc_jdt['comingsoon_feedburner_address'])): ?>
-            	<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $sc_jdt['comingsoon_feedburner_address']; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+              <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $sc_jdt['comingsoon_feedburner_address']; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                     <input type="hidden" value="<?php echo $sc_jdt['comingsoon_feedburner_address']; ?>" name="uri"/>
                     <input type="hidden" name="loc" value="en_US"/>
                     <input id="notify-email" type="text" name="email" placeholder="<?php _e('Enter Your Email', 'ultimate-coming-soon-page') ?>"/>
                     <button id="notify-btn" type="submit"><?php _e('Notify Me!', 'ultimate-coming-soon-page') ?></button>
-    			</form>
+          </form>
             <?php endif; ?>
 
 
@@ -108,18 +108,12 @@ global $seedprod_comingsoon;
     </div> <!--! end of #main -->
   </div> <!--! end of #container -->
   <div id="coming-soon-footer">
-  <?php if($sc_jdt['comingsoon_footer_credit']){ 
-    if(!empty($sc_jdt['comingsoon_affiliate_id']) && is_numeric($sc_jdt['comingsoon_affiliate_id'])){
-      $powered_by_url = "https://www.e-junkie.com/ecom/gb.php?cl=187765&c=ib&aff=".$sc_jdt['comingsoon_affiliate_id'];
-    }else{
-      $powered_by_url = "http://www.seedprod.com/";
-    }
-  ?>
-  <a href="<?php echo $powered_by_url; ?>" target="_blank">
-  <img id="credit" src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-footer-logo-{$sc_jdt['comingsoon_font_color']}.png" ?>" alt="Powered by SeedProd" /></a>
-  <?php } ?>
+   <?php if($sc_jdt['comingsoon_footer_credit']){ ?>
+
   <div id="csp3-credit"><a target="_blank" href="http://www.seedprod.com/?utm_source=ucsp-credit-link&utm_medium=link&utm_campaign=ultimate-coming-soon-page-credit-link"><img src="<?php echo plugins_url('ultimate-coming-soon-page',dirname('.'))."/framework/seedprod-credit.png"; ?>"></a></div>
   </div>
+
+  <?php } ?>
   <?php //@wp_footer(); ?>
   <script src="<?php echo includes_url(); ?>js/jquery/jquery.js"></script>
   <script src="<?php echo plugins_url('template/script.js',dirname(__FILE__)); ?>"></script>

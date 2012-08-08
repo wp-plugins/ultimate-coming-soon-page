@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/
 Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, i18n 
 Requires at least: 3
 Tested up to: 3.4.1
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -105,6 +105,9 @@ If you get locked out, just go straight to the wp-admin page. http://www.example
 
 
 == Changelog ==
+= 1.5.2 =
+* Made footer credit opt-in
+
 = 1.5.1 =
 * Fixed German, French & Greek Translations
 * Updated admin screenshot
@@ -214,6 +217,9 @@ If you get locked out, just go straight to the wp-admin page. http://www.example
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.5.2 =
+* Made footer credit opt-in
+
 = 1.5.1 =
 * Fixed German, French & Greek Translations
 * Updated admin screenshot
