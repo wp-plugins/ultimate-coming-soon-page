@@ -96,7 +96,33 @@ http://www.youtube.com/watch?v=31dUHLCW8VU
 
 = What if I get locked out? =
 
-If you get locked out, just go straight to the wp-admin page. http://www.example.com/wp-admin/
+If you get locked out, just go straight to the wp-login page. http://www.example.com/wp-login.php
+
+= The plugin is enabled...but my website still shows =
+
+I often hear people say "The plugin is enabled..but my website still shows! How do i fix this?"
+
+If you are logged into WordPress you will not see the coming soon page. You will see your normal website. This is so you can work on it while visitors see the coming soon page.
+
+If you are logged out of WordPress and still see your normal website then either your browser is caching the page or you having a caching plugin that is serving a cached version of the page.
+
+To remedy:
+
+1. Clear your browser or caching plugin's cache.
+
+or
+
+2. Open a different browser and you should see your coming soon page.
+
+= I disabled the plugin but the Coming Soon page is still showing. =
+
+This occurs when you are using a caching plugin and the plugin is still serving a cached page. 
+
+To fix:
+
+1. Clear the cache on your browser.
+1. Clear the cache on the plugin you are using.
+1. If still appearing then disable the caching plugin. You really only need to use a caching plugin when you site is live and NOT in development.
 
 == Screenshots ==
 
