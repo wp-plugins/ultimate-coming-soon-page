@@ -3,8 +3,8 @@ Contributors: johnnytee
 Donate link: http://seedprod.com/
 Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, i18n 
 Requires at least: 3
-Tested up to: 3.4.1
-Stable tag: 1.5.2
+Tested up to: 3.4.2
+Stable tag: 1.5.3
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -79,6 +79,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * Polish (pl_PL) by [pl2wp-Team](http://pl2wp.prywatny.eu)
 * Russian (ru_RU) by [Oleg Vlasov](http://bestplugins.ru)
 * German (de_DE) by Frederic Ch. Reuter
+* Italian (it_IT) by Luca Barbetti
 
 == Installation ==
 
