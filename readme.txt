@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/
-Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, i18n 
+Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
 Tested up to: 3.4.2
 Stable tag: 1.5.3
@@ -132,6 +132,9 @@ To fix:
 
 
 == Changelog ==
+= 1.5.3 =
+* Added Italian Translation
+
 = 1.5.2 =
 * Made footer credit opt-in
 
@@ -244,6 +247,9 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.5.3 =
+* Added Italian Translation
+
 = 1.5.2 =
 * Made footer credit opt-in
 
