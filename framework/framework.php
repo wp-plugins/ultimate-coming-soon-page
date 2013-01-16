@@ -114,7 +114,7 @@ if (!class_exists('SeedProd_Framework')) {
                 <a href="http://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_blank">
                 <img src="http://static.seedprod.com.s3.amazonaws.com/ads/ultimate-coming-soon-page-banner-772x250.jpg" style="max-width:100%">
                 </a>
-        		<?php settings_errors(); ?> 
+        		<?php //settings_errors(); ?> 
                 <h2 class="nav-tab-wrapper" style="padding-left:20px">
                     <a class="nav-tab seed_csp3-support" href="options-general.php?page=seedprod_coming_soon"><?php _e('Settings','ultimate-coming-soon-page') ?></a>
                     <a class="nav-tab seed_csp3-preview thickbox-preview" href="<?php echo home_url(); ?>?cs_preview=true&TB_iframe=true&width=640&height=632" title="<?php _e('&larr; Close Window','ultimate-coming-soon-page') ?>"><?php _e('Live Preview','ultimate-coming-soon-page'); ?></a>
