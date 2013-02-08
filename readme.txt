@@ -3,8 +3,8 @@ Contributors: johnnytee
 Donate link: http://seedprod.com/
 Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
-Tested up to: 3.5.0
-Stable tag: 1.6.1
+Tested up to: 3.5.1
+Stable tag: 1.7.0
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -81,6 +81,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * German (de_DE) by Frederic Ch. Reuter
 * Italian (it_IT) by Luca Barbetti
 * Slovak (sk_SK) by [Branco Radenovich/WebHostingGeeks.com](http://webhostinggeeks.com/blog/)
+* Persian(fa_IR) by Ali Mirzaei
 
 == Installation ==
 
@@ -133,6 +134,10 @@ To fix:
 
 
 == Changelog ==
+= 1.7.0 =
+* Added BuddyPress Compatibility
+* Added Persian Translation
+
 = 1.6.1 =
 * Fixed bug that prevent user from inserting media into the description.
 
@@ -256,6 +261,10 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+
+= 1.7.0 =
+* Added BuddyPress Compatibility
+
 = 1.6.1 =
 * Fixed bug that prevent user from inserting media into the description.
 
