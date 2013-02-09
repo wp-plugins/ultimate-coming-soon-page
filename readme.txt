@@ -31,6 +31,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 *   Uses HTML5 &amp; CSS3
 *   Translation Ready, i18n Support
 *   Multisite Support
+*	BuddyPress Support
 
 ### Pro Version Features:
 
@@ -81,7 +82,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * German (de_DE) by Frederic Ch. Reuter
 * Italian (it_IT) by Luca Barbetti
 * Slovak (sk_SK) by [Branco Radenovich/WebHostingGeeks.com](http://webhostinggeeks.com/blog/)
-* Persian(fa_IR) by Ali Mirzaei
+* Persian(fa_IR) by [Ali Mirzaei](http://www.alimir.ir)
 
 == Installation ==
 
