@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/
 Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
 Tested up to: 3.5.1
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -135,6 +135,9 @@ To fix:
 
 
 == Changelog ==
+= 1.7.1 =
+* Updated Slovak Translation
+
 = 1.7.0 =
 * Added BuddyPress Compatibility
 * Added Persian Translation
@@ -262,6 +265,8 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.7.1 =
+* Updated Slovak Translation
 
 = 1.7.0 =
 * Added BuddyPress Compatibility
