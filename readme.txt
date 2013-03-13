@@ -135,6 +135,10 @@ To fix:
 
 
 == Changelog ==
+= 1.8.0 =
+* Feature: updated google fonts
+* Feature: added the ability to use an image on teaser image
+
 = 1.7.3 =
 * Tweak: Made Goole Font urls protocol less
 
