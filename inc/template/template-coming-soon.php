@@ -125,6 +125,7 @@ global $seedprod_comingsoon;
     <?php
     if(!empty($sc_jdt['comingsoon_background_strech'])):
     ?>
+    $('#supersized').css('display','fixed');
     $.supersized({
       slides:[ {image : '<?php echo $sc_jdt['comingsoon_custom_bg_image']; ?>'} ]
     });
