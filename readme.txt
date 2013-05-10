@@ -136,6 +136,10 @@ To fix:
 
 
 == Changelog ==
+= 1.8.1 =
+* Fix: Added WP Core Styles
+* Fix: Fix IOS 5.1 Full Screen BG Bug
+
 = 1.8.0 =
 * Feature: updated google fonts
 * Feature: added the ability to use an image on teaser image
@@ -277,6 +281,10 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.8.1 =
+* Fix: Added WP Core Styles
+* Fix: Fix IOS 5.1 Full Screen BG Bug
+
 = 1.7.1 =
 * Updated Slovak Translation
 
