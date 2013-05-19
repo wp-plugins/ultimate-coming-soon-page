@@ -59,6 +59,10 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          * Display the coming soon page
          */
         function render_comingsoon_page() {
+                // Return if a login page
+                if(preg_match("/login/i",$_SERVER['REQUEST_URI']) > 0){
+                    return false;
+                }
 
 	            if(!is_admin()){
 	                if(!is_feed()){

@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/
 Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
 Tested up to: 3.5.1
-Stable tag: 1.8.1
+Stable tag: 1.9.0
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -136,6 +136,9 @@ To fix:
 
 
 == Changelog ==
+= 1.9.0 =
+* Added: Support for Theme my Login and other custom login plugins
+
 = 1.8.1 =
 * Fix: Added WP Core Styles
 * Fix: Fix IOS 5.1 Full Screen BG Bug
@@ -281,6 +284,9 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.9.0 =
+* Added: Support for Theme my Login and other custom login plugins
+
 = 1.8.1 =
 * Fix: Added WP Core Styles
 * Fix: Fix IOS 5.1 Full Screen BG Bug
