@@ -78,7 +78,7 @@ global $seedprod_comingsoon;
             <img id="teaser-image" src="<?php echo $sc_jdt['comingsoon_image'] ?>" alt="Teaser" usemap="#teaser-image" />
             <?php endif; ?>
             <h1 id="teaser-headline"><?php echo $sc_jdt['comingsoon_headline'] ?></h1>
-            <p id="teaser-description"><?php echo $sc_jdt['comingsoon_description'] ?></p>
+            <div id="teaser-description"><?php echo shortcode_unautop(wpautop(convert_chars(wptexturize($sc_jdt['comingsoon_description'])))) ?></div>
             <?php if(!empty($sc_jdt['comingsoon_customhtml'])): ?>
             <div id="coming-soon-custom-html">
                 <?php echo $sc_jdt['comingsoon_customhtml'] ?>
