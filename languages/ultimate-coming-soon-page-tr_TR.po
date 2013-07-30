@@ -1,119 +1,68 @@
-﻿msgid ""
+msgid ""
 msgstr ""
-"Project-Id-Version: UCS-tr_TR\n"
-"POT-Creation-Date: 2013-07-28 23:59-0800\n"
-"PO-Revision-Date: 2013-07-29 00:41-0800\n"
-"Last-Translator: \n"
-"Language-Team: rushearn.com <support@rushearn.com>\n"
+"Project-Id-Version: Ultimate Coming Soon Page\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-12 12:02-0500\n"
+"PO-Revision-Date: 2013-07-30 00:06+0200\n"
+"Last-Translator: HakanEr <hakanerwptr@gmail.com>\n"
+"Language-Team: hakaner <hakanerwptr@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ../\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: n"
-"X-Poedit-SearchPath-0: n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: turkish\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: ultimate-coming-soon-page.php:38
 msgid ""
 "WordPress 3.0 and higher required. The plugin has now disabled itself. On a "
 "side note why are you running an old version :( Upgrade!"
 msgstr ""
-"WordPress .... ve üstü gerekir.Eklentisi artık kendisi kapatmıştır. Bir yan "
-"eski bir sürümünü çalıştırıyorsanız : (Upgrade!"
-
-#: framework/framework.php:119
-#: (3)\ultimate-coming-soon-page/inc/config.php:384
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: framework/framework.php:120
-msgid "&larr; Close Window"
-msgstr "&larr; Pencereyi Kapat "
-
-#: framework/framework.php:120
-msgid "Live Preview"
-msgstr "Live Preview"
-
-#: framework/framework.php:129
-msgid "Plugin Support"
-msgstr "Plugin Destek"
-
-#: framework/framework.php:133
-msgid "Got a Question, Idea, Problem or Praise?"
-msgstr "Soru, Fikir, Sorun veya Övgü var mı?"
-
-#: framework/framework.php:136
-msgid "Support Request"
-msgstr "Destek Talebi"
-
-#: framework/framework.php:145
-msgid "Show Some Love"
-msgstr "Sevginiz Gösterin"
-
-#: framework/framework.php:148
-msgid "Like this plugin? Show your support by:"
-msgstr "Eklentiyi beğendiniz mi? Destekleyerek gösterin:"
-
-#: framework/framework.php:150
-msgid "Submit your site to the Showcase"
-msgstr "Sitenize Vitrin için Gönder"
-
-#: framework/framework.php:151
-msgid "Rating It"
-msgstr "Oy Verin"
-
-#: framework/framework.php:152
-msgid "Tweet It"
-msgstr "Tweetleyin"
-
-#: framework/framework.php:163
-msgid "SeedProd Blog"
-msgstr "SeedProd Blog"
-
-#: framework/framework.php:177
-msgid "Subscribe by Email"
-msgstr "Eposta ile Abone Olun"
+"WordPress 3.0 veya üstü gerekir. Eklenti şu an kendini kapatmıştır. Bir yan "
+"not, neden eski bir sürümünü çalıştırıyorsunuz :( Güncelleyin!"
 
 #: framework/framework.php:289
 msgid "Media Image Library"
-msgstr "Ortam Kütüphanesi"
+msgstr "Ortam Resim Kitaplığı"
 
 #: framework/framework.php:403
 #, php-format
 msgid "Settings saved.  <a href='%s/?cs_preview=true'>Preview &raquo;</a>"
-msgstr ""
-"Ayarlar kaydedildi. <a href='%s/?mm_preview=true'>Ön İzleme &raquo;</a>"
+msgstr "Ayarlar kaydedildi. <a href='%s/?cs_preview=true'>Önizle &raquo;</a>"
 
 #: framework/framework.php:514
 msgid "Save Changes"
-msgstr "Kaydet"
+msgstr "Değişiklikleri Kaydet"
 
-#: inc/config.php:53
+#: inc/config.php:49
 msgid "Coming Soon Mode Active"
-msgstr "Coming Soon Mode Aktif"
+msgstr "Yakında Geliyor Modu Aktif"
 
-#: inc/config.php:86
-#: (3)\ultimate-coming-soon-page/inc/template/template-coming-soon.php:91
+#: inc/config.php:78
 msgid "Enter Your Email"
-msgstr "E-posta girin"
+msgstr "Epostanızı Girin"
 
-#: inc/config.php:87
+#: inc/config.php:79
 msgid "Error :( Please try again."
-msgstr "Hata. Lütfen tekrar deneyiniz"
+msgstr "Hata :( Lütfen tekrar deneyin."
 
-#: inc/config.php:88
+#: inc/config.php:80
 msgid "Please enter a valid email."
-msgstr "Geçerli bir e-posta girin"
+msgstr "Lütfen geçerli bir eposta girin."
 
-#: inc/config.php:89
+#: inc/config.php:81
 msgid "You'll be notified soon!"
-msgstr "Yakında haberdar olacak!"
+msgstr "Yakında haberdar olacaksınız!"
 
-#: inc/config.php:146
+#: inc/config.php:138
 msgid "Unable to load lists, check your API Key!"
-msgstr "Listeleri yüklenemiyor, API Anahtarı kontrol edin!"
+msgstr "Listeler yüklenemiyor, API Anahtarınızı kontrol edin!"
 
-#: inc/config.php:267
+#: inc/config.php:259
 msgid ""
 "Offer your visitors incentives such as coupons codes, free ebook, free "
 "software, etc. in exchange for their email.\n"
@@ -122,190 +71,190 @@ msgid ""
 "email.\n"
 "        \t"
 msgstr ""
-"Bu kupon kodları, ücretsiz e-kitap, özgür yazılım, vb e-posta karşılığında "
-"olarak ziyaretçilerinizin teşvikler sunuyoruz.\n"
-"\v  \tEğer başarılı bir e-posta ele sonra sadece aşağıdaki fileds ve "
-"bilgilerin biri veya her ikisi görüntülenir doldurun.\n"
-"\v   \t"
+"Ziyaretçilerinize epostaları karşılığında kupon kodları, ücretsiz ekitap, "
+"ücretsiz yazılım vb gibi teşvikler sunun.\n"
+"        \tSadece aşağıdaki alanların bir veya ikisini doldurun, epostaları "
+"başarıyla elde ettikten sonra bilgiler görüntülenecektir.\n"
+"        \t"
 
-#: inc/config.php:315
+#: inc/config.php:307
 msgid "Are you sure you want to DELETE all emails?"
-msgstr "Eğer tüm e-postalar DELETE etmek istediğinizden emin misiniz?"
+msgstr "Tüm epostaları SİLMEK istediğinizden emin misiniz?"
 
-#: inc/config.php:359
-#: (3)\ultimate-coming-soon-page/inc/config.php:361
-#: (3)\ultimate-coming-soon-page/inc/config.php:362
+#: inc/config.php:351 inc/config.php:353 inc/config.php:354
 msgid "Coming Soon"
-msgstr "yakında"
+msgstr "Yakında Geliyor"
 
-#: inc/config.php:396
+#: inc/config.php:376
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: inc/config.php:388
 msgid "Enable"
 msgstr "Etkinleştir"
 
-#: inc/config.php:397
+#: inc/config.php:389
 #, php-format
 msgid ""
 "Enable if you want to display a coming soon page to visitors. Users who are "
 "logged in will not see the coming soon page, this means you.  <a href='%s/?"
 "cs_preview=true'>Preview</a>"
 msgstr ""
-"Eğer yakında Moduna girecekseniz etkinleştirin. <a href='%s/?"
-"mm_preview=true'>Ön İzleme</a>"
+"Ziyaretçilere bir yakında geliyor sayfası göstermek istiyorsanız "
+"etkinleştirin. Giriş yapan kullanıcılar yakında geliyor sayfasını "
+"görmeyecektir, bu sizin de görmeyeceğiniz anlamına gelir. <a href='%s/?"
+"cs_preview=true'>Önizleyin</a>"
 
-#: inc/config.php:398
-#: (3)\ultimate-coming-soon-page/inc/config.php:474
+#: inc/config.php:390 inc/config.php:466
 msgid "Yes"
 msgstr "Evet"
 
-#: inc/config.php:404
+#: inc/config.php:396
 msgid "Image"
-msgstr "resim"
+msgstr "Resim"
 
-#: inc/config.php:405
+#: inc/config.php:397
 msgid "Upload a logo or teaser image (or) enter the url to your image."
-msgstr "Bir logo veya teaser görüntü (ya da) url görüntü için girin yüklemesi."
+msgstr "Bir logo veya önizleme resmi yükleyin (veya) resminizin url'ini girin."
 
-#: inc/config.php:411
+#: inc/config.php:403
 msgid "Headline"
-msgstr "başlık"
+msgstr "Başlık"
 
-#: inc/config.php:412
+#: inc/config.php:404
 msgid ""
 "Write a headline for your coming soon page. Tip: Avoid using 'Coming Soon'."
 msgstr ""
-"Lütfen gelen yakında sayfa için bir başlık yazın. İpucu: 'Yakında' "
+"Yakında geliyor sayfanız için bir başlık yazın. İpucu: 'Yakında Geliyor' "
 "kullanmaktan kaçının."
 
-#: inc/config.php:418
+#: inc/config.php:410
 msgid "Description"
-msgstr "tanımlama"
+msgstr "Açıklama"
+
+#: inc/config.php:411
+msgid "Tell the visitor what to expect from your site."
+msgstr "Sitenizde ne olacağını ziyaretçinize söyleyin."
 
 #: inc/config.php:419
-msgid "Tell the visitor what to expect from your site."
-msgstr "Sitenizden ne olacağını ziyaretçi.lere söyleyin"
+msgid "Mailing List"
+msgstr "Posta Listesi"
 
 #: inc/config.php:427
-msgid "Mailing List"
-msgstr "Mailing List"
-
-#: inc/config.php:435
 msgid "FeedBurn Address"
 msgstr "FeedBurn Adresi"
 
-#: inc/config.php:436
+#: inc/config.php:428
 msgid ""
 "Enter the part after http://feeds2.feedburner.com/ <a href='http://wordpress."
 "org/extend/plugins/ultimate-coming-soon-page/faq/'' target='_blanks'> Learn "
 "how</a> to use FeedBurner to collect emails."
 msgstr ""
-"Http://feeds2.feedburner.com/ <a href='http://wordpress.org/extend/plugins/"
-"ultimate-coming-soon-page/faq/'' target='_blanks'> öğrenin sonra kısmını "
-"girin nasıl </ a> e-postalar toplamak için FeedBurner kullanın."
+"http://feeds2.feedburner.com/ sonrasında gelen kısmı girin. Epostaları "
+"toplamak için FeedBurner'ı nasıl kullanacağınızı <a href='http://wordpress."
+"org/extend/plugins/ultimate-coming-soon-page/faq/'' "
+"target='_blanks'>öğrenin</a>."
 
-#: inc/config.php:443
+#: inc/config.php:435
 msgid "Custom HTML"
-msgstr "Custom HTML"
+msgstr "Kişisel HTML"
 
-#: inc/config.php:444
+#: inc/config.php:436
 msgid ""
 "Enter any custom html or javascript that you want outputted. You can also "
 "enter you Google Analytics code."
 msgstr ""
-"Eğer çıkışı istediğiniz herhangi bir özel html veya javascript girin. Ayrıca "
-"Google Analytics kodu girebilirsiniz."
+"Kullanmak istediğiniz herhangi bir kişisel html veya javascript girin. "
+"Ayrıca, Google Analytics kodunuzu da girebilirsiniz."
 
-#: inc/config.php:452
+#: inc/config.php:444
 msgid "Style"
-msgstr "stil"
+msgstr "Stil"
 
-#: inc/config.php:457
+#: inc/config.php:449
 msgid "Background Color"
 msgstr "Arkaplan Rengi"
 
-#: inc/config.php:465
+#: inc/config.php:457
 msgid "Background Image"
 msgstr "Arkaplan Resmi"
 
-#: inc/config.php:468
+#: inc/config.php:460
 msgid ""
 "Upload an optional background image (or) enter the url to your image. This "
 "will override the color above if set."
 msgstr ""
-"Isteğe bağlı bir arka plan resmi (veya) url görüntü için girin yüklemesi. Bu "
-"set, yukarıdaki renk geçersiz kılar."
+"İsteğe bağlı bir arka plan resmi yükleyin (veya) resminiz için url girin. "
+"Eğer resim ayarlanırsa, yukarıdaki rengi geçersiz kılar."
 
-#: inc/config.php:472
+#: inc/config.php:464
 msgid "Stretch Background Image"
-msgstr "Streç Arkaplan Resmi"
+msgstr "Arkaplan Resmini Sığdır"
 
-#: inc/config.php:473
+#: inc/config.php:465
 msgid "This will stretch your background image to match any browser size."
 msgstr ""
-"Bu herhangi bir tarayıcı boyutuna göre arka plan görüntüsü uzatmak olacaktır."
+"Bu, herhangi bir tarayıcı boyutuna uyacak şekilde arka plan resminizi "
+"uzatarak sığdıracaktır."
 
-#: inc/config.php:481
+#: inc/config.php:473
 msgid "Font Color"
 msgstr "Font Rengi"
 
-#: inc/config.php:482
+#: inc/config.php:474
 msgid "Black"
-msgstr "siyah"
+msgstr "Siyah"
 
-#: inc/config.php:482
+#: inc/config.php:474
 msgid "Gray"
-msgstr "gri"
+msgstr "Gri"
 
-#: inc/config.php:482
+#: inc/config.php:474
 msgid "White"
-msgstr "beyaz"
+msgstr "Beyaz"
 
-#: inc/config.php:491
+#: inc/config.php:483
 msgid "Headline Font"
-msgstr "Başlık Yazı Tipi"
+msgstr "Başlık Fontu"
 
-#: inc/config.php:495
-#: (3)\ultimate-coming-soon-page/inc/config.php:504
+#: inc/config.php:487 inc/config.php:496
 msgid ""
 "View <a href=\"http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html"
 "\">System Fonts</a> - View <a href=\"http://www.google.com/webfonts\">Google "
 "Fonts</a>"
 msgstr ""
-"görüş <a href=\"http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html"
-"\">sistem yazı tipleri</a> - View <a href=\"http://www.google.com/webfonts"
-"\">Google Fonts</a>"
+"<a href=\"http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html\">Sistem "
+"Fontlarını</a> görün - <a href=\"http://www.google.com/webfonts\">Google "
+"Fontlarını</a> görün"
 
-#: inc/config.php:499
+#: inc/config.php:491
 msgid "Body Font"
-msgstr "vücut Yazı Tipi"
+msgstr "Gövde Fontu"
 
-#: inc/config.php:509
+#: inc/config.php:501
 msgid "Custom CSS"
-msgstr "özel CSS"
+msgstr "Kişisel CSS"
 
-#: inc/config.php:514
+#: inc/config.php:506
 msgid "Need to tweaks the styles? Add your custom CSS here."
-msgstr "Stilleri tweaks gerekiyor? Burada özel CSS ekleyin."
+msgstr "Stillere ince ayar mı gerekiyor? Buraya kişisel CSS ekleyin."
 
-#: inc/config.php:519
+#: inc/config.php:511
 msgid "Powered By SeedProd"
-msgstr "Powered By SeedProd"
+msgstr "SeedProd Tarafından Desteklenmektedir"
 
-#: inc/config.php:520
+#: inc/config.php:512
 msgid "Nope - Got No Love"
 msgstr "Olmaz - Sevgi Beslemiyorum"
 
-#: inc/config.php:520
+#: inc/config.php:512
 msgid "Yep - I Love You Man"
 msgstr "Olur - Seni Seviyorum Adamım"
 
-#: inc/config.php:521
+#: inc/config.php:513
 msgid ""
 "Can we show a <strong>cool stylish</strong> footer credit at the bottom the "
 "page."
 msgstr ""
-"Bir <strong> serin şık </ strong> altındaki altbilgi kredi sayfa "
-"gösterebilir."
-
-#: inc/template/template-coming-soon.php:92
-msgid "Notify Me!"
-msgstr "Beni haberdar et!"
+"Sayfanın alt tarafında <strong>hoş ve şık</strong> bir bilgi "
+"gösterebilirmiyiz."
