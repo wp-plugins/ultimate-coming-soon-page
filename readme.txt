@@ -84,7 +84,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * Slovak (sk_SK) by [Branco Radenovich/WebHostingGeeks.com](http://webhostinggeeks.com/blog/)
 * Persian(fa_IR) by [Ali Mirzaei](http://www.alimir.ir)
 * Spanish(es_CO) by [Jaime Echeverry](http://jaime.co/)
-* Turkish(tr_TR) by [Hakan Er](hakanertr.wordpress.com)
+* Turkish(tr_TR) by [Hakan Er](http://hakanertr.wordpress.com)
 
 == Installation ==
 
