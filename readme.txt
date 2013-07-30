@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/
 Tags: wordpress coming soon, wordpress under construction, wordpress maintenance mode,maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
 Tested up to: 3.5.1
-Stable tag: 1.9.4
+Stable tag: 1.9.5
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -85,6 +85,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * Persian(fa_IR) by [Ali Mirzaei](http://www.alimir.ir)
 * Spanish(es_CO) by [Jaime Echeverry](http://jaime.co/)
 * Turkish(tr_TR) by [Hakan Er](http://hakanertr.wordpress.com)
+* Swedish(sv_SE) by [Björn Sennbrink](https://github.com/Sennbrink/SeedProd-Ultimate-Coming-Soon-WP-Plugin-Swedish-Translation)
 
 == Installation ==
 
@@ -137,6 +138,9 @@ To fix:
 
 
 == Changelog ==
+= 1.9.5 =
+* Added:  Swedish Translation
+
 = 1.9.4 =
 * Added:  Tweaked Turkish Translation
 
@@ -297,6 +301,9 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.9.5 =
+* Added:  Swedish Translation
+
 = 1.9.4 =
 * Added:  Tweaked Turkish Translation
 
