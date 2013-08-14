@@ -86,6 +86,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * Spanish(es_CO) by [Jaime Echeverry](http://jaime.co/)
 * Turkish(tr_TR) by [Hakan Er](http://hakanertr.wordpress.com)
 * Swedish(sv_SE) by [Björn Sennbrink](https://github.com/Sennbrink/SeedProd-Ultimate-Coming-Soon-WP-Plugin-Swedish-Translation)
+* Estonian(et_ET) by Rait Huusmann
 
 == Installation ==
 
@@ -138,6 +139,9 @@ To fix:
 
 
 == Changelog ==
+= 1.9.6 =
+* Added:  Estonian Translation
+
 = 1.9.5 =
 * Added:  Swedish Translation
 
