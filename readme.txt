@@ -98,17 +98,17 @@ Manual Installation
 
 == Frequently Asked Questions ==
 
-= How do I use FeedBurner to collect emails? =
+= How do I use FeedBurner to collect emails on my coming soon page? =
 
 http://www.youtube.com/watch?v=31dUHLCW8VU
 
-= What if I get locked out? =
+= What if I get locked out of my coming soon page? =
 
 If you get locked out, just go straight to the wp-login page. http://www.example.com/wp-login.php
 
-= The plugin is enabled...but my website still shows =
+= The coming soon page is enabled...but my website still shows =
 
-I often hear people say "The plugin is enabled..but my website still shows! How do i fix this?"
+I often hear people say "The coming soon page is enabled..but my website still shows! How do i fix this?"
 
 If you are logged into WordPress you will not see the coming soon page. You will see your normal website. This is so you can work on it while visitors see the coming soon page.
 
