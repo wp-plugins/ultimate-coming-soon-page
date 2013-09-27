@@ -4,7 +4,7 @@ Donate link: http://seedprod.com/
 Tags: wordpress coming soon, wordpress under construction, wordpress maintenance mode, maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
 Tested up to: 3.6.0
-Stable tag: 1.9.5
+Stable tag: 1.10.0
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -139,6 +139,12 @@ To fix:
 
 
 == Changelog ==
+= 1.10.0 =
+* Added:  Replaced the css reset with normalize so the editors style would be respected.
+* Added: Ability to disable background noise effect.
+* Added: Ability to disable text shadow effect.
+* Fixed: Undefined Indexes
+
 = 1.9.6 =
 * Added:  Estonian Translation
 
@@ -305,6 +311,11 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.10.0 =
+* Added:  Replaced the css reset with normalize so the editors style would be respected.
+* Added: Ability to disable background noise effect.
+* Added: Ability to disable text shadow effect.
+
 = 1.9.5 =
 * Added:  Swedish Translation
 

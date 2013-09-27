@@ -25,9 +25,17 @@ global $seedprod_comingsoon;
   <?php  do_action( 'sc_head'); ?>
 
   <link rel="stylesheet" href="<?php echo plugins_url('template/style.css',dirname(__FILE__)); ?>">
+  
+  <?php
+  if(isset($sc_jdt['comingsoon_background_noise_effect']) && $sc_jdt['comingsoon_background_noise_effect'] == 'on' ){
+    $noise = plugins_url('template/images/bg.png',dirname(__FILE__));
+  }else{
+    $noise = '';
+  }
+  ?>
   <style type="text/css">
     body{
-        background: <?php echo $sc_jdt['comingsoon_custom_bg_color'];?> url('<?php echo (empty($sc_jdt['comingsoon_custom_bg_image']) ? plugins_url('template/images/bg.png',dirname(__FILE__)) : $sc_jdt['comingsoon_custom_bg_image']); ?>') repeat;
+        background: <?php echo $sc_jdt['comingsoon_custom_bg_color'];?> url('<?php echo (empty($sc_jdt['comingsoon_custom_bg_image']) ? $noise : $sc_jdt['comingsoon_custom_bg_image']); ?>') repeat;
         <?php if(!empty($sc_jdt['comingsoon_background_strech'])):?>
           background-repeat: no-repeat;
           background-attachment: fixed;
@@ -38,12 +46,12 @@ global $seedprod_comingsoon;
           background-size: cover;
         <?php endif;?>
     }
-    <?php if(!empty($sc_jdt['comingsoon_body_font'])):?>
+    <?php if(!empty($sc_jdt['comingsoon_body_font']) && $sc_jdt['comingsoon_body_font'] != 'empty_0'):?>
     #coming-soon-container{
         font-family:<?php echo $seedprod_comingsoon->font_families($sc_jdt['comingsoon_body_font']); ?>;
     }
     <?php endif;?>
-    <?php if(!empty($sc_jdt['comingsoon_headline_font'])):?>
+    <?php if(!empty($sc_jdt['comingsoon_headline_font']) && $sc_jdt['comingsoon_headline_font'] != 'empty_0'):?>
     #teaser-headline{
         font-family:<?php echo $seedprod_comingsoon->font_families($sc_jdt['comingsoon_headline_font']); ?>;
     }
@@ -52,17 +60,23 @@ global $seedprod_comingsoon;
     <?php if($sc_jdt['comingsoon_font_color'] == 'white'):?>
     #coming-soon-container, #coming-soon-footer{
         color:#fff;
+        <?php if(isset($sc_jdt['comingsoon_text_shadow_effect']) && $sc_jdt['comingsoon_text_shadow_effect'] == 'on'){ ?>
         text-shadow: #333 1px 1px 0px;
+        <?php } ?>
     }
     <?php elseif($sc_jdt['comingsoon_font_color'] == 'gray'):?>
     #coming-soon-container, #coming-soon-footer{
         color:#666;
+        <?php if(isset($sc_jdt['comingsoon_text_shadow_effect']) && $sc_jdt['comingsoon_text_shadow_effect'] == 'on'){ ?>
         text-shadow: #fff 1px 1px 0px;
+        <?php } ?>
     }
     <?php elseif($sc_jdt['comingsoon_font_color'] == 'black'):?>
     #coming-soon-container, #coming-soon-footer{
         color:#000;
+        <?php if(isset($sc_jdt['comingsoon_text_shadow_effect']) && $sc_jdt['comingsoon_text_shadow_effect'] == 'on'){ ?>
         text-shadow: #fff 1px 1px 0px;
+        <?php } ?>
     }
     <?php endif;?>
     <?php echo $sc_jdt['comingsoon_custom_css'];?>
@@ -94,14 +108,6 @@ global $seedprod_comingsoon;
             <?php endif; ?>
 
 
-            <div id="notify-incentive">
-                <div id="notify-incentive-text">
-                    <?php echo $sc_jdt['comingsoon_incentive_text'] ?>
-                </div>
-                <div id="notify-incentive-link">
-                    <a href="<?php echo $sc_jdt['comingsoon_incentive_link'] ?>"><?php echo $sc_jdt['comingsoon_incentive_link'] ?></a>
-                </div>
-            </div>
         </div>
     </div> <!--! end of #main -->
   </div> <!--! end of #container -->

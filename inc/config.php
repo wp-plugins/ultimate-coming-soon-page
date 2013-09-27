@@ -459,6 +459,16 @@ $seedprod_comingsoon->options[] = array( "type" => "color",
 				"setting_id" => "seedprod_comingsoon_options",
 				"default_value" => "#ffffff",
 				);
+
+$seedprod_comingsoon->options[] = array( "type" => "radio",
+                "id" => "comingsoon_background_noise_effect",
+                "label" => __("Background Noise Effect", 'ultimate-coming-soon-page'),
+                "option_values" => array('on'=>__('On', 'ultimate-coming-soon-page'),'off'=>__('Off', 'ultimate-coming-soon-page')),
+                "desc" => __("Adds a noise effect when over the selected color.", 'ultimate-coming-soon-page'),
+                "default_value" => "on",
+                "section_id" => "seedprod_section_style",
+                "setting_id" => "seedprod_comingsoon_options",
+                );
 				
 $seedprod_comingsoon->options[] = array( "type" => "image",
                 "id" => "comingsoon_custom_bg_image",
@@ -476,6 +486,8 @@ $seedprod_comingsoon->options[] = array( "type" => "checkbox",
                 "setting_id" => "seedprod_comingsoon_options",
                 );
 
+
+
 $seedprod_comingsoon->options[] = array( "type" => "radio",
                 "id" => "comingsoon_font_color",
 				"label" => __("Font Color", 'ultimate-coming-soon-page'),
@@ -485,6 +497,16 @@ $seedprod_comingsoon->options[] = array( "type" => "radio",
 				"section_id" => "seedprod_section_style",
 				"setting_id" => "seedprod_comingsoon_options",
 				);
+
+$seedprod_comingsoon->options[] = array( "type" => "radio",
+                "id" => "comingsoon_text_shadow_effect",
+                "label" => __("Text Shadow Effect", 'ultimate-coming-soon-page'),
+                "option_values" => array('on'=>__('On', 'ultimate-coming-soon-page'),'off'=>__('Off', 'ultimate-coming-soon-page')),
+                "desc" => __("", 'ultimate-coming-soon-page'),
+                "default_value" => "on",
+                "section_id" => "seedprod_section_style",
+                "setting_id" => "seedprod_comingsoon_options",
+                );
 				
 $seedprod_comingsoon->options[] = array( "type" => "select",
                 "id" => "comingsoon_headline_font",
