@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/
-Tags: wordpress coming soon, wordpress under construction, wordpress maintenance mode, maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
+Tags: wordpress coming soon, wordpress maintenance mode. wordpress under construction, maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
 Tested up to: 3.7.1
 Stable tag: 1.10.0
@@ -139,6 +139,9 @@ To fix:
 
 
 == Changelog ==
+= 1.10.1 =
+* Fixed: Undefined Indexes
+
 = 1.10.0 =
 * Added:  Replaced the css reset with normalize so the editors style would be respected.
 * Added: Ability to disable background noise effect.
@@ -311,6 +314,9 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.10.1 =
+* Fixed: Undefined Indexes
+
 = 1.10.0 =
 * Added:  Replaced the css reset with normalize so the editors style would be respected.
 * Added: Ability to disable background noise effect.
