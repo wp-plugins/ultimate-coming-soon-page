@@ -83,7 +83,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * Portuguese(pt_PT) by [Alexander Pereira](http://www.pontovisual.net/traducao-do-plugin-ultimate-coming-soon-page/)
 * Russian (ru_RU) by [Oleg Vlasov](http://bestplugins.ru)
 * Spanish(es_CO) by [Jaime Echeverry](http://jaime.co/)
-* Spanish(es_ES) by [Andrew Kurtis](http://webhostinghub.com)
+* Spanish(es_ES) by [WebHostingHub](http://webhostinghub.com)
 * Slovak (sk_SK) by [Branco Radenovich/WebHostingGeeks.com](http://webhostinggeeks.com/blog/)
 * Slovenian(sl_SI) by [Jani Roskar](http://qb.si)
 * Swedish(sv_SE) by [Björn Sennbrink](https://github.com/Sennbrink/SeedProd-Ultimate-Coming-Soon-WP-Plugin-Swedish-Translation)
