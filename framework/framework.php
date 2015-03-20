@@ -113,7 +113,7 @@ if (!class_exists('SeedProd_Framework')) {
         	    <?php screen_icon(); ?>
         		<h2><?php echo $this->plugin_name; ?> </h2>
                 <a href="http://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_blank">
-                <img src="http://static.seedprod.com.s3.amazonaws.com/ads/ultimate-coming-soon-page-banner-772x250.jpg" style="max-width:100%">
+                <img src="//s3.amazonaws.com/static.seedprod.com/ads/ultimate-coming-soon-page-banner-772x250.jpg" style="max-width:100%">
                 </a>
         		<?php //settings_errors(); ?>
                 <h2 class="nav-tab-wrapper" style="padding-left:20px">
