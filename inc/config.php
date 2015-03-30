@@ -444,6 +444,15 @@ $seedprod_comingsoon->options[] = array( "type" => "textbox",
                 );
 
 $seedprod_comingsoon->options[] = array( "type" => "textarea",
+                "id" => "comingsoon_headerscripts",
+				"label" => __("Header Scripts", 'ultimate-coming-soon-page'),
+				"desc" => __("Enter any scripts that need to be outputted in the html head.", 'ultimate-coming-soon-page'),
+				"class" => "large-text",
+				"section_id" => "seedprod_section_coming_soon",
+				"setting_id" => "seedprod_comingsoon_options",
+				);
+
+$seedprod_comingsoon->options[] = array( "type" => "textarea",
                 "id" => "comingsoon_customhtml",
 				"label" => __("Custom HTML", 'ultimate-coming-soon-page'),
 				"desc" => __("Enter any custom html or javascript that you want outputted. You can also enter you Google Analytics code.", 'ultimate-coming-soon-page'),
