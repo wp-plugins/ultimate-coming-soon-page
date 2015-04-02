@@ -76,6 +76,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * French (fr_FR) by Gabriel Delattre
 * German (de_DE) by Frederic Ch. Reuter
 * Greek(el_EL) by [Mihalis Papanousis](http://aenaon.biz)
+* Indonesian (id_ID) by Nasrulhaq Muiz
 * Italian (it_IT) by Luca Barbetti
 * Persian(fa_IR) by [Ali Mirzaei](http://www.alimir.ir)
 * Polish (pl_PL) by [pl2wp-Team](http://pl2wp.prywatny.eu)
@@ -141,6 +142,9 @@ To fix:
 
 
 == Changelog ==
+= 1.14.1 =
+* Added: Indonesian Translation
+
 = 1.14.0 =
 * Added: Header scripts field
 
@@ -339,6 +343,9 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.14.1 =
+* Added: Indonesian Translation
+
 = 1.14.0 =
 * Added: Header scripts field
 
