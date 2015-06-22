@@ -72,7 +72,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 
 **Included Translations:**
 
-* Danish(da_DK) by Alexander Leo-Hansen
+* Danish(da_DK) by [Alexander Leo-Hansen](http://alexanderleohansen.dk/)
 * Estonian(et_ET) by Rait Huusmann
 * French (fr_FR) by Gabriel Delattre
 * German (de_DE) by Frederic Ch. Reuter
