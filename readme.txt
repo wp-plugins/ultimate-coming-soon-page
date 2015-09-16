@@ -3,7 +3,7 @@ Contributors: johnnytee
 Donate link: http://seedprod.com/
 Tags: wordpress coming soon, wordpress maintenance mode. wordpress under construction, maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
-Tested up to: 4.3.0
+Tested up to: 4.3.1
 Stable tag: 1.14.4
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
